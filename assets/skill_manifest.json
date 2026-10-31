@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "files": {
+    ".gitattributes": "6a7438a807adc3c23c287463d196c4950d0def0fabdd229e78abc966ca4b72b8",
     ".gitignore": "7531553f2318453bbae3a9600dfda9fb6bcc34eeb277c398c164c1def94b6a20",
     "README.md": "5aa8e4fcdbf38429afc0e99b2b8f40bf651bffa5ba6051a9e3bb3adc7dd437a2",
     "SKILL.md": "5678e33764b1f4f0736e220a2d930f5e2240e9cb9a0c143ea05991c55ca8744c",

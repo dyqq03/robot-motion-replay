@@ -1,0 +1,2 @@
+# Preserve calibration/model/package hashes on every checkout, including Windows.
+* -text
