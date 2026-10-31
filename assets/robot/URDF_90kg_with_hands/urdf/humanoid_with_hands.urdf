@@ -1,0 +1,2123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="humanoid_with_orcahands">
+  <link name="Base">
+    <inertial>
+      <origin xyz="-0.00621788935959 0.000741470326306 0.112894732608854" rpy="0 0 0" />
+      <mass value="33.3112183586296" />
+      <inertia ixx="0.558164748470024" ixy="-0.00157636558725468" ixz="-0.0530747256907434" iyy="0.48881024270887" iyz="-0.000466533341763365" izz="0.661719503032703" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.168405267715454" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/Base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.168405267715454" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="AnklePitch">
+    <inertial>
+      <origin xyz="1.28960138681e-05 0.00563647691079 0.114954678546" rpy="0 0 0" />
+      <mass value="8.98112136815575" />
+      <inertia ixx="0.181486498633289" ixy="3.43479236245888e-06" ixz="1.40870460452404e-05" iyy="0.169279888921243" iyz="0.00971721276968337" izz="0.0328590057616356" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/AnklePitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/AnklePitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="AnklePitch" type="revolute">
+    <origin xyz="0 0 0.268405267715454" rpy="0 0 0" />
+    <parent link="Base" />
+    <child link="AnklePitch" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.748834763354" upper="1.738362787842" effort="100" velocity="1.5" />
+  </joint>
+  <link name="Knee">
+    <inertial>
+      <origin xyz="0.0068612306055 0.00688324818004 0.133536027928" rpy="0 0 0" />
+      <mass value="12.069770304436" />
+      <inertia ixx="0.286667266035964" ixy="0.000563828036692439" ixz="-0.00293026681828659" iyy="0.23991942864582" iyz="0.00917869391687495" izz="0.0811535765664941" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/Knee.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/Knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Knee" type="revolute">
+    <origin xyz="0 0 0.35" rpy="0 0 0" />
+    <parent link="AnklePitch" />
+    <child link="Knee" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.098834763354" upper="2.088362787842" effort="100" velocity="1.5" />
+  </joint>
+  <link name="HipPitch">
+    <inertial>
+      <origin xyz="0.000103127022991 0.0120559458396 0.00377545200702" rpy="0 0 0" />
+      <mass value="5.11724137437319" />
+      <inertia ixx="0.0172467068302276" ixy="5.01955398442959e-06" ixz="-3.76838138708343e-05" iyy="0.015028079964628" iyz="0.000234647541859386" izz="0.016800443351252" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/HipPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/HipPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="HipPitch" type="revolute">
+    <origin xyz="0 0 0.35" rpy="0 0 0" />
+    <parent link="Knee" />
+    <child link="HipPitch" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.098834763354" upper="2.088362787842" effort="100" velocity="1.5" />
+  </joint>
+  <link name="WaistYaw">
+    <inertial>
+      <origin xyz="-0.00497289572114 -0.000194819869865 0.0703234401171" rpy="0 0 0" />
+      <mass value="5.66302763691241" />
+      <inertia ixx="0.0504848609663405" ixy="-4.11189997954436e-05" ixz="0.00291051871947882" iyy="0.049953137517359" iyz="8.33297893562701e-06" izz="0.0254563312419082" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/WaistYaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/WaistYaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="WaistYaw" type="revolute">
+    <origin xyz="0 0 0.12" rpy="0 0 0" />
+    <parent link="HipPitch" />
+    <child link="WaistYaw" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-3.817187749774" upper="3.510009801423" effort="100" velocity="1.5" />
+  </joint>
+  <link name="NeckYaw">
+    <inertial>
+      <origin xyz="0.000815224732371 -0.00430921465769 0.0206667909925" rpy="0 0 0" />
+      <mass value="0.492435244403174" />
+      <inertia ixx="0.000529044006440356" ixy="1.20750975172907e-06" ixz="-2.54303760102645e-06" iyy="0.000472976125320091" iyz="0.000135942184633814" izz="0.000251322782394708" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/NeckYaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/NeckYaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="NeckYaw" type="revolute">
+    <origin xyz="-0.03 0 0.2" rpy="0 0 0" />
+    <parent link="WaistYaw" />
+    <child link="NeckYaw" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.508598775598" upper="1.538598775598" effort="10" velocity="1.5" />
+  </joint>
+  <link name="NeckPitch">
+    <inertial>
+      <origin xyz="0.0134440509661 0.00267084447127 0.0863998761641" rpy="0 0 0" />
+      <mass value="4.47713365836762" />
+      <inertia ixx="0.0191265816410192" ixy="0.000134297439870659" ixz="0.00145788402020431" iyy="0.0225590148640715" iyz="-0.000425303793622231" izz="0.0173490185197803" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/NeckPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/NeckPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="NeckPitch" type="revolute">
+    <origin xyz="0 0 0.0900000000000003" rpy="0 0 0" />
+    <parent link="NeckYaw" />
+    <child link="NeckPitch" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.792598775598" upper="0.954598775598" effort="10" velocity="1.5" />
+  </joint>
+  <link name="RightShoulderPitch">
+    <inertial>
+      <origin xyz="-0.00424019524214 -0.0098662184332 -0.00533076377636" rpy="0 0 0" />
+      <mass value="1.82117793907176" />
+      <inertia ixx="0.00247780564467235" ixy="0.000298264333917596" ixz="-4.01493276925383e-06" iyy="0.00210325014230575" iyz="2.30405509958962e-05" izz="0.00253420871723986" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightShoulderPitch" type="revolute">
+    <origin xyz="-0.04 -0.07 0.17" rpy="0 0 0" />
+    <parent link="WaistYaw" />
+    <child link="RightShoulderPitch" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.996509341496" upper="1.303490658504" effort="10" velocity="2" />
+  </joint>
+  <link name="RightShoulderRoll">
+    <inertial>
+      <origin xyz="-0.00668588503624 -0.00144948456599 -0.0109380217678" rpy="0 0 0" />
+      <mass value="1.74904410081716" />
+      <inertia ixx="0.00219019722574678" ixy="2.56202185093313e-06" ixz="8.00409962484834e-06" iyy="0.00179990576984319" iyz="-5.7854925521082e-07" izz="0.001383838329783" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderRoll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderRoll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightShoulderRoll" type="revolute">
+    <origin xyz="0 -0.09 0" rpy="0 0 0" />
+    <parent link="RightShoulderPitch" />
+    <child link="RightShoulderRoll" />
+    <axis xyz="0.99657 0 0.082722" />
+    <limit lower="-1.741838341496" upper="0.178023658504" effort="10" velocity="2" />
+  </joint>
+  <link name="RightShoulderYaw">
+    <inertial>
+      <origin xyz="-0.000464639891912 -0.00177295161788 -0.0163657218029" rpy="0 0 0" />
+      <mass value="0.866364263728168" />
+      <inertia ixx="0.00144600989031548" ixy="-1.85510611834362e-06" ixz="-8.08664677501132e-05" iyy="0.00141754217039565" iyz="-1.42364654098094e-05" izz="0.000553247131661142" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderYaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightShoulderYaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightShoulderYaw" type="revolute">
+    <origin xyz="0 0 -0.1" rpy="0 0 0" />
+    <parent link="RightShoulderRoll" />
+    <child link="RightShoulderYaw" />
+    <axis xyz="-0.0827222019928587 0 0.996572645268499" />
+    <limit lower="-1.569050670748" upper="1.572541329252" effort="10" velocity="2" />
+  </joint>
+  <link name="RightElbowPitch">
+    <inertial>
+      <origin xyz="0.00100794012648 -0.00283196416484 -0.0151068359263" rpy="0 0 0" />
+      <mass value="0.956015249711515" />
+      <inertia ixx="0.00151609887857857" ixy="7.24412740847567e-07" ixz="-1.89597593700045e-05" iyy="0.0012021277177222" iyz="1.78551568445867e-05" izz="0.000865128360975623" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightElbowPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightElbowPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightElbowPitch" type="revolute">
+    <origin xyz="0.00999999999999735 0 -0.125" rpy="0 0 0" />
+    <parent link="RightShoulderYaw" />
+    <child link="RightElbowPitch" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0.000000000000" upper="2.443461000000" effort="10" velocity="2" />
+  </joint>
+  <link name="RightWristRoll">
+    <inertial>
+      <origin xyz="0.0101098610958 0.000778841843665 -0.0270905258748" rpy="0 0 0" />
+      <mass value="0.861192590600255" />
+      <inertia ixx="0.00141886526831685" ixy="-9.36205206665498e-06" ixz="5.52001167867239e-05" iyy="0.0013274299938812" iyz="7.62451445458185e-05" izz="0.000667972904774387" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightWristRoll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightWristRoll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightWristRoll" type="revolute">
+    <origin xyz="0 0 -0.0750000000000001" rpy="0 0 0" />
+    <parent link="RightElbowPitch" />
+    <child link="RightWristRoll" />
+    <axis xyz="0.0827222019928004 0 -0.996572645268503" />
+    <limit lower="-1.570796000000" upper="1.570796000000" effort="10" velocity="2" />
+  </joint>
+  <link name="RightWristPitch">
+    <inertial>
+      <origin xyz="0.013975411674501 -0.00373205896684238 -0.114455780909624" rpy="0 0 0" />
+      <mass value="2.34777473313902" />
+      <inertia ixx="0.00709563293802064" ixy="-5.0645964848489e-06" ixz="1.75037194196058e-05" iyy="0.0069324052415489" iyz="0.000376410106065871" izz="0.00234790845324216" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightWristPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/RightWristPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RightWristPitch" type="revolute">
+    <origin xyz="0 0 -0.0649999999999999" rpy="0 -0.0828168378559813 0" />
+    <parent link="RightWristRoll" />
+    <child link="RightWristPitch" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.574286658504" upper="1.567305341496" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftShoulderPitch">
+    <inertial>
+      <origin xyz="-0.00423298747749 0.00994038713359 -0.00532106332946" rpy="0 0 0" />
+      <mass value="1.82636614006647" />
+      <inertia ixx="0.00248339804739039" ixy="-0.000296758284840593" ixz="-4.34231470953328e-06" iyy="0.00210454503770715" iyz="-2.59902620633571e-05" izz="0.00253665529266719" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftShoulderPitch" type="revolute">
+    <origin xyz="-0.04 0.07 0.17" rpy="0 0 0" />
+    <parent link="WaistYaw" />
+    <child link="LeftShoulderPitch" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.396263000000" upper="1.396263000000" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftShoulderRoll">
+    <inertial>
+      <origin xyz="-0.0087929955297 0.00147815325571 -0.0113483796356" rpy="0 0 0" />
+      <mass value="1.85153778936286" />
+      <inertia ixx="0.00236325718414471" ixy="-1.63693700127998e-06" ixz="-5.62340197386118e-06" iyy="0.00205138593617235" iyz="-2.50020582306976e-07" izz="0.00160240474414743" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderRoll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderRoll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftShoulderRoll" type="revolute">
+    <origin xyz="0 0.09 0" rpy="0 0 0" />
+    <parent link="LeftShoulderPitch" />
+    <child link="LeftShoulderRoll" />
+    <axis xyz="0.996572645268499 0 0.0827222019928551" />
+    <limit lower="-0.179768987756" upper="1.740093012244" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftShoulderYaw">
+    <inertial>
+      <origin xyz="-0.000313960325631 0.0014432477453 -0.0157962137295" rpy="0 0 0" />
+      <mass value="0.862546678885166" />
+      <inertia ixx="0.00138612036937578" ixy="-2.07324280438667e-07" ixz="-7.98019195198393e-05" iyy="0.00135883098351563" iyz="-6.17838581641744e-06" izz="0.00054518807087895" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderYaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftShoulderYaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftShoulderYaw" type="revolute">
+    <origin xyz="0 0 -0.1" rpy="0 0 0" />
+    <parent link="LeftShoulderRoll" />
+    <child link="LeftShoulderYaw" />
+    <axis xyz="-0.0827222019928569 0 0.996572645268499" />
+    <limit lower="-1.570796000000" upper="1.570796000000" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftElbowPitch">
+    <inertial>
+      <origin xyz="0.00101608895031 0.000126610644786 -0.015001091044" rpy="0 0 0" />
+      <mass value="0.962642379134369" />
+      <inertia ixx="0.00152577987701764" ixy="6.63924350212399e-07" ixz="-1.90822585081913e-05" iyy="0.00120741438565571" iyz="1.73646544507825e-05" izz="0.000873265905835071" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftElbowPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftElbowPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftElbowPitch" type="revolute">
+    <origin xyz="0.00999999999999701 0 -0.125" rpy="0 0 0" />
+    <parent link="LeftShoulderYaw" />
+    <child link="LeftElbowPitch" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0.000000000000" upper="2.443461000000" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftWristRoll">
+    <inertial>
+      <origin xyz="0.0101109762334 -0.000736899052335 -0.02707149928" rpy="0 0 0" />
+      <mass value="0.863664619738295" />
+      <inertia ixx="0.00142025919123688" ixy="9.76167165114763e-06" ixz="5.5177772520939e-05" iyy="0.00132831650799697" iyz="-8.18920959848062e-05" izz="0.000670037750688987" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftWristRoll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftWristRoll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftWristRoll" type="revolute">
+    <origin xyz="0 0 -0.0750000000000001" rpy="0 0 0" />
+    <parent link="LeftElbowPitch" />
+    <child link="LeftWristRoll" />
+    <axis xyz="0.0827222019928009 0 -0.996572645268503" />
+    <limit lower="-1.570796000000" upper="1.570796000000" effort="10" velocity="2" />
+  </joint>
+  <link name="LeftWristPitch">
+    <inertial>
+      <origin xyz="0.0218476932951372 0.0038454439775689 -0.0942086890820657" rpy="0 0 0" />
+      <mass value="2.8254933872996" />
+      <inertia ixx="0.0123500094466582" ixy="2.52990079141899e-05" ixz="0.000819992306189305" iyy="0.0122696021915409" iyz="-0.000271702937434308" izz="0.00261226768202178" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftWristPitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body/LeftWristPitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeftWristPitch" type="revolute">
+    <origin xyz="0 0 -0.0649999999999999" rpy="0 0 0" />
+    <parent link="LeftWristRoll" />
+    <child link="LeftWristPitch" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.574286658504" upper="1.567305341496" effort="10" velocity="2" />
+  </joint>
+  <material name="LeftWhite">
+    <color rgba="1 1 1 1" />
+  </material>
+  <link name="LeftPalm">
+    <inertial>
+      <origin xyz="-0.00193 -0.00052 -0.00664" rpy="1.67519 -0.04750000000000032 -1.55556" />
+      <mass value="0.0257" />
+      <inertia ixx="1.612e-05" iyy="1.151e-05" izz="6.72e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftPalmVisual">
+      <origin xyz="-0.0015568393804010381 0.00032366355975666324 -0.011896430343868667" rpy="2.01172521777585 -0.047179539585598285 -1.531383022156099" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPalmVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPalmCollision">
+      <origin xyz="-0.0015796019462848588 0.0001376248446814945 -0.011923873250196919" rpy="2.026338195778868 -0.044917456181218895 -1.531847751735018" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPalmCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftPalmSkinVisual">
+      <origin xyz="-0.005673309514830851 -0.0012702684906836111 -0.001744430321194409" rpy="1.7666058493725336 -0.1563942094199331 -1.6505205003593353" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPalmSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPalmSkinCollision">
+      <origin xyz="-0.008013832397891144 -0.001293701510845759 -0.0015696747425978242" rpy="1.8840619193629062 -0.16785003095386486 -1.6839920915628581" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPalmSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftThumbMP">
+    <inertial>
+      <origin xyz="-0.00247 0.0 0.004" rpy="0.0 -0.016249999999999876 0.0" />
+      <mass value="0.00586" />
+      <inertia ixx="8.4e-07" iyy="6.6e-07" izz="2.7e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftThumbMPVisual">
+      <origin xyz="-0.0026672782758389094 -3.6617030073895996e-06 0.0032021510136003503" rpy="-0.00450638440425983 0.0029041941261005455 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftThumbMPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftThumbMPCollision">
+      <origin xyz="-0.0025186274059406416 1.1817094343651893e-05 0.0033325772179257306" rpy="-0.004051421860145692 0.0 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftThumbMPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftThumbMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftThumbPP">
+    <inertial>
+      <origin xyz="-0.01848 1e-05 2e-05" rpy="1.5708 -0.7739199999999999 -1.5708" />
+      <mass value="0.00655" />
+      <inertia ixx="7.5e-07" iyy="7.1e-07" izz="3e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftThumbPPVisual">
+      <origin xyz="-0.01772057472979195 1.0070925191614284e-05 -0.00010493568910233946" rpy="-1.6017800681828298 1.1287165327427504 1.5432562301164818" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftThumbPPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftThumbPPCollision">
+      <origin xyz="-0.01727473106987278 2.0812531064334476e-05 -0.00010892038972696916" rpy="-1.588892025872152 1.3512360913096229 1.5473903377526785" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftThumbPPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftThumbAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftThumbIP">
+    <inertial>
+      <origin xyz="-0.00135 2e-05 0.01383" rpy="0.0003700000000000001 -0.03263000000000016 -0.00034" />
+      <mass value="0.01402" />
+      <inertia ixx="1.7e-06" iyy="1.64e-06" izz="5.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftThumbIPVisual">
+      <origin xyz="-0.0012998948492342203 7.159773213648307e-06 0.013619877706625217" rpy="0.0 -0.04338716477372251 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftThumbIPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftThumbIPCollision">
+      <origin xyz="-0.0013560375396256981 0.00012710825491742077 0.013446327660739959" rpy="0.00708255798627546 -0.04763590113115046 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftThumbIPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftThumbIPSkinVisual">
+      <origin xyz="-0.0015424443589898442 1.6522252825510055e-07 0.016259641785170875" rpy="3.141592653589793 1.2480960827956862 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftThumbIPSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftThumbIPSkinCollision">
+      <origin xyz="-0.0015528244655451595 6.48072440430664e-06 0.016246657621879965" rpy="3.141592653589793 1.243771833702049 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftThumbIPSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftThumbPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftThumbDP">
+    <inertial>
+      <origin xyz="0.00327663125519 -0.000278942684895 0.0211035334334" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.32314894261e-06" iyy="3.5477101271e-06" izz="8.7853767267e-07" ixy="4.98515527194e-09" ixz="-8.09087530952e-07" iyz="1.82058705108e-08" />
+    </inertial>
+    <visual name="LeftThumbDPVisual">
+      <origin xyz="-0.001737692119750562 -5.352917438125722e-06 0.005127321105400321" rpy="0.0 -0.24698289481892632 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftThumbDPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftThumbDPCollision">
+      <origin xyz="-0.001737692119750562 -5.352917438125722e-06 0.005127321105400321" rpy="0.0 -0.24698289481892632 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftThumbDPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftThumbDIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftThumbFingertip">
+    </link>
+  <link name="LeftIndexMP">
+    <inertial>
+      <origin xyz="-0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 1.5707926535897931 -3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftIndexMPVisual">
+      <origin xyz="-0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 1.5066740246432395 -2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftIndexMPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftIndexMPCollision">
+      <origin xyz="-0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 1.5147947849129795 -2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftIndexMPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftIndexAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftIndexPP">
+    <inertial>
+      <origin xyz="-0.00135 2e-05 0.01637" rpy="0.00034 -0.020550000000000068 -0.00038" />
+      <mass value="0.0165" />
+      <inertia ixx="2.39e-06" iyy="2.31e-06" izz="7.1e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftIndexPPVisual">
+      <origin xyz="-0.0012791981098529209 4.322204569499314e-05 0.016098661080179" rpy="0.005516325755706635 -0.035101984887858206 -0.03910570256058449" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftIndexPPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftIndexPPCollision">
+      <origin xyz="-0.0013516740131344841 1.1247422892215125e-05 0.015681803525061735" rpy="0.0 -0.042883356216690816 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftIndexPPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftIndexPPSkinVisual">
+      <origin xyz="-0.0016617007377281573 7.13567847691717e-08 0.018763861638214734" rpy="3.141592653589793 0.8345404465359767 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftIndexPPSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftIndexPPSkinCollision">
+      <origin xyz="-0.0016773866527582534 -5.5310131701629075e-06 0.018740870134460883" rpy="3.141592653589793 0.8259683678608123 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftIndexPPSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftIndexMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftIndexIP">
+    <inertial>
+      <origin xyz="0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="7.96852278399e-09" ixz="-8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="LeftIndexIPVisual">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftIndexIPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftIndexIPCollision">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftIndexIPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftIndexPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftIndexFingertip">
+    </link>
+  <link name="LeftMiddleMP">
+    <inertial>
+      <origin xyz="-0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 1.5707926535897931 -3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftMiddleMPVisual">
+      <origin xyz="-0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 1.5066740246432395 -2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftMiddleMPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftMiddleMPCollision">
+      <origin xyz="-0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 1.5147947849129795 -2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftMiddleMPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftMiddleAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftMiddlePP">
+    <inertial>
+      <origin xyz="-0.00144 2e-05 0.02021" rpy="-2.9999999999999916e-05 -0.013859999999999983 -0.0005999999999999998" />
+      <mass value="0.02006" />
+      <inertia ixx="3.78e-06" iyy="3.69e-06" izz="8.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftMiddlePPVisual">
+      <origin xyz="-0.001283421930192045 3.6963342684240676e-05 0.02022720775953102" rpy="0.004564296284170381 -0.027656376334468602 -0.037580505677349094" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftMiddlePPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftMiddlePPCollision">
+      <origin xyz="-0.001339380770656077 -6.845101857801683e-06 0.02011933923689832" rpy="-0.0006410664486678006 -0.029880005436222712 5.421010862427522e-20" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftMiddlePPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftMiddlePPSkinVisual">
+      <origin xyz="-0.001729699116189442 2.0144468929163878e-08 0.022938288977938984" rpy="0.0 0.22312530126972074 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftMiddlePPSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftMiddlePPSkinCollision">
+      <origin xyz="-0.0017525848624676125 2.7252940732883304e-06 0.022885135333659" rpy="0.0 0.22006061767397878 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftMiddlePPSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftMiddleMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftMiddleIP">
+    <inertial>
+      <origin xyz="0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="7.96852278399e-09" ixz="-8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="LeftMiddleIPVisual">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftMiddleIPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftMiddleIPCollision">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftMiddleIPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftMiddlePIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftMiddleFingertip">
+    </link>
+  <link name="LeftRingMP">
+    <inertial>
+      <origin xyz="-0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 1.5707926535897931 -3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftRingMPVisual">
+      <origin xyz="-0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 1.5066740246432395 -2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftRingMPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftRingMPCollision">
+      <origin xyz="-0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 1.5147947849129795 -2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftRingMPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftRingAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftRingPP">
+    <inertial>
+      <origin xyz="-0.00144 2e-05 0.02021" rpy="-2.9999999999999916e-05 -0.013859999999999983 -0.0005999999999999998" />
+      <mass value="0.02006" />
+      <inertia ixx="3.78e-06" iyy="3.69e-06" izz="8.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftRingPPVisual">
+      <origin xyz="-0.001283421930192045 3.6963342684240676e-05 0.02022720775953102" rpy="0.004564296284170381 -0.027656376334468602 -0.037580505677349094" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftRingPPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftRingPPCollision">
+      <origin xyz="-0.001339380770656077 -6.845101857801683e-06 0.02011933923689832" rpy="-0.0006410664486678006 -0.029880005436222712 5.421010862427522e-20" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftRingPPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftRingPPSkinVisual">
+      <origin xyz="-0.001729699116189442 2.0144468929163878e-08 0.022938288977938984" rpy="0.0 0.22312530126972074 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftRingPPSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftRingPPSkinCollision">
+      <origin xyz="-0.0017525848624676125 2.7252940732883304e-06 0.022885135333659" rpy="0.0 0.22006061767397878 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftRingPPSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftRingMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftRingIP">
+    <inertial>
+      <origin xyz="0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="7.96852278399e-09" ixz="-8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="LeftRingIPVisual">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftRingIPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftRingIPCollision">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftRingIPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftRingPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftRingFingertip">
+    </link>
+  <link name="LeftPinkyMP">
+    <inertial>
+      <origin xyz="-0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 1.5707926535897931 -3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftPinkyMPVisual">
+      <origin xyz="-0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 1.5066740246432395 -2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPinkyMPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPinkyMPCollision">
+      <origin xyz="-0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 1.5147947849129795 -2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPinkyMPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftPinkyAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftPinkyPP">
+    <inertial>
+      <origin xyz="-0.00135 2e-05 0.01383" rpy="0.0003700000000000001 -0.03263000000000016 -0.00034" />
+      <mass value="0.01402" />
+      <inertia ixx="1.7e-06" iyy="1.64e-06" izz="5.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="LeftPinkyPPVisual">
+      <origin xyz="-0.0012998948492342203 7.159773213648307e-06 0.013619877706625217" rpy="0.0 -0.04338716477372251 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPinkyPPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPinkyPPCollision">
+      <origin xyz="-0.0013560375396256981 0.00012710825491742077 0.013446327660739959" rpy="0.00708255798627546 -0.04763590113115046 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPinkyPPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+    <visual name="LeftPinkyPPSkinVisual">
+      <origin xyz="-0.0015424443589898442 1.6522252825510055e-07 0.016259641785170875" rpy="3.141592653589793 1.2480960827956862 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPinkyPPSkinVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPinkyPPSkinCollision">
+      <origin xyz="-0.0015528244655451595 6.48072440430664e-06 0.016246657621879965" rpy="3.141592653589793 1.243771833702049 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPinkyPPSkinCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftPinkyMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftPinkyIP">
+    <inertial>
+      <origin xyz="0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="7.96852278399e-09" ixz="-8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="LeftPinkyIPVisual">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/visual/LeftPinkyIPVisual.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </visual>
+    <collision name="LeftPinkyIPCollision">
+      <origin xyz="-0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 0.0034390239986910043 -1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/left/collision/LeftPinkyIPCollision.stl" />
+      </geometry>
+      <material name="LeftWhite" />
+    </collision>
+  </link>
+  <link name="LeftPinkyPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="LeftPinkyFingertip">
+    </link>
+  <joint type="revolute" name="LeftThumbMCP">
+    <parent link="LeftPalm" />
+    <child link="LeftThumbMCP" />
+    <origin xyz="0.02821 0.01777 -0.01321" rpy="0.322420207222 0.442545831146 0.455492886276" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit lower="0.000000000000" upper="1.745329250000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftIndexAbduction">
+    <parent link="LeftPalm" />
+    <child link="LeftIndexAbduction" />
+    <origin xyz="0.024088797002689358 0.0018999642829399502 0.025164928786148736" rpy="1.6066999999999996 -1.13552 0.05339000000000049" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftMiddleAbduction">
+    <parent link="LeftPalm" />
+    <child link="LeftMiddleAbduction" />
+    <origin xyz="7.346410206776621e-08 0.0 0.030000000000134926" rpy="-1.5707926536208807 -1.5707926535897934 -3.141592653558706" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftRingAbduction">
+    <parent link="LeftPalm" />
+    <child link="LeftRingAbduction" />
+    <origin xyz="-0.021521022061295733 0.0015382095479525787 0.020824784431525818" rpy="-1.5359699999999998 -1.30836 3.05441" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftPinkyAbduction">
+    <parent link="LeftPalm" />
+    <child link="LeftPinkyAbduction" />
+    <origin xyz="-0.04258452932438962 0.004988143142003794 0.007243722937596895" rpy="-1.49694 -0.8614899999999999 2.8837299999999995" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="LeftThumbMCPOffset">
+    <parent link="LeftThumbMCP" />
+    <child link="LeftThumbMP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftIndexAbductionOffset">
+    <parent link="LeftIndexAbduction" />
+    <child link="LeftIndexMP" />
+    <origin xyz="0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftMiddleAbductionOffset">
+    <parent link="LeftMiddleAbduction" />
+    <child link="LeftMiddleMP" />
+    <origin xyz="0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftRingAbductionOffset">
+    <parent link="LeftRingAbduction" />
+    <child link="LeftRingMP" />
+    <origin xyz="0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftPinkyAbductionOffset">
+    <parent link="LeftPinkyAbduction" />
+    <child link="LeftPinkyMP" />
+    <origin xyz="0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="LeftThumbAbduction">
+    <parent link="LeftThumbMP" />
+    <child link="LeftThumbAbduction" />
+    <origin xyz="-6.938893903907228e-18 0.0 0.0" rpy="-1.221730098604 -0.733038285838 0.000000256872" />
+    <axis xyz="0.0 -0.34202085907197166 -0.9396923602752502" />
+    <limit lower="-1.082104140000" upper="0.000000000000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftIndexMCP">
+    <parent link="LeftIndexMP" />
+    <child link="LeftIndexMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 1.5707926535897931 -3.141592653589793" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.658062790000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftMiddleMCP">
+    <parent link="LeftMiddleMP" />
+    <child link="LeftMiddleMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 1.5707926535897931 -3.141592653589793" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.588249620000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftRingMCP">
+    <parent link="LeftRingMP" />
+    <child link="LeftRingMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 1.5707926535897931 -3.141592653589793" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.588249620000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftPinkyMCP">
+    <parent link="LeftPinkyMP" />
+    <child link="LeftPinkyMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 1.5707926535897931 -3.141592653589793" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.710422670000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="LeftThumbAbductionOffset">
+    <parent link="LeftThumbAbduction" />
+    <child link="LeftThumbPP" />
+    <origin xyz="0.03 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftIndexMCPOffset">
+    <parent link="LeftIndexMCP" />
+    <child link="LeftIndexPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftMiddleMCPOffset">
+    <parent link="LeftMiddleMCP" />
+    <child link="LeftMiddlePP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftRingMCPOffset">
+    <parent link="LeftRingMCP" />
+    <child link="LeftRingPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftPinkyMCPOffset">
+    <parent link="LeftPinkyMCP" />
+    <child link="LeftPinkyPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="LeftThumbPIP">
+    <parent link="LeftThumbPP" />
+    <child link="LeftThumbPIP" />
+    <origin xyz="0.0 0.0 0.0" rpy="-2.6535897934554242e-06 -1.5707926535897934 -3.141592653589793" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.209439510000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftIndexPIP">
+    <parent link="LeftIndexPP" />
+    <child link="LeftIndexPIP" />
+    <origin xyz="-0.0005 0.0 0.038" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftMiddlePIP">
+    <parent link="LeftMiddlePP" />
+    <child link="LeftMiddlePIP" />
+    <origin xyz="-0.0005 0.0 0.046" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.867502300000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftRingPIP">
+    <parent link="LeftRingPP" />
+    <child link="LeftRingPIP" />
+    <origin xyz="-0.0005 0.0 0.046" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.867502300000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="LeftPinkyPIP">
+    <parent link="LeftPinkyPP" />
+    <child link="LeftPinkyPIP" />
+    <origin xyz="-0.0005 0.0 0.033" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="LeftThumbPIPOffset">
+    <parent link="LeftThumbPIP" />
+    <child link="LeftThumbIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftIndexPIPOffset">
+    <parent link="LeftIndexPIP" />
+    <child link="LeftIndexIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftMiddlePIPOffset">
+    <parent link="LeftMiddlePIP" />
+    <child link="LeftMiddleIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftRingPIPOffset">
+    <parent link="LeftRingPIP" />
+    <child link="LeftRingIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftPinkyPIPOffset">
+    <parent link="LeftPinkyPIP" />
+    <child link="LeftPinkyIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="LeftThumbDIP">
+    <parent link="LeftThumbIP" />
+    <child link="LeftThumbDIP" />
+    <origin xyz="-0.0005 0.0 0.033" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.954768760000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="LeftIndexFingertipFixed">
+    <parent link="LeftIndexIP" />
+    <child link="LeftIndexFingertip" />
+    <origin xyz="0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftMiddleFingertipFixed">
+    <parent link="LeftMiddleIP" />
+    <child link="LeftMiddleFingertip" />
+    <origin xyz="0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftRingFingertipFixed">
+    <parent link="LeftRingIP" />
+    <child link="LeftRingFingertip" />
+    <origin xyz="0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftPinkyFingertipFixed">
+    <parent link="LeftPinkyIP" />
+    <child link="LeftPinkyFingertip" />
+    <origin xyz="0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftThumbDIPOffset">
+    <parent link="LeftThumbDIP" />
+    <child link="LeftThumbDP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="LeftThumbFingertipFixed">
+    <parent link="LeftThumbDP" />
+    <child link="LeftThumbFingertip" />
+    <origin xyz="0.003 0.0 0.025" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint name="LeftPalmMount" type="fixed">
+    <parent link="LeftWristPitch" />
+    <child link="LeftPalm" />
+    <origin xyz="0.0357489795185153 0.00779836582248186 -0.239664750690771" rpy="-2.96725726836741 -0.0824637346751524 -9.99462101836102e-05" />
+  </joint>
+  <material name="RightWhite">
+    <color rgba="1 1 1 1" />
+  </material>
+  <link name="RightPalm">
+    <inertial>
+      <origin xyz="0.00193 -0.00052 -0.00664" rpy="1.67519 0.04750000000000032 1.55556" />
+      <mass value="0.0257" />
+      <inertia ixx="1.612e-05" iyy="1.151e-05" izz="6.72e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightPalmVisual">
+      <origin xyz="0.0015568393804010381 0.00032366355975666324 -0.011896430343868667" rpy="2.01172521777585 0.047179539585598285 1.531383022156099" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPalmVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPalmCollision">
+      <origin xyz="0.0015796019462848588 0.0001376248446814945 -0.011923873250196919" rpy="2.026338195778868 0.044917456181218895 1.531847751735018" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPalmCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightPalmSkinVisual">
+      <origin xyz="0.005673309514830851 -0.0012702684906836111 -0.001744430321194409" rpy="1.7666058493725336 0.1563942094199331 1.6505205003593353" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPalmSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPalmSkinCollision">
+      <origin xyz="0.008013832397891144 -0.001293701510845759 -0.0015696747425978242" rpy="1.8840619193629062 0.16785003095386486 1.6839920915628581" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPalmSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightThumbMP">
+    <inertial>
+      <origin xyz="0.00247 0.0 0.004" rpy="0.0 0.016249999999999876 0.0" />
+      <mass value="0.00586" />
+      <inertia ixx="8.4e-07" iyy="6.6e-07" izz="2.7e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightThumbMPVisual">
+      <origin xyz="0.0026672782758389094 -3.6617030073895996e-06 0.0032021510136003503" rpy="-0.00450638440425983 -0.0029041941261005455 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightThumbMPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightThumbMPCollision">
+      <origin xyz="0.0025186274059406416 1.1817094343651893e-05 0.0033325772179257306" rpy="-0.004051421860145692 0.0 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightThumbMPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightThumbMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightThumbPP">
+    <inertial>
+      <origin xyz="0.01848 1e-05 2e-05" rpy="1.5708 0.7739199999999999 1.5708" />
+      <mass value="0.00655" />
+      <inertia ixx="7.5e-07" iyy="7.1e-07" izz="3e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightThumbPPVisual">
+      <origin xyz="0.01772057472979195 1.0070925191614284e-05 -0.00010493568910233946" rpy="-1.6017800681828298 -1.1287165327427504 -1.5432562301164818" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightThumbPPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightThumbPPCollision">
+      <origin xyz="0.01727473106987278 2.0812531064334476e-05 -0.00010892038972696916" rpy="-1.588892025872152 -1.3512360913096229 -1.5473903377526785" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightThumbPPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightThumbAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightThumbIP">
+    <inertial>
+      <origin xyz="0.00135 2e-05 0.01383" rpy="0.0003700000000000001 0.03263000000000016 0.00034" />
+      <mass value="0.01402" />
+      <inertia ixx="1.7e-06" iyy="1.64e-06" izz="5.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightThumbIPVisual">
+      <origin xyz="0.0012998948492342203 7.159773213648307e-06 0.013619877706625217" rpy="0.0 0.04338716477372251 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightThumbIPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightThumbIPCollision">
+      <origin xyz="0.0013560375396256981 0.00012710825491742077 0.013446327660739959" rpy="0.00708255798627546 0.04763590113115046 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightThumbIPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightThumbIPSkinVisual">
+      <origin xyz="0.0015424443589898442 1.6522252825510055e-07 0.016259641785170875" rpy="3.141592653589793 -1.2480960827956862 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightThumbIPSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightThumbIPSkinCollision">
+      <origin xyz="0.0015528244655451595 6.48072440430664e-06 0.016246657621879965" rpy="3.141592653589793 -1.243771833702049 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightThumbIPSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightThumbPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightThumbDP">
+    <inertial>
+      <origin xyz="-0.00327663125519 -0.000278942684895 0.0211035334334" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.32314894261e-06" iyy="3.5477101271e-06" izz="8.7853767267e-07" ixy="-4.98515527194e-09" ixz="8.09087530952e-07" iyz="1.82058705108e-08" />
+    </inertial>
+    <visual name="RightThumbDPVisual">
+      <origin xyz="0.001737692119750562 -5.352917438125722e-06 0.005127321105400321" rpy="0.0 0.24698289481892632 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightThumbDPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightThumbDPCollision">
+      <origin xyz="0.001737692119750562 -5.352917438125722e-06 0.005127321105400321" rpy="0.0 0.24698289481892632 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightThumbDPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightThumbDIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightThumbFingertip">
+    </link>
+  <link name="RightIndexMP">
+    <inertial>
+      <origin xyz="0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 -1.5707926535897931 3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightIndexMPVisual">
+      <origin xyz="0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 -1.5066740246432395 2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightIndexMPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightIndexMPCollision">
+      <origin xyz="0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 -1.5147947849129795 2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightIndexMPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightIndexAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightIndexPP">
+    <inertial>
+      <origin xyz="0.00135 2e-05 0.01637" rpy="0.00034 0.020550000000000068 0.00038" />
+      <mass value="0.0165" />
+      <inertia ixx="2.39e-06" iyy="2.31e-06" izz="7.1e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightIndexPPVisual">
+      <origin xyz="0.0012791981098529209 4.322204569499314e-05 0.016098661080179" rpy="0.005516325755706635 0.035101984887858206 0.03910570256058449" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightIndexPPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightIndexPPCollision">
+      <origin xyz="0.0013516740131344841 1.1247422892215125e-05 0.015681803525061735" rpy="0.0 0.042883356216690816 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightIndexPPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightIndexPPSkinVisual">
+      <origin xyz="0.0016617007377281573 7.13567847691717e-08 0.018763861638214734" rpy="3.141592653589793 -0.8345404465359767 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightIndexPPSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightIndexPPSkinCollision">
+      <origin xyz="0.0016773866527582534 -5.5310131701629075e-06 0.018740870134460883" rpy="3.141592653589793 -0.8259683678608123 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightIndexPPSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightIndexMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightIndexIP">
+    <inertial>
+      <origin xyz="-0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="-7.96852278399e-09" ixz="8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="RightIndexIPVisual">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightIndexIPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightIndexIPCollision">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightIndexIPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightIndexPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightIndexFingertip">
+    </link>
+  <link name="RightMiddleMP">
+    <inertial>
+      <origin xyz="0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 -1.5707926535897931 3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightMiddleMPVisual">
+      <origin xyz="0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 -1.5066740246432395 2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightMiddleMPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightMiddleMPCollision">
+      <origin xyz="0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 -1.5147947849129795 2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightMiddleMPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightMiddleAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightMiddlePP">
+    <inertial>
+      <origin xyz="0.00144 2e-05 0.02021" rpy="-2.9999999999999916e-05 0.013859999999999983 0.0005999999999999998" />
+      <mass value="0.02006" />
+      <inertia ixx="3.78e-06" iyy="3.69e-06" izz="8.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightMiddlePPVisual">
+      <origin xyz="0.001283421930192045 3.6963342684240676e-05 0.02022720775953102" rpy="0.004564296284170381 0.027656376334468602 0.037580505677349094" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightMiddlePPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightMiddlePPCollision">
+      <origin xyz="0.001339380770656077 -6.845101857801683e-06 0.02011933923689832" rpy="-0.0006410664486678006 0.029880005436222712 -5.421010862427522e-20" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightMiddlePPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightMiddlePPSkinVisual">
+      <origin xyz="0.001729699116189442 2.0144468929163878e-08 0.022938288977938984" rpy="0.0 -0.22312530126972074 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightMiddlePPSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightMiddlePPSkinCollision">
+      <origin xyz="0.0017525848624676125 2.7252940732883304e-06 0.022885135333659" rpy="0.0 -0.22006061767397878 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightMiddlePPSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightMiddleMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightMiddleIP">
+    <inertial>
+      <origin xyz="-0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="-7.96852278399e-09" ixz="8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="RightMiddleIPVisual">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightMiddleIPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightMiddleIPCollision">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightMiddleIPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightMiddlePIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightMiddleFingertip">
+    </link>
+  <link name="RightRingMP">
+    <inertial>
+      <origin xyz="0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 -1.5707926535897931 3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightRingMPVisual">
+      <origin xyz="0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 -1.5066740246432395 2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightRingMPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightRingMPCollision">
+      <origin xyz="0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 -1.5147947849129795 2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightRingMPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightRingAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightRingPP">
+    <inertial>
+      <origin xyz="0.00144 2e-05 0.02021" rpy="-2.9999999999999916e-05 0.013859999999999983 0.0005999999999999998" />
+      <mass value="0.02006" />
+      <inertia ixx="3.78e-06" iyy="3.69e-06" izz="8.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightRingPPVisual">
+      <origin xyz="0.001283421930192045 3.6963342684240676e-05 0.02022720775953102" rpy="0.004564296284170381 0.027656376334468602 0.037580505677349094" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightRingPPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightRingPPCollision">
+      <origin xyz="0.001339380770656077 -6.845101857801683e-06 0.02011933923689832" rpy="-0.0006410664486678006 0.029880005436222712 -5.421010862427522e-20" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightRingPPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightRingPPSkinVisual">
+      <origin xyz="0.001729699116189442 2.0144468929163878e-08 0.022938288977938984" rpy="0.0 -0.22312530126972074 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightRingPPSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightRingPPSkinCollision">
+      <origin xyz="0.0017525848624676125 2.7252940732883304e-06 0.022885135333659" rpy="0.0 -0.22006061767397878 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightRingPPSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightRingMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightRingIP">
+    <inertial>
+      <origin xyz="-0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="-7.96852278399e-09" ixz="8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="RightRingIPVisual">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightRingIPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightRingIPCollision">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightRingIPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightRingPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightRingFingertip">
+    </link>
+  <link name="RightPinkyMP">
+    <inertial>
+      <origin xyz="0.01155 0.0 -4e-05" rpy="-2.6535897932333796e-06 -1.5707926535897931 3.141592653589793" />
+      <mass value="0.00498" />
+      <inertia ixx="3.4e-07" iyy="3.1e-07" izz="2e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightPinkyMPVisual">
+      <origin xyz="0.010698479000335614 -1.389065483476104e-05 -0.00027878809319396305" rpy="3.1297715721932393 -1.5066740246432395 2.4424906541753444e-15" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPinkyMPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPinkyMPCollision">
+      <origin xyz="0.01047824184159959 -4.456734197189478e-05 -0.00016480462181888062" rpy="0.928212641576985 -1.5147947849129795 2.212627507721145" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPinkyMPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightPinkyAbduction">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightPinkyPP">
+    <inertial>
+      <origin xyz="0.00135 2e-05 0.01383" rpy="0.0003700000000000001 0.03263000000000016 0.00034" />
+      <mass value="0.01402" />
+      <inertia ixx="1.7e-06" iyy="1.64e-06" izz="5.9e-07" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="RightPinkyPPVisual">
+      <origin xyz="0.0012998948492342203 7.159773213648307e-06 0.013619877706625217" rpy="0.0 0.04338716477372251 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPinkyPPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPinkyPPCollision">
+      <origin xyz="0.0013560375396256981 0.00012710825491742077 0.013446327660739959" rpy="0.00708255798627546 0.04763590113115046 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPinkyPPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+    <visual name="RightPinkyPPSkinVisual">
+      <origin xyz="0.0015424443589898442 1.6522252825510055e-07 0.016259641785170875" rpy="3.141592653589793 -1.2480960827956862 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPinkyPPSkinVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPinkyPPSkinCollision">
+      <origin xyz="0.0015528244655451595 6.48072440430664e-06 0.016246657621879965" rpy="3.141592653589793 -1.243771833702049 0.0" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPinkyPPSkinCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightPinkyMCP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightPinkyIP">
+    <inertial>
+      <origin xyz="-0.00334379485445 -0.000327557388478 0.0210705200055" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.31250458829e-06" iyy="3.54755175426e-06" izz="8.89340250793e-07" ixy="-7.96852278399e-09" ixz="8.2491980294e-07" iyz="2.74131198613e-08" />
+    </inertial>
+    <visual name="RightPinkyIPVisual">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/visual/RightPinkyIPVisual.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </visual>
+    <collision name="RightPinkyIPCollision">
+      <origin xyz="0.0010416798025929732 7.836534536637715e-05 0.011793743862640304" rpy="-0.03448776902850714 -0.0034390239986910043 1.5709149778710771" />
+      <geometry>
+        <mesh filename="../meshes/hands/right/collision/RightPinkyIPCollision.stl" />
+      </geometry>
+      <material name="RightWhite" />
+    </collision>
+  </link>
+  <link name="RightPinkyPIP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="RightPinkyFingertip">
+    </link>
+  <joint type="revolute" name="RightThumbMCP">
+    <parent link="RightPalm" />
+    <child link="RightThumbMCP" />
+    <origin xyz="-0.02821 0.01777 -0.01321" rpy="0.322420207222 -0.442545831146 -0.455492886276" />
+    <axis xyz="0.0 0.0 -1.0" />
+    <limit lower="0.000000000000" upper="1.745329250000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightIndexAbduction">
+    <parent link="RightPalm" />
+    <child link="RightIndexAbduction" />
+    <origin xyz="-0.024088797002689358 0.0018999642829399502 0.025164928786148736" rpy="1.6066999999999996 1.13552 -0.05339000000000049" />
+    <axis xyz="0.0 0.0 -1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightMiddleAbduction">
+    <parent link="RightPalm" />
+    <child link="RightMiddleAbduction" />
+    <origin xyz="-7.346410206776621e-08 0.0 0.030000000000134926" rpy="-1.5707926536208807 1.5707926535897934 3.141592653558706" />
+    <axis xyz="0.0 0.0 -1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightRingAbduction">
+    <parent link="RightPalm" />
+    <child link="RightRingAbduction" />
+    <origin xyz="0.021521022061295733 0.0015382095479525787 0.020824784431525818" rpy="-1.5359699999999998 1.30836 -3.05441" />
+    <axis xyz="0.0 0.0 -1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightPinkyAbduction">
+    <parent link="RightPalm" />
+    <child link="RightPinkyAbduction" />
+    <origin xyz="0.04258452932438962 0.004988143142003794 0.007243722937596895" rpy="-1.49694 0.8614899999999999 -2.8837299999999995" />
+    <axis xyz="0.0 0.0 -1.0" />
+    <limit lower="-0.645771820000" upper="0.645771820000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="RightThumbMCPOffset">
+    <parent link="RightThumbMCP" />
+    <child link="RightThumbMP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightIndexAbductionOffset">
+    <parent link="RightIndexAbduction" />
+    <child link="RightIndexMP" />
+    <origin xyz="-0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightMiddleAbductionOffset">
+    <parent link="RightMiddleAbduction" />
+    <child link="RightMiddleMP" />
+    <origin xyz="-0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightRingAbductionOffset">
+    <parent link="RightRingAbduction" />
+    <child link="RightRingMP" />
+    <origin xyz="-0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightPinkyAbductionOffset">
+    <parent link="RightPinkyAbduction" />
+    <child link="RightPinkyMP" />
+    <origin xyz="-0.02 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="RightThumbAbduction">
+    <parent link="RightThumbMP" />
+    <child link="RightThumbAbduction" />
+    <origin xyz="6.938893903907228e-18 0.0 0.0" rpy="-1.221730098604 0.733038285838 -0.000000256872" />
+    <axis xyz="0.0 0.34202085907197166 0.9396923602752502" />
+    <limit lower="-1.082104140000" upper="0.000000000000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightIndexMCP">
+    <parent link="RightIndexMP" />
+    <child link="RightIndexMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 -1.5707926535897931 3.141592653589793" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.658062790000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightMiddleMCP">
+    <parent link="RightMiddleMP" />
+    <child link="RightMiddleMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 -1.5707926535897931 3.141592653589793" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.588249620000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightRingMCP">
+    <parent link="RightRingMP" />
+    <child link="RightRingMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 -1.5707926535897931 3.141592653589793" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.588249620000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightPinkyMCP">
+    <parent link="RightPinkyMP" />
+    <child link="RightPinkyMCP" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 -1.5707926535897931 3.141592653589793" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.710422670000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="RightThumbAbductionOffset">
+    <parent link="RightThumbAbduction" />
+    <child link="RightThumbPP" />
+    <origin xyz="-0.03 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightIndexMCPOffset">
+    <parent link="RightIndexMCP" />
+    <child link="RightIndexPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightMiddleMCPOffset">
+    <parent link="RightMiddleMCP" />
+    <child link="RightMiddlePP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightRingMCPOffset">
+    <parent link="RightRingMCP" />
+    <child link="RightRingPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightPinkyMCPOffset">
+    <parent link="RightPinkyMCP" />
+    <child link="RightPinkyPP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="RightThumbPIP">
+    <parent link="RightThumbPP" />
+    <child link="RightThumbPIP" />
+    <origin xyz="0.0 0.0 0.0" rpy="-2.6535897934554242e-06 1.5707926535897934 3.141592653589793" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.209439510000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightIndexPIP">
+    <parent link="RightIndexPP" />
+    <child link="RightIndexPIP" />
+    <origin xyz="0.0005 0.0 0.038" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightMiddlePIP">
+    <parent link="RightMiddlePP" />
+    <child link="RightMiddlePIP" />
+    <origin xyz="0.0005 0.0 0.046" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.867502300000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightRingPIP">
+    <parent link="RightRingPP" />
+    <child link="RightRingPIP" />
+    <origin xyz="0.0005 0.0 0.046" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.867502300000" effort="100" velocity="100" />
+  </joint>
+  <joint type="revolute" name="RightPinkyPIP">
+    <parent link="RightPinkyPP" />
+    <child link="RightPinkyPIP" />
+    <origin xyz="0.0005 0.0 0.033" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.884955590000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="RightThumbPIPOffset">
+    <parent link="RightThumbPIP" />
+    <child link="RightThumbIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightIndexPIPOffset">
+    <parent link="RightIndexPIP" />
+    <child link="RightIndexIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightMiddlePIPOffset">
+    <parent link="RightMiddlePIP" />
+    <child link="RightMiddleIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightRingPIPOffset">
+    <parent link="RightRingPIP" />
+    <child link="RightRingIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightPinkyPIPOffset">
+    <parent link="RightPinkyPIP" />
+    <child link="RightPinkyIP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="revolute" name="RightThumbDIP">
+    <parent link="RightThumbIP" />
+    <child link="RightThumbDIP" />
+    <origin xyz="0.0005 0.0 0.033" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 -1.0 0.0" />
+    <limit lower="-0.349065850000" upper="1.954768760000" effort="100" velocity="100" />
+  </joint>
+  <joint type="fixed" name="RightIndexFingertipFixed">
+    <parent link="RightIndexIP" />
+    <child link="RightIndexFingertip" />
+    <origin xyz="-0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightMiddleFingertipFixed">
+    <parent link="RightMiddleIP" />
+    <child link="RightMiddleFingertip" />
+    <origin xyz="-0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightRingFingertipFixed">
+    <parent link="RightRingIP" />
+    <child link="RightRingFingertip" />
+    <origin xyz="-0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightPinkyFingertipFixed">
+    <parent link="RightPinkyIP" />
+    <child link="RightPinkyFingertip" />
+    <origin xyz="-0.009 0.0 0.035" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightThumbDIPOffset">
+    <parent link="RightThumbDIP" />
+    <child link="RightThumbDP" />
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint type="fixed" name="RightThumbFingertipFixed">
+    <parent link="RightThumbDP" />
+    <child link="RightThumbFingertip" />
+    <origin xyz="-0.003 0.0 0.025" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint name="RightPalmMount" type="fixed">
+    <parent link="RightWristPitch" />
+    <child link="RightPalm" />
+    <origin xyz="0.0157897769127305 -0.00729274551915073 -0.241774433062832" rpy="-2.9671246895071 0.000588928194834581 -3.14147401354623" />
+  </joint>
+</robot>

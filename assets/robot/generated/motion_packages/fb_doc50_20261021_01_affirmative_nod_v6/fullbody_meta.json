@@ -1,0 +1,40 @@
+{
+  "source_bag": "fb_doc50_20261021_01_affirmative_nod_v6",
+  "arm_mode": "ker",
+  "duration_sec": 1.725,
+  "synthetic": true,
+  "missing_joints": [],
+  "name_reorders": 0,
+  "dropped_jump_frames": 0,
+  "gaps": {},
+  "chains": {
+    "arms": {
+      "mode": "ker",
+      "frames_cmd_l": 0,
+      "frames_cmd_r": 0,
+      "frames_js": 0,
+      "units": "rad"
+    },
+    "neck": {
+      "frames": 1201,
+      "units": "rad"
+    },
+    "eyou": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand_left": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand_right": {
+      "frames": 0,
+      "units": "deg"
+    }
+  },
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60",
+  "arm_mapping_sha256": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+  "files": {
+    "README.md": "16dce06ff4a7c8b91e904ce09a3e9197fbdbf4188e4dff61dc49b06ff462e340",
+    "arm_reference.json": "cf5f6e61679075188dce4fc4aadde8dc03139de58fd5e4a88e02ae5c2e5d3f97",
+    "backend_validation.json": "6d922293b5cd64372b3531036c92939296a2eeda85bb8538fccb9f623b45b55c",
+    "candidate_review.json": "cb27414ac555538ffe851075c01d2eb3236ec853fbe6caa88d0fc359434e1541",
+    "collision_rules.json": "b8e02f8bc06bb2cdd31fb57b51297cb458f6f29384f154c3d7780a5352f3a164",
+    "collision_validation.json": "9cc7f9b077fcd25c666a2615a4ae0050a6e56bf630de60a4bde046d47cf67cd1",
+    "fullbody.hdf5": "fc85c192c04621061b037aaf5f10d89a83f3b8e40e36f33e3a97612fe371e570",
+    "fullbody_meta.json": "611e15268bb9f759348e324a53d1d1ed0a065bd24bfc2eef2f69497755fc0beb",
+    "hand_reference.json": "71291b51dc35602597331c8d78f9705ad1f3ea451fbeee5be60e6f4bd11476b8",
+    "keyframe_sampling.json": "9d4f52b5cce708089f7d9f920d2f51027ef272b3e8521d3f9ae72d3ac0c12da8",
+    "keyframes.jpg": "d7c5b37684e19b4b67667ef79c6971cdd5004d715cfbe1ebfb585762910c2b5c",
+    "kinematic_validation.json": "f1ed008b506ff7b634af343780a95d358c4c0eb5b7080fadaf4a9b24cb4ad1c4",
+    "motion.json": "34192fae5fccf9e03d471509a8a1f89d80d61fb2f947c5c711be57f07498aa02",
+    "preview.mp4": "0af4528cf83f660068c9ac0cbd3a33c049fa227bfb7d6259cb6299e7fbfd7d28",
+    "render_validation.json": "b2e7fcf45123d7f98affa0886e7e1faee59bccb9937d7cc0c43ed58d7f50c47e",
+    "source.json": "0ee54efa89dba10d9a1f7d471fdd606246b10735f0d42f7fba09d21d0a83f61b",
+    "trajectory.png": "e3d8d1e23aa2ea6ddd9272008584fac8385fd4786c4f34694541e2b3ac4c854d",
+    "trajectory_deg.csv": "6f92d0cb99d10443bb6c89d0597c508c75c2255027e9c93cb3cc5f00a2fc9ff8",
+    "visual_review.json": "587b389186ab11f16ec960a51fcfb23c247fe4359d06a72140daaed5081ae5e8"
+  },
+  "draft": false,
+  "collision_check_required": true,
+  "collision_rules_file": "collision_rules.json",
+  "neck_mapping_sha256": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+  "hand_mapping_sha256": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221",
+  "hand_hardware_sha256": "1ed4dc107abdad739e04a4feb47973f91acc65e87feff6bd63aa7afdb9531bbb",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+}

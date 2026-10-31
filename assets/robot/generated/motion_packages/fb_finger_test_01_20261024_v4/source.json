@@ -1,0 +1,9 @@
+{
+  "source_package": "fb_finger_test_01_20261024_v3",
+  "source_path": "generated/motion_packages/fb_finger_test_01_20261024_v3",
+  "source_hdf5_sha256": "05a0e375afb32221ca6660e2f0790f952905d5d9800aacb516c80a2e7a1a70a4",
+  "hand_snapshot": "reports/hand_angles_20261026/snapshot.json",
+  "reference_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "local_only": true,
+  "no_hardware_commands": true
+}

@@ -1,0 +1,17 @@
+{
+  "full_duration_video": true,
+  "fps": 24,
+  "frames": 43,
+  "duration_s": 1.725,
+  "input_sha256": {
+    "fullbody.hdf5": "40f6cb7273aa734e068eff39ca6e8d3199a8e751b92289e0fea44dbf27134201",
+    "motion.json": "f80c2ca21112f2d30822cb41089218b3e214a6d07726ae3c1170c3b24c2485a0",
+    "fullbody_meta.json": "bc512cc83960f12f9551d191ae26984f7c5e849e276e20047cd53bc114361b46"
+  },
+  "views": [
+    "front",
+    "side",
+    "left_hand",
+    "right_hand"
+  ]
+}

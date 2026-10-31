@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "group": "body",
+  "description": "Hardware readings at the URDF q=0 reference pose; these are calibration inputs, not motion targets",
+  "unit": "deg",
+  "source": "User-provided reference-pose readings, 2026-10-08",
+  "physical_zero_verified": false,
+  "positions": {
+    "waistyaw": 8.8,
+    "hippitch": 0.3,
+    "knee": 0.3,
+    "anklepitch": 0.3
+  }
+}

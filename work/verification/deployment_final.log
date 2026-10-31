@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "local_dry_run_checks_current_proofs_and_zip_without_network",
+    "changed_labels_old_recordings_and_corrupt_zip_rejected_before_commit",
+    "real_archive_install_label_migration_exact_replacement_and_backup_preservation"
+  ],
+  "network_access": false,
+  "robot_commands_sent": false,
+  "real_server_tested": false
+}

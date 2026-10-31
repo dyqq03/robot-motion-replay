@@ -1,0 +1,23 @@
+[
+  {
+    "package": "fb_doc50_20261021_01_affirmative_nod_v6",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 1.2528789049829356,
+    "checked_poses": 49
+  },
+  {
+    "package": "fb_walk_arm_swing_5cycles_v5",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 6.547834019991569,
+    "checked_poses": 219
+  },
+  {
+    "package": "fb_finger_test_01_20261024_v4",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 0.9065755849878769,
+    "checked_poses": 61
+  }
+]

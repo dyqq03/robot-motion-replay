@@ -1,0 +1,29 @@
+{
+  "server": "192.168.8.30:2222",
+  "records": [
+    "fb_right_wave"
+  ],
+  "verified_files": [
+    {
+      "path": "fb_right_wave/fullbody.hdf5",
+      "sha256": "5cf52550d81f4d47c767cd5a62d0809e99114714a2c02dd534f8a5093391ccf0",
+      "size_bytes": 679920
+    },
+    {
+      "path": "fb_right_wave/fullbody_meta.json",
+      "sha256": "aeda1e34cddd8718016ea870ad427ef792c203ef43ef4bb3715fdf96a5cad5d4",
+      "size_bytes": 1117
+    },
+    {
+      "path": "fb_right_wave/metadata.yaml",
+      "sha256": "514f1abac934744e5de3cc57bdb458ad0ede4823757fa90da82f118a2d5b1f1d",
+      "size_bytes": 4858
+    },
+    {
+      "path": "fb_right_wave/raw_0.db3",
+      "sha256": "f0fff0d1452efa44fcab5292284442ff166a7139cb7dc4196f479f7b3daa9036",
+      "size_bytes": 24182784
+    }
+  ],
+  "subset_note": "Selected complete recording copied without modifying source bytes; a historical reference, not a newly certified motion."
+}

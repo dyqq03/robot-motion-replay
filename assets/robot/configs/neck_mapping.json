@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "position_equation": "q_model_rad = sign * q_real_rad + offset_rad",
+  "velocity_equation": "v_model_rad_s = sign * v_real_rad_s",
+  "limit_source": "Pre-calibration active URDF limits, adopted 2026-10-08",
+  "limit_basis": "real_limits_rad are fixed numeric bounds copied from the pre-calibration URDF; model_limits_rad = sorted(sign * real_limits_rad + offset_rad)",
+  "reference_urdf": "URDF_90kg_with_hands/urdf/humanoid_with_hands.before_base_5p3cm.urdf",
+  "reference_urdf_sha256": "158e8432379681121aa829bdf26fa5f4d95cdb0495434dc021fc38582260fcad",
+  "physical_zero_verified": false,
+  "group": "neck",
+  "source_unit": "rad",
+  "sign_basis": "Existing handeye_calibration_ws joint_mapping_90kg_with_hands.yaml; hand zero convention requested by user",
+  "joints": [
+    {
+      "source_joint": "neck_joint1",
+      "model_joint": "NeckYaw",
+      "source_unit": "rad",
+      "sign": -1,
+      "offset_rad": 0.015,
+      "real_limits_rad": [
+        -1.5235987755983,
+        1.5235987755983
+      ],
+      "model_limits_rad": [
+        -1.5085987755983001,
+        1.5385987755983
+      ],
+      "reference_urdf_limits_rad": [
+        -1.5235987755983,
+        1.5235987755983
+      ],
+      "source_topic": "/neck_joint_states",
+      "zero_pose_real_rad": 0.015,
+      "zero_reading_within_real_limits": true
+    },
+    {
+      "source_joint": "neck_joint2",
+      "model_joint": "NeckPitch",
+      "source_unit": "rad",
+      "sign": 1,
+      "offset_rad": 0.081,
+      "real_limits_rad": [
+        -0.873598775598299,
+        0.873598775598299
+      ],
+      "model_limits_rad": [
+        -0.792598775598299,
+        0.954598775598299
+      ],
+      "reference_urdf_limits_rad": [
+        -0.873598775598299,
+        0.873598775598299
+      ],
+      "source_topic": "/neck_joint_states",
+      "zero_pose_real_rad": -0.081,
+      "zero_reading_within_real_limits": true
+    }
+  ],
+  "offset_basis": "offset=-sign*recorded_hardware_position_at_URDF_zero",
+  "zero_readings_file": "configs/neck_zero_readings.json",
+  "zero_readings_sha256": "922300cb7e1fa0fbc5619c5f4bc17c2e39382ef21bf8e0f7db3e56c1ea6e857f",
+  "zero_source": "User-provided reference-pose readings, 2026-10-08"
+}

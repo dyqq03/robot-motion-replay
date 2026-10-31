@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "description": "Hardware readings when the arm matches the URDF q=0 reference pose; these are calibration readings, not motion targets",
+  "unit": "deg",
+  "source": "Server joint_mapping.yaml verification.calibrated_raw_zero_positions_deg, adopted 2026-10-08; both J4 zero readings overridden to 0 deg by user",
+  "physical_zero_verified": false,
+  "positions": {
+    "openarm_right_joint1": 0.2,
+    "openarm_right_joint2": 0.2,
+    "openarm_right_joint3": 0.1,
+    "openarm_right_joint4": 0.0,
+    "openarm_right_joint5": 0.0,
+    "openarm_right_joint7": 0.2,
+    "openarm_left_joint1": 0.0,
+    "openarm_left_joint2": -0.3,
+    "openarm_left_joint3": 0.0,
+    "openarm_left_joint4": 0.0,
+    "openarm_left_joint5": 0.0,
+    "openarm_left_joint7": 0.2
+  }
+}

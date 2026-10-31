@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "draft": false,
+  "collision_check_required": true,
+  "collision_rules_file": "collision_rules.json",
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60",
+  "arm_mapping_sha256": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+  "neck_mapping_sha256": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+  "hand_mapping_sha256": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221",
+  "hand_hardware_sha256": "1ed4dc107abdad739e04a4feb47973f91acc65e87feff6bd63aa7afdb9531bbb",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "files": {
+    "README.md": "61136bd3ea5f8fe652f9f55e7413a236e3bcc2514624fce2a9adbaba82398dd4",
+    "backend_validation.json": "1af4c9fcd70fc2ed3d057311c39c8be934102475f59001d502b338da22335b59",
+    "collision_rules.json": "b8e02f8bc06bb2cdd31fb57b51297cb458f6f29384f154c3d7780a5352f3a164",
+    "collision_validation.json": "8d8cb06587b7b2956debc9b47e8401c21e1aac936cfdb30f35a298c821470589",
+    "design.json": "370fa0913dfd3b0cd91a2598008333534d00691bd17c097dd55bcab254854332",
+    "fullbody.hdf5": "7dc0d6b4ca6029d1bb8400574fcb2910dc03d821a0fd61eb896b3d5529684d43",
+    "fullbody_meta.json": "0e1695b001baa7527239bf8def47b66d157e9dea2d3d9bee37d45fb0a92edd91",
+    "keyframes.jpg": "acafe1094d77f0809a7c6ba1f1e1aedbe42800aede81445933a10667f50696f3",
+    "kinematic_validation.json": "ecede3d21fa4adf0bd4571197a074948ef90b38bc645f7393a4fa5c7fcffdac8",
+    "motion.json": "faba85912a93e74e2a78ab0cae09d1a46eae23135238a4dd3076dc9e16529850",
+    "preview.mp4": "a5029eb5820ad7c2dd41ea612a0264834556190bc79155293fb8101348c208cc",
+    "render_validation.json": "def5071bf5f47fb54097668008f9eda82c4774bb76f43e922edfb4556ebfab1a",
+    "source.json": "504ebcee0bdfd376df32ce8215b4bb04cb97b26d343d10ed595ca57fefd04fb0",
+    "trajectory.png": "3d4c595459e053c2076295af56cad33d0a46d3593628519e908656a62f6cb36e",
+    "trajectory_deg.csv": "6c51db7ce98ef09136ee5404d925dfb788d75887b799dd3c024fef8ef6321860",
+    "visual_review.json": "af5a083a24829af101b8aedc8c427a40b36e73e621c4dccbe6d582ce327c579c"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "arm_retarget_semantic_validation": "reports/initial_pose_elbows_back_refresh_20261024/retarget_semantic_validation.json",
+  "hands_preserved_sample_for_sample": true,
+  "source_package": "fb_walk_arm_swing_5cycles_v4",
+  "source_directory": "reports/initial_pose_elbows_back_refresh_20261024/server_backup/fullbody/fb_walk_arm_swing_5cycles_v4",
+  "source_hdf5_sha256": "004b74dd67c0f87e473ac6b9ab312ca1752e4deeb7a829f31902470229223368",
+  "backup_archive": "reports/initial_pose_elbows_back_refresh_20261024/server_backup.tar.gz",
+  "raw_hand_snapshot": "reports/hand_angles_20261024_155019/snapshot.json",
+  "arm_reference": "arm_reference.json",
+  "hand_reference": "hand_reference.json",
+  "generator": "scripts/refresh_replay_elbows_back_20261024.py",
+  "adjustments": [],
+  "hardware_commands_sent": false
+}

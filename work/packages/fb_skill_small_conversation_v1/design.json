@@ -1,0 +1,87 @@
+{
+  "package": "fb_skill_small_conversation_v1",
+  "name": "轻微转头与右手自然伴随",
+  "description": "小幅讲话伴随动作；示范相对当前参考的连续样条，并非未经检查即可发布的模板",
+  "duration_s": 6.0,
+  "sample_hz": 100,
+  "tracks": {
+    "neck": {
+      "mode": "rest_relative",
+      "keyframes": [
+        {
+          "t": 0,
+          "q": {}
+        },
+        {
+          "t": 1.5,
+          "q": {
+            "neck_joint1": -3,
+            "neck_joint2": -1
+          }
+        },
+        {
+          "t": 3.4,
+          "q": {
+            "neck_joint1": 2,
+            "neck_joint2": 1
+          }
+        },
+        {
+          "t": 6,
+          "q": {}
+        }
+      ]
+    },
+    "arm_right": {
+      "mode": "rest_relative",
+      "keyframes": [
+        {
+          "t": 0,
+          "q": {}
+        },
+        {
+          "t": 1.6,
+          "q": {
+            "openarm_right_joint4": 3
+          }
+        },
+        {
+          "t": 3.5,
+          "q": {
+            "openarm_right_joint4": 1
+          }
+        },
+        {
+          "t": 6,
+          "q": {}
+        }
+      ]
+    },
+    "hand_right": {
+      "mode": "rest_relative",
+      "keyframes": [
+        {
+          "t": 0,
+          "q": {}
+        },
+        {
+          "t": 1.8,
+          "q": {
+            "index_mcp": 1.5,
+            "index_pip": 1
+          }
+        },
+        {
+          "t": 3.6,
+          "q": {
+            "index_mcp": 0.5
+          }
+        },
+        {
+          "t": 6,
+          "q": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "index": 1,
+  "slug": "affirmative_nod",
+  "source_page": 2,
+  "source_excerpt": "头势·点头",
+  "name": "点头·连续平滑·两倍速",
+  "arms": [],
+  "hands": [],
+  "neck": true,
+  "near_head": false,
+  "speed_caps": {
+    "neck": 72.0
+  },
+  "preview_times_s": [
+    0.0,
+    0.34500000000000003,
+    0.6900000000000001,
+    1.0350000000000001,
+    1.3800000000000001,
+    1.725
+  ],
+  "notes": [
+    "用户要求当前两倍速度，并改善点头卡顿；保留两次点头及9°/7°深度，首尾J1=J2=0°。",
+    "移除两次点头间和尾部的停留；五次Hermite曲线联合最小化积分平方加加速度。",
+    "内部转折速度为0但加速度连续且非零，自然连续换向；首尾速度和加速度为0。",
+    "仅颈部指令；其他链为空指令，仿真假设沿用原包。"
+  ],
+  "neck_set_number": 1,
+  "neck_baseline_id": "user_neck_zero_20261022",
+  "neck_baseline_pose_deg": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "neck_default_config_sha256": "03bd118441c5e2ab4bcade0fb47537e82fd733fac3e71fed3ff52635f6db6b50",
+  "schema_version": 1,
+  "duration_s": 1.725,
+  "sample_hz": 695.6521739130435,
+  "synthetic": true,
+  "joint_names": [],
+  "neck_joint_names": [
+    "neck_joint1",
+    "neck_joint2"
+  ],
+  "hand_joint_names": {},
+  "preview_arm_baseline_rad": {
+    "openarm_left_joint1": 0.13962634015954636,
+    "openarm_left_joint2": -0.24958208303518914,
+    "openarm_left_joint3": 0.019198621771937627,
+    "openarm_left_joint4": 0.8395033702092726,
+    "openarm_left_joint5": 0.026179938779914945,
+    "openarm_left_joint7": -0.20943951023931956,
+    "openarm_right_joint1": -0.13609784291737445,
+    "openarm_right_joint2": 0.2476792378182023,
+    "openarm_right_joint3": -0.015588512933942473,
+    "openarm_right_joint4": 0.8397223392172277,
+    "openarm_right_joint5": -0.026825396443887487,
+    "openarm_right_joint7": 0.21607647378587838
+  },
+  "preview_neck_baseline_rad": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "baseline_id": "user_confirmed_symmetric_arms_elbows_back_20261024",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "preview_cycles": 0,
+  "preview_label": "SMOOTH NOD / 2X / TWO CYCLES",
+  "loop_endpoints_match": true,
+  "units": {
+    "arms": "rad",
+    "neck": "rad",
+    "hand_left": "deg",
+    "hand_right": "deg",
+    "trajectory_csv": "deg"
+  },
+  "interpolation": "C3 piecewise quintic minimum-jerk nods; zero endpoint velocity/acceleration; backend/collision linear between dense commands",
+  "uncommanded_pose_assumptions": {
+    "arms": "confirmed elbows-back/hands-higher 20261024 arm reference",
+    "hands": "latest measured hand pose with user-authorized minimal ABD corrections, snapshot in hand_baseline_pose_deg; no added command streams",
+    "neck": "original package neck reference unchanged",
+    "waist_legs": "model qpos0"
+  },
+  "bilateral_arm_format_holds_inactive_side": false,
+  "hardware_execution_validated": false,
+  "generator": "scripts/refresh_replay_elbows_back_20261024.py",
+  "supersedes": "fb_doc50_20261021_01_affirmative_nod_v5",
+  "semantic_phase_times_s": [
+    0.0,
+    0.43125,
+    0.8625,
+    1.2937500000000002,
+    1.725
+  ],
+  "generation_batch": "initial_pose_elbows_back_refresh_20261024",
+  "retiming": {
+    "source_package": "fb_doc50_20261021_01_affirmative_nod_v3",
+    "speed_factor": 2.0,
+    "source_duration_s": 3.45,
+    "source_hdf5_sha256": "a84f0794df306e3d3b0b08d5e5a88f80e23c433301fecc20cf11c9407c19562b",
+    "previous_revision": {
+      "previous_package": "fb_doc50_20261021_01_affirmative_nod_v2",
+      "previous_duration_s": 6.875,
+      "speed_factor": 1.9927536231884058,
+      "relative_amplitudes_unchanged": true,
+      "source_hdf5_sha256": "dd7df69daf42822698645d213612f3fd96a2b9ca930b3cb841867236fc27b239",
+      "previous_baseline_deg": [
+        4.5,
+        -8.3
+      ],
+      "new_baseline_deg": [
+        0.0,
+        0.0
+      ]
+    },
+    "position_samples_unchanged": false,
+    "amplitudes_and_nod_count_preserved": true
+  },
+  "baseline_source": "configs/arm_motion_defaults.json",
+  "baseline_pose_deg": {
+    "openarm_left_joint1": 8.0,
+    "openarm_left_joint2": -14.3,
+    "openarm_left_joint3": 1.1,
+    "openarm_left_joint4": 48.1,
+    "openarm_left_joint5": 1.5,
+    "openarm_left_joint7": -12.0,
+    "openarm_right_joint1": -7.797832,
+    "openarm_right_joint2": 14.190975,
+    "openarm_right_joint3": -0.893156,
+    "openarm_right_joint4": 48.112546,
+    "openarm_right_joint5": -1.536982,
+    "openarm_right_joint7": 12.38027
+  },
+  "hand_baseline_pose_deg": {
+    "left": {
+      "thumb_mcp": 17.132867132867133,
+      "thumb_abd": 0.0,
+      "thumb_pip": 34.37554585152837,
+      "thumb_dip": 7.685884691848919,
+      "index_abd": 6.280442804428038,
+      "index_mcp": -8.424976700838762,
+      "index_pip": -14.17162872154116,
+      "middle_abd": -4.12,
+      "middle_mcp": -8.743975903614468,
+      "middle_pip": 2.7948717948717885,
+      "ring_abd": -15.36,
+      "ring_mcp": -3.436525612472167,
+      "ring_pip": -1.6861451460886059,
+      "pinky_abd": -36.29,
+      "pinky_mcp": -4.154628687690753,
+      "pinky_pip": -4.39575971731448
+    },
+    "right": {
+      "thumb_mcp": 73.50877479122019,
+      "thumb_abd": -3.932063744452165,
+      "thumb_pip": 34.121738754397406,
+      "thumb_dip": 30.463918532678797,
+      "index_abd": 13.929973248666396,
+      "index_mcp": 0.24880772898492864,
+      "index_pip": 0.22920879832279084,
+      "middle_abd": -1.95,
+      "middle_mcp": -1.1742289356591549,
+      "middle_pip": 0.7529279823270514,
+      "ring_abd": -11.58,
+      "ring_mcp": -5.347577922516706,
+      "ring_pip": 1.5165146621265997,
+      "pinky_abd": -24.116067184838556,
+      "pinky_mcp": -12.955228197739814,
+      "pinky_pip": 2.4542436302638464
+    }
+  },
+  "hand_baseline_id": "user_measured_hands_20261024_155122_collision_adjusted_v1",
+  "initial_pose_update": {
+    "method": "Action-aware arm retarget: rest-relative small motions; preserve original semantic display targets and continuously reshape departure/return for larger gestures; hands unchanged",
+    "source_package": "fb_doc50_20261021_01_affirmative_nod_v5",
+    "source_hdf5_sha256": "1f9cb70fc248a8a0c522ab526471ad475f0f1c75cfc045690f8ec2de0fb8d636",
+    "modified_streams": [],
+    "uncommanded_streams_preserved_empty": true
+  },
+  "bundle_reference_copy": true
+}

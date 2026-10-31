@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "group": "neck",
+  "description": "Hardware readings at the URDF q=0 reference pose; these are calibration inputs, not motion targets",
+  "unit": "rad",
+  "source": "User-provided reference-pose readings, 2026-10-08",
+  "physical_zero_verified": false,
+  "positions": {
+    "neck_joint1": 0.015,
+    "neck_joint2": -0.081
+  }
+}

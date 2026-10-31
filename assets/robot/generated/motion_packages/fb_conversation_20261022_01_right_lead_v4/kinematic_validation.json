@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "input_sha256": {
+    "fullbody.hdf5": "318991ff8ef4aee782bfe5a13c9420c03d0ef7c9c27a0363943f6c4d7525d98d",
+    "motion.json": "835c58f2f58bc1bef0fd74f94a683c69b0372e922849bdb841e803f4680fa6eb",
+    "fullbody_meta.json": "a9db729edf9379b27846a8e42b953dc1b54a25c12de8ceff78ec566a866a71ad"
+  },
+  "frames": 641,
+  "duration_s": 6.4,
+  "peak_speed_deg_s": {
+    "arms": 32.379226853605815,
+    "neck": 9.369899208663057,
+    "hand_left": 6.560339826245972,
+    "hand_right": 11.662826357770541
+  },
+  "limits_endpoints_units_and_sync_checked": true,
+  "body_commands_empty": true,
+  "feedback_empty": true
+}

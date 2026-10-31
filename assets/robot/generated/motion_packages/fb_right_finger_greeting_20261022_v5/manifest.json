@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "draft": false,
+  "collision_check_required": true,
+  "collision_rules_file": "collision_rules.json",
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60",
+  "arm_mapping_sha256": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+  "neck_mapping_sha256": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+  "hand_mapping_sha256": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221",
+  "hand_hardware_sha256": "1ed4dc107abdad739e04a4feb47973f91acc65e87feff6bd63aa7afdb9531bbb",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "files": {
+    "README.md": "508bfc01010453fc3d462e4ea1f964f71eca23806839fb97cc44cdfac5705644",
+    "arm_reference.json": "cf5f6e61679075188dce4fc4aadde8dc03139de58fd5e4a88e02ae5c2e5d3f97",
+    "backend_validation.json": "a655dfe3687ce410b55cb20d54b43203264ece63d26ac7f8bd9ca58e7a9b9c3f",
+    "candidate_review.json": "fb3d492cd7af577920575962602e0ef553329a5cc186b4be6065c2d3af79e770",
+    "collision_rules.json": "b8e02f8bc06bb2cdd31fb57b51297cb458f6f29384f154c3d7780a5352f3a164",
+    "collision_validation.json": "214eed9c1b3454dd6f6a5537fedfc3b1058c17f76ff48d26c5f71120b489d756",
+    "fullbody.hdf5": "e257e141b92bd8f76d44623052745d8f8a8daaf48edcda8b6d7acf77f897b665",
+    "fullbody_meta.json": "378a0ab4267d7c91ce3407ca6bb71e3cdbbc1a382adfd242833275bbabeab944",
+    "hand_reference.json": "ea1b1ca31fc36d491dfe1312e0c511cd5f0fde681ee9e5b896b118a0a5ea76eb",
+    "keyframes.jpg": "a6cd41ebff19974a63ae6c1f01c2ad31a108373835035e6eebbbe3db7f0335d6",
+    "kinematic_validation.json": "808979ff26dbee6b60f11287de649f23d374e69b59d83b1ee5bbddf6aa8776b4",
+    "motion.json": "abf0062fe6953bb6d9c6991c8cef4b2b8bcd22cc96ba7c7274d5570a5e2094d8",
+    "preview.mp4": "8fee33f29c0c3d410067de4f2290558b3aaa234cec7c1e808ad2043f74110453",
+    "render_validation.json": "e3adf0c53068e4e119f325afbd28dd406782afb4b2f6ac92d5b45ef6c7abbee0",
+    "source.json": "120bfacc7d6da4cae30df007e118aca5fb57c4d97f144dc815cbb1ec0ac3287a",
+    "trajectory.png": "0ce581b1ffd32a9c6a9a01bfbed98d470c93249f8750606a18fc06365ea79ab4",
+    "trajectory_deg.csv": "6f6879302bbc8ef8c1d52ba16a3a6984672cf689d3a049884df9a436a8a0bac6",
+    "visual_review.json": "e0e56b2780acff8be83453c780db7a7be9ce954139592967d29322cf058088d7"
+  }
+}

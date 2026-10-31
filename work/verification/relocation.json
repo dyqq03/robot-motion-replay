@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "self_test",
+    "deployment",
+    "manifest"
+  ],
+  "copied_to_different_directory": true,
+  "run_from_different_cwd": true,
+  "original_skill_reads_blocked_by_python_audit": true,
+  "external_project_roots_also_blocked": 1,
+  "symlinks": false,
+  "network_access": false,
+  "robot_commands_sent": false,
+  "self_test": {
+    "status": "passed",
+    "full": true,
+    "checks": [
+      "model_assets_calibration_and_dependencies",
+      "six_reference_packages_current_proofs_and_loader",
+      "pure_neck_pure_hand_and_combination_backend_forward_reverse",
+      "reject_target_stream_stale_calibration_and_duplicate_samples",
+      "stable_measurement_reference_validation_and_adoption",
+      "relative_and_semantic_absolute_retarget_without_nonhand_or_time_changes",
+      "uncertified_export_rejected",
+      "changed_calibration_blocks_old_reference_and_import_rolls_back",
+      "full_path_render_and_missing_visual_review_export_guard"
+    ],
+    "original_project_required": false,
+    "network_access": false,
+    "robot_commands_sent": false,
+    "synthetic_samples_used_only_inside_isolated_tests": true
+  }
+}

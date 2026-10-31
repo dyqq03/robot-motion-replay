@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "unit": "deg",
+  "coordinate_system": "calibrated_hardware_joint_absolute_angles",
+  "calibration_files_sha256": {
+    "left": {
+      "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+      "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+    },
+    "right": {
+      "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+      "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+    }
+  },
+  "motor_ids_by_joint": {
+    "left": {
+      "thumb_mcp": 4,
+      "thumb_abd": 3,
+      "thumb_pip": 1,
+      "thumb_dip": 2,
+      "index_abd": 14,
+      "index_mcp": 15,
+      "index_pip": 16,
+      "middle_abd": 13,
+      "middle_mcp": 8,
+      "middle_pip": 9,
+      "ring_abd": 5,
+      "ring_mcp": 7,
+      "ring_pip": 6,
+      "pinky_abd": 12,
+      "pinky_mcp": 10,
+      "pinky_pip": 11
+    },
+    "right": {
+      "thumb_mcp": 13,
+      "thumb_abd": 14,
+      "thumb_pip": 16,
+      "thumb_dip": 15,
+      "index_abd": 3,
+      "index_mcp": 2,
+      "index_pip": 1,
+      "middle_abd": 4,
+      "middle_mcp": 9,
+      "middle_pip": 8,
+      "ring_abd": 12,
+      "ring_mcp": 7,
+      "ring_pip": 11,
+      "pinky_abd": 5,
+      "pinky_mcp": 10,
+      "pinky_pip": 6
+    }
+  },
+  "changes_calibration": false,
+  "changes_startup_homing": false,
+  "changes_hardware_config": false,
+  "interpolation": "Absolute targets: baseline + envelope * (target - baseline); do not add baseline to existing absolute gesture targets",
+  "id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "source": "User requested current measured hand reference for local motion packages; retain prior authorization for minimum bounded collision corrections",
+  "measured_at_beijing": "2026-10-26T17:51:42.679092+08:00",
+  "source_file": "reports/hand_angles_20261026/snapshot.json",
+  "source_sha256": "bef65628a66a511d412dce587f033e6f9b90c744d2b6cd06d6bb067425b6d49c",
+  "hands": {
+    "left": {
+      "thumb_mcp": 17.83216783216782,
+      "thumb_abd": 0.0,
+      "thumb_pip": 30.707423580786,
+      "thumb_dip": 7.292246520874723,
+      "index_abd": 5.188191881918858,
+      "index_mcp": -6.710158434296364,
+      "index_pip": -8.343257443082319,
+      "middle_abd": -1.8134602936180118,
+      "middle_mcp": -0.9427710843373447,
+      "middle_pip": 2.6825817860300454,
+      "ring_abd": -11.757610630539638,
+      "ring_mcp": -5.661469933184883,
+      "ring_pip": 7.530631479736087,
+      "pinky_abd": -33.41239785222913,
+      "pinky_mcp": -4.75483214649034,
+      "pinky_pip": 2.954063604240279
+    },
+    "right": {
+      "thumb_mcp": 80.52631884240118,
+      "thumb_abd": -5.865871163711226,
+      "thumb_pip": 31.408695269633697,
+      "thumb_dip": 27.855671105715224,
+      "index_abd": 9.720111016212627,
+      "index_mcp": 4.100481759175036,
+      "index_pip": -4.0295713967388895,
+      "middle_abd": -0.5788199753980194,
+      "middle_mcp": 6.541248706171967,
+      "middle_pip": 3.9304106468760374,
+      "ring_abd": -2.775416114219226,
+      "ring_mcp": -1.236466940326011,
+      "ring_pip": 28.595853237296218,
+      "pinky_abd": -24.02913109033532,
+      "pinky_mcp": -11.919231678712407,
+      "pinky_pip": 1.2610232173543885
+    }
+  },
+  "scope": "Local generation and local versioned hand-motion replacements only; server replay and startup are unchanged",
+  "adjustment": {
+    "user_authorized": true,
+    "authorization": "User previously authorized minimum corrections within existing limits and collision rules",
+    "reason": "Left thumb ABD bounded to existing 0 degree maximum; small adjacent-finger ABD corrections for existing model clearance",
+    "changes": [
+      {
+        "side": "left",
+        "joint": "thumb_abd",
+        "measured_deg": 2.8324873096446765,
+        "reference_deg": 0.0,
+        "delta_deg": -2.8324873096446765
+      },
+      {
+        "side": "left",
+        "joint": "middle_abd",
+        "measured_deg": 3.047058823529447,
+        "reference_deg": -1.8134602936180118,
+        "delta_deg": -4.860519117147459
+      },
+      {
+        "side": "left",
+        "joint": "ring_abd",
+        "measured_deg": -15.050847457627114,
+        "reference_deg": -11.757610630539638,
+        "delta_deg": 3.293236827087476
+      },
+      {
+        "side": "left",
+        "joint": "pinky_abd",
+        "measured_deg": -35.62731871838112,
+        "reference_deg": -33.41239785222913,
+        "delta_deg": 2.214920866151992
+      }
+    ],
+    "candidate_report": "reports/hand_reference_refresh_20261026/new_reference_collision.json",
+    "search_method": "Feasible seed from bisection in middle/ring ABD spread, then local derivative-free minimization of squared middle/ring/pinky ABD corrections with full collision-distance constraints and 0.25mm extra left-hand certification slack; not a proof of global optimality"
+  }
+}

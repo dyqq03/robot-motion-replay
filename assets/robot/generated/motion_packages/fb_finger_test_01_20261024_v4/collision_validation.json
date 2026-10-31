@@ -1,0 +1,1077 @@
+{
+  "schema_version": 1,
+  "stage": "trajectory",
+  "status": "passed",
+  "can_export": true,
+  "scope": "convex robot self-collision; configured group only; excluded assembly pairs listed",
+  "interpolation": "piecewise linear model qpos between all input commands",
+  "rules_sha256": "b8e02f8bc06bb2cdd31fb57b51297cb458f6f29384f154c3d7780a5352f3a164",
+  "rules": {
+    "schema_version": 1,
+    "description": "Local self-collision checks using existing convex collision meshes. Distances are meters; qpos is model radians. Defaults are provisional model margins, not hardware certification.",
+    "collision_geom_group": 3,
+    "ignore_same_welded_body": true,
+    "ignore_direct_joint_neighbors": true,
+    "clearance_m": {
+      "default": 0.015,
+      "same_hand": 0.002
+    },
+    "mesh_solver": {
+      "native_ccd": true,
+      "iterations": 200,
+      "tolerance": 1e-08,
+      "distance_padding_m": 0.005,
+      "numeric_guard_m": 0.0001,
+      "consistency_tolerance_m": 0.0005
+    },
+    "trajectory": {
+      "coarse_hz": 10.0,
+      "minimum_interval_s": 0.001,
+      "maximum_depth": 16,
+      "maximum_pose_checks": 10000,
+      "maximum_wall_time_s": 180.0
+    },
+    "excluded_pairs": [],
+    "pair_overrides": [
+      {
+        "geoms": [
+          "Knee__collision__0",
+          "WaistYaw__collision__0"
+        ],
+        "clearance_m": 0.001,
+        "reason": "HipPitch intermediate assembly between Knee and WaistYaw; unchanged waist/leg pose, source-hull gap 3.25 mm. Retain 1 mm positive clearance; no exclusion."
+      },
+      {
+        "geoms": [
+          "NeckYaw__collision__0",
+          "LeftShoulderPitch__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: NeckYaw/LeftShoulderPitch; audited positive source-hull separation at baseline about 11 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "LeftElbowPitch__collision__0",
+          "LeftWristPitch__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: LeftElbowPitch/LeftWristPitch; audited positive source-hull separation at baseline about 12 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "LeftWristPitch__collision__0",
+          "LeftThumbPP__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: LeftWristPitch/LeftThumbPP; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "LeftShoulderPitch__collision__0",
+          "LeftShoulderYaw__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: LeftShoulderPitch/LeftShoulderYaw; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "NeckYaw__collision__0",
+          "RightShoulderPitch__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: NeckYaw/RightShoulderPitch; audited positive source-hull separation at baseline about 11 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "RightElbowPitch__collision__0",
+          "RightWristPitch__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: RightElbowPitch/RightWristPitch; audited positive source-hull separation at baseline about 12 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "RightWristPitch__collision__0",
+          "RightThumbPP__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: RightWristPitch/RightThumbPP; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      },
+      {
+        "geoms": [
+          "RightShoulderPitch__collision__0",
+          "RightShoulderYaw__collision__0"
+        ],
+        "clearance_m": 0.005,
+        "reason": "Local mechanical assembly near shared mounting: RightShoulderPitch/RightShoulderYaw; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+      }
+    ],
+    "notes": [
+      "Mesh names and topology are discovered automatically; no hand-written exhaustive pair list.",
+      "Excluded pairs require two exact geom names and a reason. Never suppress a pair just because the baseline already overlaps.",
+      "Pair overrides may reduce clearance to zero for an intentional touch, but may not allow penetration; changes require a reason.",
+      "Quick checks are conservative bounding-box screening only. Candidate checks use mesh distances. Only a complete trajectory result with status passed is exportable.",
+      "The visible floor is not included in this self-collision group. Scene objects and real-world obstacles require separate collision geometry.",
+      "Model bounds, convex hulls, numerical tolerances and actual robot calibration limit the result. No physical collision response is enabled by this file."
+    ],
+    "proxy_manifest": "generated/collision_proxy_doc50_20261021/manifest.json",
+    "compound_mounts": [
+      {
+        "geoms": [
+          "LeftPalm__collision__0",
+          "LeftThumbPP__collision__0"
+        ],
+        "joint": "LeftThumbMCP",
+        "radius_m": 0.03,
+        "reason": "Audited two-axis thumb-root assembly: MCP/ABD axes share the same anchor; seven source-surface edge intersections lie 22.73–24.20 mm from this anchor. Only convex fragments wholly inside its 30 mm mounting sphere are excepted against each other. Remaining palm/thumb surfaces retain 2 mm clearance. Evidence: evidence/actual_surface_intersections.json."
+      },
+      {
+        "geoms": [
+          "RightPalm__collision__0",
+          "RightThumbPP__collision__0"
+        ],
+        "joint": "RightThumbMCP",
+        "radius_m": 0.03,
+        "reason": "Audited two-axis thumb-root assembly: MCP/ABD axes share the same anchor; seven source-surface edge intersections lie 22.73–24.20 mm from this anchor. Only convex fragments wholly inside its 30 mm mounting sphere are excepted against each other. Remaining palm/thumb surfaces retain 2 mm clearance. Evidence: evidence/actual_surface_intersections.json."
+      }
+    ]
+  },
+  "mujoco_version": "3.2.3",
+  "input_frames": 601,
+  "duration_s": 6.0,
+  "checked_poses": 61,
+  "interval_visits": 60,
+  "certified_duration_s": 6.0,
+  "certified_fraction": 1.0,
+  "mesh_queries": 23214,
+  "cached_pair_queries": 7560,
+  "elapsed_s": 0.7390510490222368,
+  "pair_count": 1970,
+  "excluded_pairs": [
+    {
+      "geoms": [
+        "Base__collision__0",
+        "AnklePitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "AnklePitch__collision__0",
+        "Knee__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "Knee__collision__0",
+        "HipPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "HipPitch__collision__0",
+        "WaistYaw__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "WaistYaw__collision__0",
+        "NeckYaw__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "WaistYaw__collision__0",
+        "RightShoulderPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "WaistYaw__collision__0",
+        "LeftShoulderPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "NeckYaw__collision__0",
+        "NeckPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightShoulderPitch__collision__0",
+        "RightShoulderRoll__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightShoulderRoll__collision__0",
+        "RightShoulderYaw__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightShoulderYaw__collision__0",
+        "RightElbowPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightElbowPitch__collision__0",
+        "RightWristRoll__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristRoll__collision__0",
+        "RightWristPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristRoll__collision__0",
+        "RightPalm__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristRoll__collision__0",
+        "RightPalm__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightPalm__collision__0"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightPalm__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightPalm__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__1",
+        "RightThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__1",
+        "RightIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__1",
+        "RightMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__1",
+        "RightRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__1",
+        "RightPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightThumbMP__collision__0",
+        "RightThumbPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightThumbPP__collision__0",
+        "RightThumbIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightThumbPP__collision__0",
+        "RightThumbIP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightThumbIP__collision__0",
+        "RightThumbIP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightThumbIP__collision__0",
+        "RightThumbDP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightThumbIP__collision__1",
+        "RightThumbDP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightIndexMP__collision__0",
+        "RightIndexPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightIndexMP__collision__0",
+        "RightIndexPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightIndexPP__collision__0",
+        "RightIndexPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightIndexPP__collision__0",
+        "RightIndexIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightIndexPP__collision__1",
+        "RightIndexIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightMiddleMP__collision__0",
+        "RightMiddlePP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightMiddleMP__collision__0",
+        "RightMiddlePP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightMiddlePP__collision__0",
+        "RightMiddlePP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightMiddlePP__collision__0",
+        "RightMiddleIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightMiddlePP__collision__1",
+        "RightMiddleIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightRingMP__collision__0",
+        "RightRingPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightRingMP__collision__0",
+        "RightRingPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightRingPP__collision__0",
+        "RightRingPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightRingPP__collision__0",
+        "RightRingIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightRingPP__collision__1",
+        "RightRingIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPinkyMP__collision__0",
+        "RightPinkyPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPinkyMP__collision__0",
+        "RightPinkyPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPinkyPP__collision__0",
+        "RightPinkyPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "RightPinkyPP__collision__0",
+        "RightPinkyIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "RightPinkyPP__collision__1",
+        "RightPinkyIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftShoulderPitch__collision__0",
+        "LeftShoulderRoll__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftShoulderRoll__collision__0",
+        "LeftShoulderYaw__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftShoulderYaw__collision__0",
+        "LeftElbowPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftElbowPitch__collision__0",
+        "LeftWristRoll__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristRoll__collision__0",
+        "LeftWristPitch__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristRoll__collision__0",
+        "LeftPalm__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristRoll__collision__0",
+        "LeftPalm__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftPalm__collision__0"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftPalm__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftPalm__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__1",
+        "LeftThumbMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__1",
+        "LeftIndexMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__1",
+        "LeftMiddleMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__1",
+        "LeftRingMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPalm__collision__1",
+        "LeftPinkyMP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftThumbMP__collision__0",
+        "LeftThumbPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftThumbPP__collision__0",
+        "LeftThumbIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftThumbPP__collision__0",
+        "LeftThumbIP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftThumbIP__collision__0",
+        "LeftThumbIP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftThumbIP__collision__0",
+        "LeftThumbDP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftThumbIP__collision__1",
+        "LeftThumbDP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftIndexMP__collision__0",
+        "LeftIndexPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftIndexMP__collision__0",
+        "LeftIndexPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftIndexPP__collision__0",
+        "LeftIndexPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftIndexPP__collision__0",
+        "LeftIndexIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftIndexPP__collision__1",
+        "LeftIndexIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftMiddleMP__collision__0",
+        "LeftMiddlePP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftMiddleMP__collision__0",
+        "LeftMiddlePP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftMiddlePP__collision__0",
+        "LeftMiddlePP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftMiddlePP__collision__0",
+        "LeftMiddleIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftMiddlePP__collision__1",
+        "LeftMiddleIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftRingMP__collision__0",
+        "LeftRingPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftRingMP__collision__0",
+        "LeftRingPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftRingPP__collision__0",
+        "LeftRingPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftRingPP__collision__0",
+        "LeftRingIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftRingPP__collision__1",
+        "LeftRingIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPinkyMP__collision__0",
+        "LeftPinkyPP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPinkyMP__collision__0",
+        "LeftPinkyPP__collision__1"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPinkyPP__collision__0",
+        "LeftPinkyPP__collision__1"
+      ],
+      "reason": "same welded body"
+    },
+    {
+      "geoms": [
+        "LeftPinkyPP__collision__0",
+        "LeftPinkyIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    },
+    {
+      "geoms": [
+        "LeftPinkyPP__collision__1",
+        "LeftPinkyIP__collision__0"
+      ],
+      "reason": "direct joint neighbors after collapsing fixed links"
+    }
+  ],
+  "findings": [],
+  "unresolved_intervals": [],
+  "findings_truncated": false,
+  "unresolved_intervals_truncated": false,
+  "hardware_execution_validated": false,
+  "physical_contact_response_enabled": false,
+  "package": "fb_finger_test_01_20261024_v4",
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60",
+  "source_hashes": {
+    "fullbody.hdf5": "9bbe88e94750e151abacc8d1a1616ce2894785c5d213486424a118fda409cebf",
+    "fullbody_meta.json": "9cab9b1dedb9882755fb61204fc93fd0f78f4803bd8cb4a341cd8a15ee8dd90a",
+    "motion.json": "b04e05fe83f8996d691e2f7d67a4bf9a35729ff4d7920f1ee1c05669b54ff458",
+    "configs/arm_mapping.json": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+    "configs/body_mapping.json": "596f5b2dc0a9631abfadea7077dece92a51fcf18efee6151084a3b2bb4188c2d",
+    "configs/neck_mapping.json": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+    "configs/hand_mapping.json": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221",
+    "configs/hand_hardware.json": "1ed4dc107abdad739e04a4feb47973f91acc65e87feff6bd63aa7afdb9531bbb",
+    "configs/hand_calibration.json": "b5ebdfebe126d2baf576e3586b5ab186854691f17a474305997dd03cd750dd9b",
+    "configs/motion_baseline.json": "b5fa2da7ccd1c1675ba08c0eb311a9663eff240424bcee5d4c043f1730e90f4c",
+    "configs/hand_models/orcahand_v1_left/config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+    "configs/hand_models/orcahand_v1_left/calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7",
+    "configs/hand_models/orcahand_v1_right/config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+    "configs/hand_models/orcahand_v1_right/calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d",
+    "generated/model_report.json": "24eb5b47d80943b3e465c158aa35b931d1478ef007824a43747b184becca2ba5",
+    "URDF_90kg_with_hands/urdf/humanoid_with_hands.urdf": "32b39628bce7e6c63adc05a9b5be5a0b847b4c9717fe04f6475ee0c52eff8d32",
+    "model_asset/URDF_90kg_with_hands/meshes/body/Base.STL": "8d4121221a0f6f9f22f6de3fca76d05531e16b74f701530e94a2406f490456f9",
+    "model_asset/URDF_90kg_with_hands/meshes/body/AnklePitch.STL": "b7fe7320260c66cc5392f364c284d9200196c401716ac662ad8d859e9678ea5a",
+    "model_asset/URDF_90kg_with_hands/meshes/body/Knee.STL": "bf579b6c9a5570b954d35cc1feb4511d3b3917e3e93d348f21f5a23d1bd8c6a6",
+    "model_asset/URDF_90kg_with_hands/meshes/body/HipPitch.STL": "72f051eb2f6c02a74481866a2c5dd364f725f54fd2059a62c87dfd63a015b076",
+    "model_asset/URDF_90kg_with_hands/meshes/body/WaistYaw.STL": "30bb2f2122ed5b55740e4255f088a5b3fd4c7310a66672f7d411d5e22d50de9b",
+    "model_asset/URDF_90kg_with_hands/meshes/body/NeckYaw.STL": "a163c72fa982d5358510013d66f933fd704c3a16052bf4ca1df7c48969054449",
+    "model_asset/URDF_90kg_with_hands/meshes/body/NeckPitch.STL": "c17c5563b85ac637ac5bf7366124ac0417932b7a289b2b15548c7467ce65d407",
+    "model_asset/URDF_90kg_with_hands/meshes/body/RightShoulderPitch.STL": "94bcae5bf39a8693ea34306d6eab6a512530ef418fbf233e9f1483c4ce10c0d0",
+    "model_asset/URDF_90kg_with_hands/meshes/body/RightShoulderRoll.STL": "e7df90b4c823d0e49029e697a954c4571c11d1be9271b0d272bbad87266b7dcf",
+    "model_asset/URDF_90kg_with_hands/meshes/body/RightShoulderYaw.STL": "9669151120a657fb144c20f982b6380e730b9520a711c1dfaed5aae8321525c9",
+    "model_asset/URDF_90kg_with_hands/meshes/body/RightElbowPitch.STL": "ed6067dc87bd5589bef6fbe9bd92eca508f120f0ec6d0652a8adf4df1e45dfff",
+    "model_asset/URDF_90kg_with_hands/meshes/body/RightWristRoll.STL": "cc3bac96d1b263ff3977e1691a2e3d9d73f4d3f344164732426dd4c137c3a068",
+    "model_asset/generated/mesh_assets/RightWristPitch_62010784d71e_150000.stl": "03ad4eaf527e81906fb1ff35d285cbfcf41916dab11f4fbd1440a25b46f1555e",
+    "model_asset/URDF_90kg_with_hands/meshes/body/LeftShoulderPitch.STL": "32e29223dcbfd74f39872426b5b6882797f9ca072ec1f0564cf3df5e67e3e57b",
+    "model_asset/URDF_90kg_with_hands/meshes/body/LeftShoulderRoll.STL": "b9a3111eac3e8fa2602ad2b639aefe9a345408165b1d24dcb9d4b3dab63b7fd9",
+    "model_asset/URDF_90kg_with_hands/meshes/body/LeftShoulderYaw.STL": "a2f91b509e5015901eeed154964e9b477ccd956d925f417b266b5f943872d17e",
+    "model_asset/URDF_90kg_with_hands/meshes/body/LeftElbowPitch.STL": "39a6dd286d22fcf3f3f4552445a2b067bebcbb3ae711df176e4911e9851a33c3",
+    "model_asset/URDF_90kg_with_hands/meshes/body/LeftWristRoll.STL": "18dbe75c19fa14bd4d33d0605ae040b3f97ae449ee165e5ba58a4822ff3f34c0",
+    "model_asset/generated/mesh_assets/LeftWristPitch_3dc72d885655_150000.stl": "c4ac6773c4e038f8d3ee92eb9f327574cae498e77fbecfd70ee56db76c724164",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPalmVisual.stl": "4c8fb3b3b4f6bf40ddb59515d0a704a56cbca1d2bd582186065e866085902e24",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPalmCollision.stl": "6ab93c038affcc134bde16beb00473b5797c61e61094a9405192bff622e6b5a7",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPalmSkinVisual.stl": "094d5e3aad17f3b29fdf80149d552a7ec74ef8e2e13b1781eab88c2c196a1b33",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPalmSkinCollision.stl": "fbc51da71d2403df38ffd052c734e29e34bb7eeb51ce7a602c98e6323cb80d0b",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbMPVisual.stl": "4f0b02ae1307c4fbd2533af174ab7667d4384d7a040496fa9797d8c3f9480596",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbMPCollision.stl": "a2a7b13ae336a30aef59d45b069834ea8e938b51ca96b4f22346c015cf9793f8",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbPPVisual.stl": "4fd2db30582e27b0e70b555b4bce93fad6a9e11eed422ab6133a61e198a33a7d",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbPPCollision.stl": "a537cbfa149d15aa21827846aed8f9181ee9b86aabe1b54d1eb74e2598ec1f4d",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbIPVisual.stl": "df9e7d1e9f932ed40d50c37419ecca96442f01c0addca2889fbf2ecec034e11f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbIPCollision.stl": "fa8399a40eaaa810b6dbff76d6843de9f00ca14de257bce7b5075f7bfa931d48",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbIPSkinVisual.stl": "90940c206d3c0970cd8bc75954cff9d1565637bbe2836aed8ae74d7e64f35084",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbIPSkinCollision.stl": "4b28db466cc70bbc6eee6440847db962f80a6c7ec3c6f145404ec3f6faa4c329",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbDPVisual.stl": "ffbdd99aeacbe1c1a1438fb67606aeb3b3ba2ab44c40af01ff863de7dd253fec",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbDPCollision.stl": "ffbdd99aeacbe1c1a1438fb67606aeb3b3ba2ab44c40af01ff863de7dd253fec",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexMPVisual.stl": "d869b4c6f438c265b4aebc1125fdc4fdee07ea8a8698af7d82ca8493606943db",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexMPCollision.stl": "6ea5999558bcd9c70e421f8ff1d07dc5cb5d80eeff06141080cc5ef85daf9bfc",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexPPVisual.stl": "4c819d663fc1f6fe22e18636d087d41c44b47406c2c76ebd211f27cba29fccaf",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexPPCollision.stl": "95f49f3be5448a4fa49778cbc74547f69a382356d76f305d9db3309e61bca66d",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexPPSkinVisual.stl": "fa309c7dce4fd7d6c78d87f48044b1151863a5d1294cba51e9fc2934fbc415f9",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexPPSkinCollision.stl": "df4e7e7671fe6b7f0a716db05595baed1d9e6a499e6922df3bc3ee69857cfc02",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexIPVisual.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexIPCollision.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddleMPVisual.stl": "7de5ca016236a7f418060df30f71490f6c31ba346db41d386134af4e3aa40430",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddleMPCollision.stl": "3cefbe6092a8b2d3323a34f2b4dde5dee5b9645863ef210fa1697ba5baa3a7f7",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddlePPVisual.stl": "3429281dab492a11decc891196d3372c2509f24f6b79deddcd1e78b6c4c00952",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddlePPCollision.stl": "fd97b7413b1e36e54ae6f203c570b523dfbb389bccb3f4d65e95feff938c5743",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddlePPSkinVisual.stl": "9d8ac0f0b6df26fbbcdc60c5133bf56bc8920b4e715f4c71355c5e806c6d38ea",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddlePPSkinCollision.stl": "e6713a3546fffa3936b8fb428e20921837e5c3d9ad6a0db3ed5b7ce9050dbc53",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddleIPVisual.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddleIPCollision.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingMPVisual.stl": "e486bd15eb2bea1bbb59a4d9c14260275668681f2cdd6a451097504c4ef699b0",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingMPCollision.stl": "799b580a1273fccaeb5533eba7aaa2d74ad81b67ffe0bbf78f27a16b73a02880",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingPPVisual.stl": "fea6f9e3986982a75a85eee16d56c70022e639d485529b54cc0ccde5e612b1da",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingPPCollision.stl": "4d2437c0e980f902fe893803d84437b89388206573bd8cb80d924e469081473c",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingPPSkinVisual.stl": "87264d07884ba8cf7890cdf954e4f1cd2a1bf566af1d3dca12eefe7cec3632d5",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingPPSkinCollision.stl": "86061ecce6f6e981125fe48826b18bb746f46500dcb32413c500786b8540818d",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingIPVisual.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingIPCollision.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyMPVisual.stl": "c4626a0b7504af07f316e6cf3d678e8abe140e6291c9414af0af7d2035fe773e",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyMPCollision.stl": "348e81ec200347a0d6589c4f1de648fe470cc28764d3b62df9ad3b955c0f1650",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyPPVisual.stl": "68ed37cf37042226bf040b4aefbccd6d8ec3e1b4181368646fe5a853a053637c",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyPPCollision.stl": "b62cba496d7b6d2538054189fd5d77a94673a3aefb8c0ffb4c8f17727f177e67",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyPPSkinVisual.stl": "c1c5b01ab6482413362d5c7c8d46b58bb87319fb18d6289d53d29c36fa488bca",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyPPSkinCollision.stl": "7633688ad4184b27662e3764f90071e3800086c8fe59e0e73a2e4de4bd62c30b",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyIPVisual.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyIPCollision.stl": "de03c0a160e9a26feca8f867b61c431eb25b16673b9d81e052f63416c396861f",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPalmVisual.stl": "4bcadf705a92ce02431721674832d8709fc0ab8f625339ec1c4cad1ab1c0e1f7",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPalmCollision.stl": "f900c43457814d75cec639d7b0e08721ae2534de6de72b458d7b424a5c8c98e9",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPalmSkinVisual.stl": "bbb577d6283ee4c67eddedba4a4f9c6e4d6b67c642a0fa1d0cd94a753562cf22",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPalmSkinCollision.stl": "d1d6778c4c1cfe8df79ce4aa46e8e11d0c98867ab4eabb8d19f3bd00cf9e7113",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbMPVisual.stl": "da24c6c48c04c31b724185aa815e5427c70df6bcc15e8160539986f79bd85bc9",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbMPCollision.stl": "47c3ae3ac3bf6b8ac01af5f789c029cef59f830447becc0b70ba4e5e432aa7c2",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbPPVisual.stl": "f8b1d8ef66e3d49d5299788dafc4c891210930c4de1d55bbe138e427a38de08e",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbPPCollision.stl": "74d1ff69367a231a77eb76f0dc2953c388b40975e2c04fa3a4bce31299654638",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbIPVisual.stl": "57675e02d25360ffc2bd9d160199d3066795804789a72d89cb623724cbb74b5c",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbIPCollision.stl": "d61b4041074bbffaffc3e226fd87ed8b0cab39d967f66d91dd852c877ba66068",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbIPSkinVisual.stl": "b05e1be011dd5c5bfa92d42fc6fc05bc2e6b58a2ed9bf76cc25826ff5597c155",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbIPSkinCollision.stl": "fd80090e191c869954f842a89f79c6737cc193a1b79949f509b939847347bbdc",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbDPVisual.stl": "9d97af2fa2e9c739093d139e691c5002c3d331c6dbe4bec3efb2093068d1361c",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbDPCollision.stl": "9d97af2fa2e9c739093d139e691c5002c3d331c6dbe4bec3efb2093068d1361c",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexMPVisual.stl": "369056591c7a493a5153cd81b1d4fb98ae710a2a64d64d52eca5187714da4860",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexMPCollision.stl": "c32f0d0517cef39ed8583131cbb263f868f002a8c0f4bfb4f703314f170b52d9",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexPPVisual.stl": "e798c951c9aaf3985a7907114860e264cbad0a17aff562ffb50f15260a650718",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexPPCollision.stl": "485b35a6977c7f56ad01c5f2ba3ea73ee4fb767ce6ec063c79afe85d1eebcd0a",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexPPSkinVisual.stl": "91e8da51efeb3d22591c62830a0b5d8b8e5adabebfd5e5d70249a1e0d4e40ff8",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexPPSkinCollision.stl": "427f68ad1f74186f3d73de0cf559fcc89fe16301f8c1336822497a7850bc5bff",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexIPVisual.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexIPCollision.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddleMPVisual.stl": "15048298d47fcb61b4d4f7b69bfc7327f5bd1358bf345825b3d969da320628fa",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddleMPCollision.stl": "b93f74581edff45105ffc979a4f43aede2079fd3b60ef5dde7b53e7fd200f0c3",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddlePPVisual.stl": "8b37c31c219f743528cb6d7c04c6b7566bfcad19a8e19f3c7de00d8698716479",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddlePPCollision.stl": "dcf9ddb58e6fce2f91cf3160c0addc2643f15695e0975c5d62f2eb4e50b7c203",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddlePPSkinVisual.stl": "986cafc443433900c1f0d2b6bc31463a611526f647af6cae0cc607a4b8f207f2",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddlePPSkinCollision.stl": "0d52d5a4c09b0838f8cee63c86809c4b3c6ec9e274ea2cbe1dbc4ba489eeeac4",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddleIPVisual.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddleIPCollision.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightRingMPVisual.stl": "cd9a53d3026c8831f584afab51384925a5a28ae7880545fd450b5d77c8050803",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightRingMPCollision.stl": "b6736e7fd49dee5ea34a9fe79f20569a01f1d54692d6a483df4aae29109fa115",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightRingPPVisual.stl": "5958972291a77b89af433bf7faf73c12f359e822ced05cea3bf4558fdcb5c09d",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightRingPPCollision.stl": "7af854da21f8efd24fa570b89eddec0ddd52a1b5fe5e2904003a2fc5dfd12105",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightRingPPSkinVisual.stl": "8cc48cd653ccfa679dda72d28fc6a2ec852e4fee118aebf3e8f3092d35d13d62",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightRingPPSkinCollision.stl": "0530572e589bb09f14bab0aa957b8559d0528e5f37cd60820b9ba2b0c93789f4",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightRingIPVisual.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightRingIPCollision.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyMPVisual.stl": "ddbcc71fd968f3c478edc5bddcfd9f91f525ad543b4970952e39b21aa266e084",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyMPCollision.stl": "b2a01be194f69f2fdcef9c3302a8ec796a4062b7411ddd2d9e22ab22cc84c0a0",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyPPVisual.stl": "3af49f453fef2d09b80d7cecd37d959ac99b54a64432a419d5d1cff656f67185",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyPPCollision.stl": "11f8d2c6dcfc4016aa5b977ff9b3658497608eeaaba3b9dc11b60f68da3485dd",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyPPSkinVisual.stl": "fc61d53f760fb37ba8bcb84f36fa671cda5eedcab2599b9bce935dfad113f9dc",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyPPSkinCollision.stl": "747638279b1ae3aaf1ce2273e311b3c778516e48e2bff0d1ff3b6e743d6d4a72",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyIPVisual.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20",
+    "model_asset/URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyIPCollision.stl": "bd108b6e9e2dc5a95020587ceca716c59b7a8953049d25fcc3f07e73d9858b20"
+  },
+  "implementation_sha256": {
+    "collision_checker.py": "12f53be7b7e3188349338d01c821ae3b23646925d079a77944ca165f5ca84064",
+    "collision_proxy.py": "d6e3274c7260a914fa41e372f69980b798c3da560244d2b8453e0fca20456bea",
+    "motion_collision.py": "d64e1936978ece175d207067be50976695032971d0fa224cad269f04da4aa583",
+    "preview_motion_package.py": "9ac54757ed9820f0083fac9f657c79439dcdbfc07ac11e92cfead2052bbae142",
+    "view_shadow_model.py": "0730555e9410791775bfac1d0ad25c8d233ca4f3d042fafe65d92f8202284ead",
+    "calibrated_hand_pose.py": "9567d37611a15d8bde08366846435121277213f457ac0a88d0dfe2906ea903b5",
+    "joint_calibration.py": "dac454eb311a4ebaaf1a6f3cd34f80ea86691520712c73b6be8159c3f8f11b90",
+    "model_paths.py": "46a42b0928b306abcd9a03dbdc217d49a6b7d2aa3edbcbe9776f3156e21f3538",
+    "unified_ui/app/hand_io.py": "e3e0025fd316c1cd7856a67ac1262d238725018e709fbde95e49cf1aba209905"
+  },
+  "uncommanded_pose_assumption": "same baseline as local preview; uncommanded hands use calibrated zero",
+  "rules_file": "collision_rules.json",
+  "runtime_start_and_end_handoffs_checked": false,
+  "proxy_hashes": {
+    "generated/collision_proxy_doc50_20261021/manifest.json": "a7561107434094b7d3c11f5df1f8ca40d688bcce261bb83ed2b177b58c855d87",
+    "generated/collision_proxy_doc50_20261021/model.xml": "0f1bb3101df68065e88e65c5aaa13a242f566d2207de0d5eb250204b4e4975c6"
+  }
+}

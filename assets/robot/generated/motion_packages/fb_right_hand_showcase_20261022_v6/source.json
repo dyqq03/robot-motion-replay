@@ -1,0 +1,9 @@
+{
+  "source_package": "fb_right_hand_showcase_20261022_v5",
+  "source_path": "generated/motion_packages/fb_right_hand_showcase_20261022_v5",
+  "source_hdf5_sha256": "5ff2f05fc5b6f516f52ee72725af446b71afb763d4c6621c4d173a82734d65b3",
+  "hand_snapshot": "reports/hand_angles_20261026/snapshot.json",
+  "reference_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "local_only": true,
+  "no_hardware_commands": true
+}

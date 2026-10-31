@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "user_confirmed_symmetric_arms_elbows_back_20261024",
+  "unit": "deg",
+  "coordinate_system": "hardware_source_joint_absolute_angles",
+  "arm_joint_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+  ],
+  "arms": {
+    "left": [
+      8.0,
+      -14.3,
+      1.1,
+      48.1,
+      1.5,
+      -12.0
+    ],
+    "right": [
+      -7.797832,
+      14.190975,
+      -0.893156,
+      48.112546,
+      -1.536982,
+      12.38027
+    ]
+  },
+  "neck": {
+    "neck_joint1": 4.5,
+    "neck_joint2": -8.3
+  },
+  "source": "User adopted elbows-back/hands-higher pose after simulation and two real-arm previews, 2026-10-24",
+  "scope": "Current generation and explicitly revised replay endpoints; shared with stack and panel initial-pose button",
+  "greeting_right_j7_fixed_deg": 12.38027,
+  "changes_calibration": false
+}

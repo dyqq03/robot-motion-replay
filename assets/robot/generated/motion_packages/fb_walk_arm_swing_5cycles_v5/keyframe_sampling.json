@@ -1,0 +1,12 @@
+{
+  "times_s": [
+    0.0,
+    1.035,
+    1.7,
+    7.3,
+    7.965,
+    9.0
+  ],
+  "input": "unchanged fullbody.hdf5",
+  "method": "Actual motion extrema, so periodic motions are not aliased by uniformly spaced rest frames"
+}

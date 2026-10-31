@@ -1,0 +1,4 @@
+interface:
+  display_name: "机器人动作仿真与回放"
+  short_description: "基于机器人模型设计动作、检查碰撞并导出回放包，支持校准后更新手型"
+  default_prompt: "使用 $robot-motion-replay 在本地仿真中设计并检查动作，生成可预览的 OpenArm 回放包。"

@@ -1,0 +1,9 @@
+{
+  "source_package": "fb_right_finger_greeting_20261022_v4",
+  "source_path": "generated/motion_packages/fb_right_finger_greeting_20261022_v4",
+  "source_hdf5_sha256": "c116533d407e9a0458bb9e75a5464496e7c54f095037cbd2980078cbfe9bef88",
+  "hand_snapshot": "reports/hand_angles_20261026/snapshot.json",
+  "reference_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "local_only": true,
+  "no_hardware_commands": true
+}

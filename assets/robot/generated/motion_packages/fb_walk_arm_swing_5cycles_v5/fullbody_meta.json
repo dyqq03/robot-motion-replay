@@ -1,0 +1,41 @@
+{
+  "source_bag": "fb_walk_arm_swing_5cycles_v5",
+  "arm_mode": "ker",
+  "duration_sec": 9.0,
+  "synthetic": true,
+  "missing_joints": [],
+  "name_reorders": 0,
+  "dropped_jump_frames": 0,
+  "gaps": {},
+  "arm_cmd_source": "synthetic_calibrated_gesture",
+  "chains": {
+    "arms": {
+      "mode": "ker",
+      "frames_cmd_l": 1801,
+      "frames_cmd_r": 1801,
+      "frames_js": 0,
+      "units": "rad"
+    },
+    "neck": {
+      "frames": 0,
+      "units": "rad"
+    },
+    "hand": {
+      "frames": 0,
+      "units": "rad"
+    },
+    "hand_left": {
+      "frames": 0,
+      "units": "rad"
+    },
+    "hand_right": {
+      "frames": 0,
+      "units": "rad"
+    },
+    "eyou": {
+      "frames": 0,
+      "units": "deg"
+    }
+  },
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+}

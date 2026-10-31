@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "skill_name": "robot-motion-replay",
+  "entry": "SKILL.md",
+  "bytes": 178031501,
+  "fixed_files": 318,
+  "generated_reference_packages": 6,
+  "original_complete_recordings": 1,
+  "ready_generated_demo": "work/packages/fb_skill_small_conversation_v1",
+  "full_relocation_test": "work/verification/relocation.json",
+  "calibration_snapshot": "2026-10-26 coherent hand-reference calibration; 2026-10-30 candidate included separately",
+  "python_dependencies": "requirements.txt",
+  "original_project_dependencies": false,
+  "hardware_actions": false,
+  "documentation_links_valid": true
+}

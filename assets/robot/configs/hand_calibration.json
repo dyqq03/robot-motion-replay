@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "hands": {
+    "left": {
+      "serial": "5B79076036",
+      "model_path": "configs/hand_models/orcahand_v1_left",
+      "source_path": "configs/hand_models/orcahand_v1_left",
+      "source_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "encoder_coordinate": "motor radians; ratio in motor rad per joint degree",
+      "port_normalized_to_confirmed_serial": true
+    },
+    "right": {
+      "serial": "5B79030495",
+      "model_path": "configs/hand_models/orcahand_v1_right",
+      "source_path": "configs/hand_models/orcahand_v1_right",
+      "source_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "encoder_coordinate": "motor radians; ratio in motor rad per joint degree",
+      "port_normalized_to_confirmed_serial": true
+    }
+  },
+  "source": "User recalibrated FT_core hand models",
+  "generated_at": "2026-10-19T20:24:04.590905",
+  "model_zero_policy": "calibrated joint zero remains model zero; encoder directions are applied only once"
+}

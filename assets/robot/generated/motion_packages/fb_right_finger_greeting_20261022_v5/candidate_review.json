@@ -1,0 +1,162 @@
+{
+  "status": "failed",
+  "checked_frames": 17,
+  "findings": [
+    {
+      "time_s": 1.805,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 158,
+        "mesh_queries": 2118,
+        "cached_pairs": 92,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.0007799113906131645,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.0006799113906131645,
+        "can_export": false
+      }
+    },
+    {
+      "time_s": 1.895,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 158,
+        "mesh_queries": 2158,
+        "cached_pairs": 92,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.00035614653290466473,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.00025614653290466474,
+        "can_export": false
+      }
+    },
+    {
+      "time_s": 1.925,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 159,
+        "mesh_queries": 2130,
+        "cached_pairs": 95,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.0003260991666661772,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.00022609916666617723,
+        "can_export": false
+      }
+    },
+    {
+      "time_s": 1.945,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 159,
+        "mesh_queries": 2112,
+        "cached_pairs": 95,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.0003219591198044113,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.00022195911980441133,
+        "can_export": false
+      }
+    },
+    {
+      "time_s": 1.965,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 159,
+        "mesh_queries": 2100,
+        "cached_pairs": 95,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.00032280293410878215,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.00022280293410878216,
+        "can_export": false
+      }
+    },
+    {
+      "time_s": 3.16,
+      "report": {
+        "stage": "candidate",
+        "status": "failed",
+        "pair_count": 1970,
+        "near_pair_count": 158,
+        "mesh_queries": 1880,
+        "cached_pairs": 92,
+        "findings": [
+          {
+            "geoms": [
+              "RightRingIP__collision__0",
+              "RightPinkyIP__collision__0"
+            ],
+            "distance_m": 0.0009729900515166312,
+            "required_clearance_m": 0.002,
+            "category": "same_hand",
+            "kind": "clearance"
+          }
+        ],
+        "numerical_findings": [],
+        "minimum_clearance_lower_bound_m": 0.0008729900515166312,
+        "can_export": false
+      }
+    }
+  ]
+}

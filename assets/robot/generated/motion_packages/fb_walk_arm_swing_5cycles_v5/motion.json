@@ -1,0 +1,254 @@
+{
+  "name": "走路轻摆臂五次",
+  "preview_label": "WALK ARM SWING x5 | MEASURED BASELINE",
+  "kind": "walking_arm_swing",
+  "repetitions": 5,
+  "period_s": 1.6,
+  "swing_start_s": 0.5,
+  "swing_end_s": 8.5,
+  "amplitude_deg": 5.5,
+  "moving_groups": [
+    "left_arm",
+    "right_arm"
+  ],
+  "joint_names": [
+    "openarm_left_joint1",
+    "openarm_left_joint2",
+    "openarm_left_joint3",
+    "openarm_left_joint4",
+    "openarm_left_joint5",
+    "openarm_left_joint7",
+    "openarm_right_joint1",
+    "openarm_right_joint2",
+    "openarm_right_joint3",
+    "openarm_right_joint4",
+    "openarm_right_joint5",
+    "openarm_right_joint7"
+  ],
+  "interpolation": "mirrored_shoulders_world_antiphase_sine_with_quintic_envelope",
+  "source_j1_phase": "same_angle_delta_due_to_mirrored_axes",
+  "world_arm_phase": "opposite_fore_aft",
+  "preview_times_s": [
+    0.0,
+    1.8,
+    3.6,
+    5.4,
+    7.2,
+    9.0
+  ],
+  "description": "双臂J1交替前后轻摆五次，其他关节全程保持不动。",
+  "generator": "scripts/refresh_replay_elbows_back_20261024.py",
+  "supersedes": "fb_walk_arm_swing_5cycles_v4",
+  "regenerated_from": "fb_walk_arm_swing_5cycles_v2",
+  "regeneration_reason": "User requested measured start/end baseline for every current action",
+  "previous_hdf5_sha256": "a605e19b77ddc641b242623665552411e392a1a67f1560d7febf921c2649861f",
+  "common_baseline": "user_measured_20261017",
+  "reference_access": "Existing downloaded recordings, calibrated mapping and measured hardware baseline",
+  "baseline_id": "user_confirmed_symmetric_arms_elbows_back_20261024",
+  "baseline_source": "configs/arm_motion_defaults.json",
+  "baseline_pose_deg": {
+    "openarm_left_joint1": 8.0,
+    "openarm_left_joint2": -14.3,
+    "openarm_left_joint3": 1.1,
+    "openarm_left_joint4": 48.1,
+    "openarm_left_joint5": 1.5,
+    "openarm_left_joint7": -12.0,
+    "openarm_right_joint1": -7.797832,
+    "openarm_right_joint2": 14.190975,
+    "openarm_right_joint3": -0.893156,
+    "openarm_right_joint4": 48.112546,
+    "openarm_right_joint5": -1.536982,
+    "openarm_right_joint7": 12.38027
+  },
+  "schema_version": 1,
+  "duration_s": 9.0,
+  "sample_hz": 200.0,
+  "unit": "deg",
+  "synthetic": true,
+  "preview_arm_baseline_rad": {
+    "openarm_left_joint1": 0.13962634015954636,
+    "openarm_left_joint2": -0.24958208303518914,
+    "openarm_left_joint3": 0.019198621771937627,
+    "openarm_left_joint4": 0.8395033702092726,
+    "openarm_left_joint5": 0.026179938779914945,
+    "openarm_left_joint7": -0.20943951023931956,
+    "openarm_right_joint1": -0.13609784291737445,
+    "openarm_right_joint2": 0.2476792378182023,
+    "openarm_right_joint3": -0.015588512933942473,
+    "openarm_right_joint4": 0.8397223392172277,
+    "openarm_right_joint5": -0.026825396443887487,
+    "openarm_right_joint7": 0.21607647378587838
+  },
+  "peak_speed_deg_s": [
+    21.59706170669267,
+    2.2737367544323206e-13,
+    2.842170943040401e-14,
+    4.547473508864641e-13,
+    2.842170943040401e-14,
+    4.547473508864641e-13,
+    21.597061706692557,
+    4.547473508864641e-13,
+    2.842170943040401e-14,
+    1.8189894035458565e-12,
+    1.1368683772161603e-13,
+    2.2737367544323206e-13
+  ],
+  "references": [],
+  "execution_scope": "local_shadow_preview",
+  "hardware_execution_validated": false,
+  "index": 74,
+  "slug": "walking_arm_swing",
+  "arms": [
+    "left",
+    "right"
+  ],
+  "hands": [],
+  "neck": false,
+  "hand_baseline_pose_deg": {
+    "left": {
+      "thumb_mcp": 17.132867132867133,
+      "thumb_abd": 0.0,
+      "thumb_pip": 34.37554585152837,
+      "thumb_dip": 7.685884691848919,
+      "index_abd": 6.280442804428038,
+      "index_mcp": -8.424976700838762,
+      "index_pip": -14.17162872154116,
+      "middle_abd": -4.12,
+      "middle_mcp": -8.743975903614468,
+      "middle_pip": 2.7948717948717885,
+      "ring_abd": -15.36,
+      "ring_mcp": -3.436525612472167,
+      "ring_pip": -1.6861451460886059,
+      "pinky_abd": -36.29,
+      "pinky_mcp": -4.154628687690753,
+      "pinky_pip": -4.39575971731448
+    },
+    "right": {
+      "thumb_mcp": 73.50877479122019,
+      "thumb_abd": -3.932063744452165,
+      "thumb_pip": 34.121738754397406,
+      "thumb_dip": 30.463918532678797,
+      "index_abd": 13.929973248666396,
+      "index_mcp": 0.24880772898492864,
+      "index_pip": 0.22920879832279084,
+      "middle_abd": -1.95,
+      "middle_mcp": -1.1742289356591549,
+      "middle_pip": 0.7529279823270514,
+      "ring_abd": -11.58,
+      "ring_mcp": -5.347577922516706,
+      "ring_pip": 1.5165146621265997,
+      "pinky_abd": -24.116067184838556,
+      "pinky_mcp": -12.955228197739814,
+      "pinky_pip": 2.4542436302638464
+    }
+  },
+  "hand_baseline_id": "user_measured_hands_20261024_155122_collision_adjusted_v1",
+  "generation_batch": "initial_pose_elbows_back_refresh_20261024",
+  "units": {
+    "arms": "rad",
+    "neck": "rad",
+    "hand_left": "deg",
+    "hand_right": "deg",
+    "trajectory_csv": "deg"
+  },
+  "initial_pose_update": {
+    "method": "Action-aware arm retarget: rest-relative small motions; preserve original semantic display targets and continuously reshape departure/return for larger gestures; hands unchanged",
+    "source_package": "fb_walk_arm_swing_5cycles_v4",
+    "source_hdf5_sha256": "004b74dd67c0f87e473ac6b9ab312ca1752e4deeb7a829f31902470229223368",
+    "modified_streams": [
+      {
+        "stream": "arms/cmd_left",
+        "original_start_deg": [
+          0.0,
+          -14.3,
+          1.1,
+          30.100000000000005,
+          1.5000000000000002,
+          -12.000000000000002
+        ],
+        "target_start_end_deg": [
+          8.0,
+          -14.3,
+          1.1,
+          48.1,
+          1.5,
+          -12.0
+        ],
+        "names": [
+          "openarm_left_joint1",
+          "openarm_left_joint2",
+          "openarm_left_joint3",
+          "openarm_left_joint4",
+          "openarm_left_joint5",
+          "openarm_left_joint7"
+        ],
+        "method": "Rest-relative: translate complete trajectory, including all interior rests, onto new baseline",
+        "progress_driver_joint": null,
+        "maximum_change_deg": [
+          8.0,
+          0.0,
+          0.0,
+          17.999999999999996,
+          2.220446049250313e-16,
+          1.7763568394002505e-15
+        ],
+        "unchanged_hand_samples": true
+      },
+      {
+        "stream": "arms/cmd_right",
+        "original_start_deg": [
+          0.201491,
+          14.191402,
+          -0.835797,
+          30.114478000000002,
+          -1.60657,
+          12.378242000000002
+        ],
+        "target_start_end_deg": [
+          -7.797832,
+          14.190975,
+          -0.893156,
+          48.112546,
+          -1.536982,
+          12.38027
+        ],
+        "names": [
+          "openarm_right_joint1",
+          "openarm_right_joint2",
+          "openarm_right_joint3",
+          "openarm_right_joint4",
+          "openarm_right_joint5",
+          "openarm_right_joint7"
+        ],
+        "method": "Rest-relative: translate complete trajectory, including all interior rests, onto new baseline",
+        "progress_driver_joint": null,
+        "maximum_change_deg": [
+          7.999323,
+          0.00042700000000017724,
+          0.05735899999999994,
+          17.998068,
+          0.06958799999999998,
+          0.0020279999999974763
+        ],
+        "unchanged_hand_samples": true
+      }
+    ],
+    "uncommanded_streams_preserved_empty": true
+  },
+  "uncommanded_pose_assumptions": {
+    "arms": "confirmed elbows-back/hands-higher 20261024 arm reference",
+    "hands": "latest measured hand pose with user-authorized minimal ABD corrections, snapshot in hand_baseline_pose_deg; no added command streams",
+    "neck": "original package neck reference unchanged",
+    "waist_legs": "model qpos0"
+  },
+  "hand_joint_names": {},
+  "preview_neck_baseline_rad": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "speed_caps": {
+    "arms": 21.597287677309684
+  },
+  "bundle_reference_copy": true
+}

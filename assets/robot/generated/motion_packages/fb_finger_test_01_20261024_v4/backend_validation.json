@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "backend_source": "backend/fullbody_player.py",
+  "backend_sha256": "53d9f996a87a8360c8d8a61f8d0ac33059c79cb103ad7e8fd25b3bfff7b4d8a4",
+  "helper_sha256": "65a06f8a0b412e681143787f7e747a523ea2a17298caa33f94d2700c3cefce63",
+  "input_sha256": {
+    "fullbody.hdf5": "9bbe88e94750e151abacc8d1a1616ce2894785c5d213486424a118fda409cebf",
+    "motion.json": "b04e05fe83f8996d691e2f7d67a4bf9a35729ff4d7920f1ee1c05669b54ff458",
+    "fullbody_meta.json": "9cab9b1dedb9882755fb61204fc93fd0f78f4803bd8cb4a341cd8a15ee8dd90a"
+  },
+  "loaded_chains": [
+    "hand_left",
+    "hand_right"
+  ],
+  "forward_reverse_messages_checked": true,
+  "hand_stream_unit": "calibrated_joint_deg",
+  "body_messages": 0,
+  "ros_initialized": false,
+  "network_access": false,
+  "serial_access": false
+}

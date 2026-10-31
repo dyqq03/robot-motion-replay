@@ -1,0 +1,1396 @@
+{
+  "schema_version": 1,
+  "position_equation": "q_model_rad = sign * q_real_rad + offset_rad",
+  "velocity_equation": "v_model_rad_s = sign * v_real_rad_s",
+  "limit_source": "Pre-calibration active URDF limits, adopted 2026-10-08",
+  "limit_basis": "real_limits_rad are fixed numeric bounds copied from the pre-calibration URDF; model_limits_rad = sorted(sign * real_limits_rad + offset_rad)",
+  "reference_urdf": "bundled_snapshot",
+  "reference_urdf_sha256": "158e8432379681121aa829bdf26fa5f4d95cdb0495434dc021fc38582260fcad",
+  "physical_zero_verified": false,
+  "group": "hand",
+  "source_unit": "deg",
+  "sign_basis": "Existing handeye_calibration_ws joint_mapping_90kg_with_hands.yaml; hand zero convention requested by user",
+  "joints": [
+    {
+      "source_joint": "left/thumb_mcp",
+      "model_joint": "LeftThumbMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "model_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "reference_urdf_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "thumb_mcp",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 4,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        0,
+        100
+      ],
+      "motor_limits_rad": [
+        1.77021382922003,
+        3.08636934522591
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.0131615551600588,
+      "encoder_position_at_joint_zero_rad": 1.77021382922003,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/thumb_abd",
+      "model_joint": "LeftThumbAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "model_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "reference_urdf_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "thumb_abd",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 3,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -62,
+        0
+      ],
+      "motor_limits_rad": [
+        -0.2868544073346149,
+        0.3175340230923277
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.00974820049075714,
+      "encoder_position_at_joint_zero_rad": 0.31753402309232776,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/thumb_pip",
+      "model_joint": "LeftThumbPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "thumb_pip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 1,
+      "motor_direction": -1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -12,
+        108
+      ],
+      "motor_limits_rad": [
+        2.1874566035249243,
+        3.5925830052281715
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.011709386680860393,
+      "encoder_position_at_joint_zero_rad": 3.452070365057847,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/thumb_dip",
+      "model_joint": "LeftThumbDIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "thumb_dip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 2,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        112
+      ],
+      "motor_limits_rad": [
+        5.554544432933906,
+        7.097729105546862
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.011690792974340574,
+      "encoder_position_at_joint_zero_rad": 5.788360292420718,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/index_abd",
+      "model_joint": "LeftIndexAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "index_abd",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 14,
+      "motor_direction": -1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        4.663301595172349,
+        5.494719182206366
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.011235372797756988,
+      "encoder_position_at_joint_zero_rad": 5.079010388689358,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/index_mcp",
+      "model_joint": "LeftIndexMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "index_mcp",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 15,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        95
+      ],
+      "motor_limits_rad": [
+        3.730641276137879,
+        5.376602661539172
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014312707699141678,
+      "encoder_position_at_joint_zero_rad": 4.016895430120712,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/index_pip",
+      "model_joint": "LeftIndexPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "index_pip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 16,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        108
+      ],
+      "motor_limits_rad": [
+        2.9007576698917474,
+        4.65256372965715
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013685984841917204,
+      "encoder_position_at_joint_zero_rad": 3.1744773667300916,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/middle_abd",
+      "model_joint": "LeftMiddleAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "middle_abd",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 13,
+      "motor_direction": -1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        -0.380427235395639,
+        0.5322913333963175
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012334034713404819,
+      "encoder_position_at_joint_zero_rad": 0.07593204900033929,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/middle_mcp",
+      "model_joint": "LeftMiddleMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "middle_mcp",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 8,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        91
+      ],
+      "motor_limits_rad": [
+        2.5770877236478773,
+        4.104932588381976
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013764368150757645,
+      "encoder_position_at_joint_zero_rad": 2.85237508666303,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/middle_pip",
+      "model_joint": "LeftMiddlePIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "middle_pip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 9,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        107
+      ],
+      "motor_limits_rad": [
+        2.2641556429192065,
+        3.9990879140178666
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013660884024398898,
+      "encoder_position_at_joint_zero_rad": 2.5373733234071842,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/ring_abd",
+      "model_joint": "LeftRingAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "ring_abd",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 5,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        -0.19481556006147643,
+        0.7102331047910518
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012230387362872002,
+      "encoder_position_at_joint_zero_rad": 0.2577087723647876,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/ring_mcp",
+      "model_joint": "LeftRingMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "ring_mcp",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 7,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        91
+      ],
+      "motor_limits_rad": [
+        2.750427552678955,
+        4.12794230020026
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012410042770462211,
+      "encoder_position_at_joint_zero_rad": 2.998628408088199,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/ring_pip",
+      "model_joint": "LeftRingPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "ring_pip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 6,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        107
+      ],
+      "motor_limits_rad": [
+        5.37046673838763,
+        6.998020354334295
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012815382802729645,
+      "encoder_position_at_joint_zero_rad": 5.626774394442222,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/pinky_abd",
+      "model_joint": "LeftPinkyAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "pinky_abd",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 12,
+      "motor_direction": -1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        1.418932228794218,
+        2.3285828360104035
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012292575773191695,
+      "encoder_position_at_joint_zero_rad": 1.8737575324023108,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/pinky_mcp",
+      "model_joint": "LeftPinkyMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "pinky_mcp",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 10,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        98
+      ],
+      "motor_limits_rad": [
+        0.9219224535192704,
+        2.429825568010856
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.01277883995331852,
+      "encoder_position_at_joint_zero_rad": 1.1774992525856407,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "left/pinky_pip",
+      "model_joint": "LeftPinkyPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "source_topic": "/left/hand/joint_targets",
+      "source_name": "pinky_pip",
+      "side": "left",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 11,
+      "motor_direction": 1,
+      "hardware_serial": "5B79076036",
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "hardware_rom_deg": [
+        -20,
+        108
+      ],
+      "motor_limits_rad": [
+        5.491651220630596,
+        7.228117472517141
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013566142592863636,
+      "encoder_position_at_joint_zero_rad": 5.762974072487868,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/thumb_mcp",
+      "model_joint": "RightThumbMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "model_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "reference_urdf_limits_rad": [
+        0.0,
+        1.74532925
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "thumb_mcp",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 13,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        0,
+        100
+      ],
+      "motor_limits_rad": [
+        1.2164467573165894,
+        2.090815782546997
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.008743690252304077,
+      "encoder_position_at_joint_zero_rad": 1.2164467573165894,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/thumb_abd",
+      "model_joint": "RightThumbAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "model_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "reference_urdf_limits_rad": [
+        -1.08210414,
+        0.0
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "thumb_abd",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 14,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -62,
+        0
+      ],
+      "motor_limits_rad": [
+        2.2020294666290283,
+        3.087289571762085
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014278388792468656,
+      "encoder_position_at_joint_zero_rad": 3.087289571762085,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/thumb_pip",
+      "model_joint": "RightThumbPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.20943951,
+        1.88495559
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "thumb_pip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 16,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -12,
+        108
+      ],
+      "motor_limits_rad": [
+        1.5999419689178467,
+        3.3640198707580566
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.01470064918200175,
+      "encoder_position_at_joint_zero_rad": 1.7763497591018678,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/thumb_dip",
+      "model_joint": "RightThumbDIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.95476876
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "thumb_dip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 15,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        112
+      ],
+      "motor_limits_rad": [
+        -0.27765053510665894,
+        1.5079030990600586
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013526921470959982,
+      "encoder_position_at_joint_zero_rad": -0.007112105687459291,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/index_abd",
+      "model_joint": "RightIndexAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "index_abd",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 3,
+      "motor_direction": -1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        4.275818347930908,
+        5.48919677734375
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.01639700580287624,
+      "encoder_position_at_joint_zero_rad": 4.882507562637329,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/index_mcp",
+      "model_joint": "RightIndexMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.65806279
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "index_mcp",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 2,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        95
+      ],
+      "motor_limits_rad": [
+        4.000621795654297,
+        5.603631973266602
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013939218935759171,
+      "encoder_position_at_joint_zero_rad": 4.2794061743694805,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/index_pip",
+      "model_joint": "RightIndexPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "index_pip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 1,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        108
+      ],
+      "motor_limits_rad": [
+        3.6861557960510254,
+        5.345922946929932
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.012966930866241455,
+      "encoder_position_at_joint_zero_rad": 3.9454944133758545,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/middle_abd",
+      "model_joint": "RightMiddleAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "middle_abd",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 4,
+      "motor_direction": -1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        -0.054916512221097946,
+        1.0923477411270142
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.015503570991190704,
+      "encoder_position_at_joint_zero_rad": 0.5187156144529581,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/middle_mcp",
+      "model_joint": "RightMiddleMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "middle_mcp",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 9,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        91
+      ],
+      "motor_limits_rad": [
+        4.678641319274902,
+        6.33380651473999
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014911398157343134,
+      "encoder_position_at_joint_zero_rad": 4.976869282421765,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/middle_pip",
+      "model_joint": "RightMiddlePIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "middle_pip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 8,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        107
+      ],
+      "motor_limits_rad": [
+        2.7212820053100586,
+        4.683243274688721
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.01544851393211545,
+      "encoder_position_at_joint_zero_rad": 3.0302522839523673,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/ring_abd",
+      "model_joint": "RightRingAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "ring_abd",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 12,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        3.758406162261963,
+        4.782952308654785
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.013845218194497598,
+      "encoder_position_at_joint_zero_rad": 4.270679235458374,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/ring_mcp",
+      "model_joint": "RightRingMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.58824962
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "ring_mcp",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 7,
+      "motor_direction": -1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        91
+      ],
+      "motor_limits_rad": [
+        -1.1903691291809082,
+        0.424912691116333
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014552088471146318,
+      "encoder_position_at_joint_zero_rad": 0.13387092169340664,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/ring_pip",
+      "model_joint": "RightRingPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.8675023
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "ring_pip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 11,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        107
+      ],
+      "motor_limits_rad": [
+        4.108000755310059,
+        5.964117527008057
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014615092690535418,
+      "encoder_position_at_joint_zero_rad": 4.400302609120767,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/pinky_abd",
+      "model_joint": "RightPinkyAbduction",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "model_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "reference_urdf_limits_rad": [
+        -0.64577182,
+        0.64577182
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "pinky_abd",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 5,
+      "motor_direction": -1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -37,
+        37
+      ],
+      "motor_limits_rad": [
+        1.9788353443145752,
+        3.284559726715088
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.017644924086493416,
+      "encoder_position_at_joint_zero_rad": 2.6316975355148315,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/pinky_mcp",
+      "model_joint": "RightPinkyMCP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.71042267
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "pinky_mcp",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 10,
+      "motor_direction": -1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        98
+      ],
+      "motor_limits_rad": [
+        2.4328935146331787,
+        4.180097579956055
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.014806814112905728,
+      "encoder_position_at_joint_zero_rad": 3.8839612976979403,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    },
+    {
+      "source_joint": "right/pinky_pip",
+      "model_joint": "RightPinkyPIP",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.0,
+      "real_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "model_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "reference_urdf_limits_rad": [
+        -0.34906585,
+        1.88495559
+      ],
+      "source_topic": "/right/hand/joint_targets",
+      "source_name": "pinky_pip",
+      "side": "right",
+      "zero_pose_real_rad": 0.0,
+      "zero_reading_within_real_limits": true,
+      "motor_id": 6,
+      "motor_direction": 1,
+      "hardware_serial": "5B79030495",
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "hardware_rom_deg": [
+        -20,
+        108
+      ],
+      "motor_limits_rad": [
+        3.002000331878662,
+        4.812097549438477
+      ],
+      "joint_to_motor_ratio_rad_per_deg": 0.01414138451218605,
+      "encoder_position_at_joint_zero_rad": 3.284828022122383,
+      "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+    }
+  ],
+  "offset_basis": "offset=-sign*recorded_hardware_position_at_URDF_zero",
+  "zero_readings_file": "bundled_snapshot",
+  "zero_readings_sha256": "f4cc337d005378e56e5739a048789893aac1d82886cf8a52e97cf9f887863f26",
+  "zero_source": "User convention: both hands real/model zero coincide; all reference readings are 0, 2026-10-08",
+  "hardware_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "hardware_calibration_sources": {
+    "left": {
+      "serial": "5B79076036",
+      "model_path": "configs/hand_models/orcahand_v1_left",
+      "source_path": "configs/hand_models/orcahand_v1_left",
+      "source_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "parameter_sha256": {
+        "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+        "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+      },
+      "encoder_coordinate": "motor radians; ratio in motor rad per joint degree",
+      "port_normalized_to_confirmed_serial": true
+    },
+    "right": {
+      "serial": "5B79030495",
+      "model_path": "configs/hand_models/orcahand_v1_right",
+      "source_path": "configs/hand_models/orcahand_v1_right",
+      "source_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "parameter_sha256": {
+        "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+        "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+      },
+      "encoder_coordinate": "motor radians; ratio in motor rad per joint degree",
+      "port_normalized_to_confirmed_serial": true
+    }
+  }
+}

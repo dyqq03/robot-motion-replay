@@ -1,0 +1,70 @@
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999993.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999993.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+{"draft": "/home/dy/wanren/robot-motion-replay/work/self_test_g9j_ogg2/drafts/fb_self_test_neck_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/home/dy/wanren/robot-motion-replay/work/self_test_g9j_ogg2/drafts/fb_self_test_hands_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/home/dy/wanren/robot-motion-replay/work/self_test_g9j_ogg2/drafts/fb_self_test_combined_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "model_assets_calibration_and_dependencies",
+    "six_reference_packages_current_proofs_and_loader",
+    "pure_neck_pure_hand_and_combination_backend_forward_reverse",
+    "reject_target_stream_stale_calibration_and_duplicate_samples",
+    "stable_measurement_reference_validation_and_adoption",
+    "relative_and_semantic_absolute_retarget_without_nonhand_or_time_changes",
+    "uncertified_export_rejected",
+    "changed_calibration_blocks_old_reference_and_import_rolls_back",
+    "full_path_render_and_missing_visual_review_export_guard"
+  ],
+  "original_project_required": false,
+  "network_access": false,
+  "robot_commands_sent": false,
+  "synthetic_samples_used_only_inside_isolated_tests": true
+}

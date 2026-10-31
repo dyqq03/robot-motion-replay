@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "description": "Local self-collision checks using existing convex collision meshes. Distances are meters; qpos is model radians. Defaults are provisional model margins, not hardware certification.",
+  "collision_geom_group": 3,
+  "ignore_same_welded_body": true,
+  "ignore_direct_joint_neighbors": true,
+  "clearance_m": {
+    "default": 0.015,
+    "same_hand": 0.002
+  },
+  "mesh_solver": {
+    "native_ccd": true,
+    "iterations": 200,
+    "tolerance": 1e-8,
+    "distance_padding_m": 0.005,
+    "numeric_guard_m": 0.0001,
+    "consistency_tolerance_m": 0.0005
+  },
+  "trajectory": {
+    "coarse_hz": 10.0,
+    "minimum_interval_s": 0.001,
+    "maximum_depth": 16,
+    "maximum_pose_checks": 10000,
+    "maximum_wall_time_s": 30.0
+  },
+  "excluded_pairs": [],
+  "pair_overrides": [],
+  "notes": [
+    "Mesh names and topology are discovered automatically; no hand-written exhaustive pair list.",
+    "Excluded pairs require two exact geom names and a reason. Never suppress a pair just because the baseline already overlaps.",
+    "Pair overrides may reduce clearance to zero for an intentional touch, but may not allow penetration; changes require a reason.",
+    "Quick checks are conservative bounding-box screening only. Candidate checks use mesh distances. Only a complete trajectory result with status passed is exportable.",
+    "The visible floor is not included in this self-collision group. Scene objects and real-world obstacles require separate collision geometry.",
+    "Model bounds, convex hulls, numerical tolerances and actual robot calibration limit the result. No physical collision response is enabled by this file."
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "unit": "deg",
+  "coordinate_system": "calibrated_hardware_joint_absolute_angles",
+  "calibration_files_sha256": {
+    "left": {
+      "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+      "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+    },
+    "right": {
+      "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+      "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+    }
+  },
+  "motor_ids_by_joint": {
+    "left": {
+      "thumb_mcp": 4,
+      "thumb_abd": 3,
+      "thumb_pip": 1,
+      "thumb_dip": 2,
+      "index_abd": 14,
+      "index_mcp": 15,
+      "index_pip": 16,
+      "middle_abd": 13,
+      "middle_mcp": 8,
+      "middle_pip": 9,
+      "ring_abd": 5,
+      "ring_mcp": 7,
+      "ring_pip": 6,
+      "pinky_abd": 12,
+      "pinky_mcp": 10,
+      "pinky_pip": 11
+    },
+    "right": {
+      "thumb_mcp": 13,
+      "thumb_abd": 14,
+      "thumb_pip": 16,
+      "thumb_dip": 15,
+      "index_abd": 3,
+      "index_mcp": 2,
+      "index_pip": 1,
+      "middle_abd": 4,
+      "middle_mcp": 9,
+      "middle_pip": 8,
+      "ring_abd": 12,
+      "ring_mcp": 7,
+      "ring_pip": 11,
+      "pinky_abd": 5,
+      "pinky_mcp": 10,
+      "pinky_pip": 6
+    }
+  },
+  "changes_calibration": false,
+  "changes_startup_homing": false,
+  "changes_hardware_config": false,
+  "interpolation": "Absolute targets: baseline + envelope * (target - baseline); do not add baseline to existing absolute gesture targets",
+  "id": "user_measured_hands_20261024_155122_collision_adjusted_v1",
+  "source": "User authorized latest measured hand reference with minimal corrections within existing limits and collision geometry, 2026-10-24",
+  "measured_at_beijing": "2026-10-24T15:51:22.884979+08:00",
+  "source_file": "reports/hand_angles_20261024_155019/snapshot.json",
+  "source_sha256": "5e91ee45d6d7dfd4f18aa401512de9633239979c8706913f246b2e4964bcd49e",
+  "hands": {
+    "left": {
+      "thumb_mcp": 17.132867132867133,
+      "thumb_abd": 0.0,
+      "thumb_pip": 34.37554585152837,
+      "thumb_dip": 7.685884691848919,
+      "index_abd": 6.280442804428038,
+      "index_mcp": -8.424976700838762,
+      "index_pip": -14.17162872154116,
+      "middle_abd": -4.12,
+      "middle_mcp": -8.743975903614468,
+      "middle_pip": 2.7948717948717885,
+      "ring_abd": -15.36,
+      "ring_mcp": -3.436525612472167,
+      "ring_pip": -1.6861451460886059,
+      "pinky_abd": -36.29,
+      "pinky_mcp": -4.154628687690753,
+      "pinky_pip": -4.39575971731448
+    },
+    "right": {
+      "thumb_mcp": 73.50877479122019,
+      "thumb_abd": -3.932063744452165,
+      "thumb_pip": 34.121738754397406,
+      "thumb_dip": 30.463918532678797,
+      "index_abd": 13.929973248666396,
+      "index_mcp": 0.24880772898492864,
+      "index_pip": 0.22920879832279084,
+      "middle_abd": -1.95,
+      "middle_mcp": -1.1742289356591549,
+      "middle_pip": 0.7529279823270514,
+      "ring_abd": -11.58,
+      "ring_mcp": -5.347577922516706,
+      "ring_pip": 1.5165146621265997,
+      "pinky_abd": -24.116067184838556,
+      "pinky_mcp": -12.955228197739814,
+      "pinky_pip": 2.4542436302638464
+    }
+  },
+  "scope": "Start/end of future and explicitly revised server motion packages; same reference deployed for stack startup",
+  "adjustment": {
+    "user_authorized": true,
+    "reason": "Nearest feasible small ABD corrections; original measured readings retained; hardware calibration, joint limits and collision rules unchanged",
+    "changes": [
+      {
+        "side": "left",
+        "joint": "thumb_abd",
+        "measured_deg": 3.619289340101517,
+        "reference_deg": 0.0,
+        "delta_deg": -3.619289340101517
+      },
+      {
+        "side": "left",
+        "joint": "middle_abd",
+        "measured_deg": -2.17647058823529,
+        "reference_deg": -4.12,
+        "delta_deg": -1.9435294117647102
+      },
+      {
+        "side": "left",
+        "joint": "ring_abd",
+        "measured_deg": -16.932203389830505,
+        "reference_deg": -15.36,
+        "delta_deg": 1.5722033898305057
+      },
+      {
+        "side": "left",
+        "joint": "pinky_abd",
+        "measured_deg": -38.62225969645867,
+        "reference_deg": -36.29,
+        "delta_deg": 2.332259696458671
+      },
+      {
+        "side": "right",
+        "joint": "middle_abd",
+        "measured_deg": 0.3116733889252927,
+        "reference_deg": -1.95,
+        "delta_deg": -2.261673388925293
+      },
+      {
+        "side": "right",
+        "joint": "ring_abd",
+        "measured_deg": -13.965709932631103,
+        "reference_deg": -11.58,
+        "delta_deg": 2.3857099326311033
+      }
+    ],
+    "candidate_report": "reports/initial_pose_refresh_20261024_155500/new_reference_collision_passed.json"
+  }
+}

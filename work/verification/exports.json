@@ -1,0 +1,37 @@
+[
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_doc50_20261021_01_affirmative_nod_v6",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_doc50_20261021_01_affirmative_nod_v6.zip",
+    "zip_sha256": "ae88e035d4ab8269afd33ba1c0831cb21d4813df1ec438a3174446116b1a0fec"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_walk_arm_swing_5cycles_v5",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_walk_arm_swing_5cycles_v5.zip",
+    "zip_sha256": "a66f72e4dc8dfbf1da92b5e6cf509b49b0bceb7edc07278f6dcf8453f51496d8"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_finger_test_01_20261024_v4",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_finger_test_01_20261024_v4.zip",
+    "zip_sha256": "f75ea4549c07e07009f5bbc328f3e4863e44797500b9cab0b7fd6c87c229580c"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_conversation_20261022_01_right_lead_v4",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_conversation_20261022_01_right_lead_v4.zip",
+    "zip_sha256": "0d4ed45cd0e1a5fccdd592773fdbdeb6f6394fe010cf9ce2dc9a159bc066a0e5"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_right_finger_greeting_20261022_v5",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_right_finger_greeting_20261022_v5.zip",
+    "zip_sha256": "c59aef69530963b5dfed71cb20143e0afb913886b023c669293a4b7ae1c0321a"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_right_hand_showcase_20261022_v6",
+    "archive": "/home/dy/wanren/robot-motion-replay/assets/robot/generated/motion_packages/fb_right_hand_showcase_20261022_v6.zip",
+    "zip_sha256": "630f295017a3d209526583ba7a4f416032e31e8083b880b12d7c8d3dd34fa990"
+  },
+  {
+    "package": "/home/dy/wanren/robot-motion-replay/work/packages/fb_skill_small_conversation_v1",
+    "archive": "/home/dy/wanren/robot-motion-replay/work/packages/fb_skill_small_conversation_v1.zip",
+    "zip_sha256": "adb3233805f185d72ae6bd0cb83f2e832ceeb7d18ce8f7475cb7d443f36f4f7d"
+  }
+]

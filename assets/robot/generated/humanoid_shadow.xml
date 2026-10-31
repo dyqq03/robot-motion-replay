@@ -1,0 +1,569 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="humanoid_shadow">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="Base" file="../URDF_90kg_with_hands/meshes/body/Base.STL" />
+    <mesh name="AnklePitch" file="../URDF_90kg_with_hands/meshes/body/AnklePitch.STL" />
+    <mesh name="Knee" file="../URDF_90kg_with_hands/meshes/body/Knee.STL" />
+    <mesh name="HipPitch" file="../URDF_90kg_with_hands/meshes/body/HipPitch.STL" />
+    <mesh name="WaistYaw" file="../URDF_90kg_with_hands/meshes/body/WaistYaw.STL" />
+    <mesh name="NeckYaw" file="../URDF_90kg_with_hands/meshes/body/NeckYaw.STL" />
+    <mesh name="NeckPitch" file="../URDF_90kg_with_hands/meshes/body/NeckPitch.STL" />
+    <mesh name="RightShoulderPitch" file="../URDF_90kg_with_hands/meshes/body/RightShoulderPitch.STL" />
+    <mesh name="RightShoulderRoll" file="../URDF_90kg_with_hands/meshes/body/RightShoulderRoll.STL" />
+    <mesh name="RightShoulderYaw" file="../URDF_90kg_with_hands/meshes/body/RightShoulderYaw.STL" />
+    <mesh name="RightElbowPitch" file="../URDF_90kg_with_hands/meshes/body/RightElbowPitch.STL" />
+    <mesh name="RightWristRoll" file="../URDF_90kg_with_hands/meshes/body/RightWristRoll.STL" />
+    <mesh name="RightWristPitch_62010784d71e_150000" file="mesh_assets/RightWristPitch_62010784d71e_150000.stl" />
+    <mesh name="LeftShoulderPitch" file="../URDF_90kg_with_hands/meshes/body/LeftShoulderPitch.STL" />
+    <mesh name="LeftShoulderRoll" file="../URDF_90kg_with_hands/meshes/body/LeftShoulderRoll.STL" />
+    <mesh name="LeftShoulderYaw" file="../URDF_90kg_with_hands/meshes/body/LeftShoulderYaw.STL" />
+    <mesh name="LeftElbowPitch" file="../URDF_90kg_with_hands/meshes/body/LeftElbowPitch.STL" />
+    <mesh name="LeftWristRoll" file="../URDF_90kg_with_hands/meshes/body/LeftWristRoll.STL" />
+    <mesh name="LeftWristPitch_3dc72d885655_150000" file="mesh_assets/LeftWristPitch_3dc72d885655_150000.stl" />
+    <mesh name="LeftPalmVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPalmVisual.stl" />
+    <mesh name="LeftPalmCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPalmCollision.stl" />
+    <mesh name="LeftPalmSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPalmSkinVisual.stl" />
+    <mesh name="LeftPalmSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPalmSkinCollision.stl" />
+    <mesh name="LeftThumbMPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbMPVisual.stl" />
+    <mesh name="LeftThumbMPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbMPCollision.stl" />
+    <mesh name="LeftThumbPPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbPPVisual.stl" />
+    <mesh name="LeftThumbPPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbPPCollision.stl" />
+    <mesh name="LeftThumbIPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbIPVisual.stl" />
+    <mesh name="LeftThumbIPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbIPCollision.stl" />
+    <mesh name="LeftThumbIPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbIPSkinVisual.stl" />
+    <mesh name="LeftThumbIPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbIPSkinCollision.stl" />
+    <mesh name="LeftThumbDPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftThumbDPVisual.stl" />
+    <mesh name="LeftThumbDPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftThumbDPCollision.stl" />
+    <mesh name="LeftIndexMPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexMPVisual.stl" />
+    <mesh name="LeftIndexMPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexMPCollision.stl" />
+    <mesh name="LeftIndexPPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexPPVisual.stl" />
+    <mesh name="LeftIndexPPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexPPCollision.stl" />
+    <mesh name="LeftIndexPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexPPSkinVisual.stl" />
+    <mesh name="LeftIndexPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexPPSkinCollision.stl" />
+    <mesh name="LeftIndexIPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftIndexIPVisual.stl" />
+    <mesh name="LeftIndexIPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftIndexIPCollision.stl" />
+    <mesh name="LeftMiddleMPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddleMPVisual.stl" />
+    <mesh name="LeftMiddleMPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddleMPCollision.stl" />
+    <mesh name="LeftMiddlePPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddlePPVisual.stl" />
+    <mesh name="LeftMiddlePPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddlePPCollision.stl" />
+    <mesh name="LeftMiddlePPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddlePPSkinVisual.stl" />
+    <mesh name="LeftMiddlePPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddlePPSkinCollision.stl" />
+    <mesh name="LeftMiddleIPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftMiddleIPVisual.stl" />
+    <mesh name="LeftMiddleIPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftMiddleIPCollision.stl" />
+    <mesh name="LeftRingMPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingMPVisual.stl" />
+    <mesh name="LeftRingMPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingMPCollision.stl" />
+    <mesh name="LeftRingPPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingPPVisual.stl" />
+    <mesh name="LeftRingPPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingPPCollision.stl" />
+    <mesh name="LeftRingPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingPPSkinVisual.stl" />
+    <mesh name="LeftRingPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingPPSkinCollision.stl" />
+    <mesh name="LeftRingIPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftRingIPVisual.stl" />
+    <mesh name="LeftRingIPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftRingIPCollision.stl" />
+    <mesh name="LeftPinkyMPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyMPVisual.stl" />
+    <mesh name="LeftPinkyMPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyMPCollision.stl" />
+    <mesh name="LeftPinkyPPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyPPVisual.stl" />
+    <mesh name="LeftPinkyPPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyPPCollision.stl" />
+    <mesh name="LeftPinkyPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyPPSkinVisual.stl" />
+    <mesh name="LeftPinkyPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyPPSkinCollision.stl" />
+    <mesh name="LeftPinkyIPVisual" file="../URDF_90kg_with_hands/meshes/hands/left/visual/LeftPinkyIPVisual.stl" />
+    <mesh name="LeftPinkyIPCollision" file="../URDF_90kg_with_hands/meshes/hands/left/collision/LeftPinkyIPCollision.stl" />
+    <mesh name="RightPalmVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPalmVisual.stl" />
+    <mesh name="RightPalmCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPalmCollision.stl" />
+    <mesh name="RightPalmSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPalmSkinVisual.stl" />
+    <mesh name="RightPalmSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPalmSkinCollision.stl" />
+    <mesh name="RightThumbMPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbMPVisual.stl" />
+    <mesh name="RightThumbMPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbMPCollision.stl" />
+    <mesh name="RightThumbPPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbPPVisual.stl" />
+    <mesh name="RightThumbPPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbPPCollision.stl" />
+    <mesh name="RightThumbIPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbIPVisual.stl" />
+    <mesh name="RightThumbIPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbIPCollision.stl" />
+    <mesh name="RightThumbIPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbIPSkinVisual.stl" />
+    <mesh name="RightThumbIPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbIPSkinCollision.stl" />
+    <mesh name="RightThumbDPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightThumbDPVisual.stl" />
+    <mesh name="RightThumbDPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightThumbDPCollision.stl" />
+    <mesh name="RightIndexMPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexMPVisual.stl" />
+    <mesh name="RightIndexMPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexMPCollision.stl" />
+    <mesh name="RightIndexPPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexPPVisual.stl" />
+    <mesh name="RightIndexPPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexPPCollision.stl" />
+    <mesh name="RightIndexPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexPPSkinVisual.stl" />
+    <mesh name="RightIndexPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexPPSkinCollision.stl" />
+    <mesh name="RightIndexIPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightIndexIPVisual.stl" />
+    <mesh name="RightIndexIPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightIndexIPCollision.stl" />
+    <mesh name="RightMiddleMPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddleMPVisual.stl" />
+    <mesh name="RightMiddleMPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddleMPCollision.stl" />
+    <mesh name="RightMiddlePPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddlePPVisual.stl" />
+    <mesh name="RightMiddlePPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddlePPCollision.stl" />
+    <mesh name="RightMiddlePPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddlePPSkinVisual.stl" />
+    <mesh name="RightMiddlePPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddlePPSkinCollision.stl" />
+    <mesh name="RightMiddleIPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightMiddleIPVisual.stl" />
+    <mesh name="RightMiddleIPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightMiddleIPCollision.stl" />
+    <mesh name="RightRingMPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightRingMPVisual.stl" />
+    <mesh name="RightRingMPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightRingMPCollision.stl" />
+    <mesh name="RightRingPPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightRingPPVisual.stl" />
+    <mesh name="RightRingPPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightRingPPCollision.stl" />
+    <mesh name="RightRingPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightRingPPSkinVisual.stl" />
+    <mesh name="RightRingPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightRingPPSkinCollision.stl" />
+    <mesh name="RightRingIPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightRingIPVisual.stl" />
+    <mesh name="RightRingIPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightRingIPCollision.stl" />
+    <mesh name="RightPinkyMPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyMPVisual.stl" />
+    <mesh name="RightPinkyMPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyMPCollision.stl" />
+    <mesh name="RightPinkyPPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyPPVisual.stl" />
+    <mesh name="RightPinkyPPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyPPCollision.stl" />
+    <mesh name="RightPinkyPPSkinVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyPPSkinVisual.stl" />
+    <mesh name="RightPinkyPPSkinCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyPPSkinCollision.stl" />
+    <mesh name="RightPinkyIPVisual" file="../URDF_90kg_with_hands/meshes/hands/right/visual/RightPinkyIPVisual.stl" />
+    <mesh name="RightPinkyIPCollision" file="../URDF_90kg_with_hands/meshes/hands/right/collision/RightPinkyIPCollision.stl" />
+  </asset>
+  <worldbody>
+    <body name="shadow_world_anchor">
+      <body name="Base">
+        <inertial pos="-0.00621789 0.00074147 0.112895" quat="0.398023 0.383898 -0.59911 0.579023" mass="33.3112" diaginertia="0.68409 0.535852 0.488753" />
+        <geom name="Base__visual__0" pos="0 0 0.168405" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.65098 0.619608 0.588235 1" mesh="Base" />
+        <geom name="Base__collision__0" pos="0 0 0.168405" quat="1 0 0 0" type="mesh" rgba="0.65098 0.619608 0.588235 1" mesh="Base" contype="0" conaffinity="0" group="3" />
+        <body name="AnklePitch" pos="0 0 0.268405">
+          <inertial pos="1.2896e-05 0.00563648 0.114955" quat="0.999374 0.0353694 -5.30015e-05 0.000190209" mass="8.98112" diaginertia="0.181487 0.169969 0.0321703" />
+          <joint name="AnklePitch" pos="0 0 0" axis="0 1 0" range="-1.74883 1.73836" actuatorfrcrange="-100 100" />
+          <geom name="AnklePitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.6 0.6 0.6 1" mesh="AnklePitch" />
+          <geom name="AnklePitch__collision__0" type="mesh" rgba="0.6 0.6 0.6 1" mesh="AnklePitch" contype="0" conaffinity="0" group="3" />
+          <body name="Knee" pos="0 0 0.35">
+            <inertial pos="0.00686123 0.00688325 0.133536" quat="0.99955 0.0288219 0.00705016 0.00446558" mass="12.0698" diaginertia="0.286713 0.240445 0.0805822" />
+            <joint name="Knee" pos="0 0 0" axis="0 1 0" range="-2.09883 2.08836" actuatorfrcrange="-100 100" />
+            <geom name="Knee__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="Knee" />
+            <geom name="Knee__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Knee" contype="0" conaffinity="0" group="3" />
+            <body name="HipPitch" pos="0 0 0.35">
+              <inertial pos="0.000103127 0.0120559 0.00377545" quat="0.750725 0.659164 0.0304755 -0.0313888" mass="5.11724" diaginertia="0.01725 0.0168278 0.0149975" />
+              <joint name="HipPitch" pos="0 0 0" axis="0 1 0" range="-2.09883 2.08836" actuatorfrcrange="-100 100" />
+              <geom name="HipPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="HipPitch" />
+              <geom name="HipPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="HipPitch" contype="0" conaffinity="0" group="3" />
+              <body name="WaistYaw" pos="0 0 0.12">
+                <inertial pos="-0.0049729 -0.00019482 0.0703234" quat="0.998105 0.00157259 -0.0570767 -0.0229254" mass="5.66303" diaginertia="0.0508207 0.0499513 0.0251223" />
+                <joint name="WaistYaw" pos="0 0 0" axis="0 0 -1" range="-3.81719 3.51001" actuatorfrcrange="-100 100" />
+                <geom name="WaistYaw__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="WaistYaw" />
+                <geom name="WaistYaw__collision__0" type="mesh" rgba="1 1 1 1" mesh="WaistYaw" contype="0" conaffinity="0" group="3" />
+                <body name="NeckYaw" pos="-0.03 0 0.2">
+                  <inertial pos="0.000815225 -0.00430921 0.0206668" quat="0.689142 0.158322 -0.152654 0.690445" mass="0.492435" diaginertia="0.000537543 0.000529067 0.000186733" />
+                  <joint name="NeckYaw" pos="0 0 0" axis="0 0 -1" range="-1.5086 1.5386" actuatorfrcrange="-10 10" />
+                  <geom name="NeckYaw__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="NeckYaw" />
+                  <geom name="NeckYaw__collision__0" type="mesh" rgba="1 1 1 1" mesh="NeckYaw" contype="0" conaffinity="0" group="3" />
+                  <body name="NeckPitch" pos="0 0 0.09">
+                    <inertial pos="0.0134441 0.00267084 0.0863999" quat="0.678557 -0.205369 -0.150068 0.689103" mass="4.47713" diaginertia="0.0225936 0.0199421 0.0164989" />
+                    <joint name="NeckPitch" pos="0 0 0" axis="0 1 0" range="-0.792599 0.954599" actuatorfrcrange="-10 10" />
+                    <geom name="NeckPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="NeckPitch" />
+                    <geom name="NeckPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="NeckPitch" contype="0" conaffinity="0" group="3" />
+                  </body>
+                </body>
+                <body name="RightShoulderPitch" pos="-0.04 -0.07 0.17">
+                  <inertial pos="-0.0042402 -0.00986622 -0.00533076" quat="0.690519 0.677599 0.149485 0.204202" mass="1.82118" diaginertia="0.00264325 0.00253449 0.00193752" />
+                  <joint name="RightShoulderPitch" pos="0 0 0" axis="0 1 0" range="-1.99651 1.30349" actuatorfrcrange="-10 10" />
+                  <geom name="RightShoulderPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderPitch" />
+                  <geom name="RightShoulderPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderPitch" contype="0" conaffinity="0" group="3" />
+                  <body name="RightShoulderRoll" pos="0 -0.09 0">
+                    <inertial pos="-0.00668589 -0.00144948 -0.010938" quat="0.999982 -0.000741896 -0.00496234 0.00327017" mass="1.74904" diaginertia="0.00219029 0.00179989 0.00138376" />
+                    <joint name="RightShoulderRoll" pos="0 0 0" axis="0.996573 0 0.0827222" range="-1.74184 0.178024" actuatorfrcrange="-10 10" />
+                    <geom name="RightShoulderRoll__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderRoll" />
+                    <geom name="RightShoulderRoll__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderRoll" contype="0" conaffinity="0" group="3" />
+                    <body name="RightShoulderYaw" pos="0 0 -0.1">
+                      <inertial pos="-0.00046464 -0.00177295 -0.0163657" quat="0.998933 -0.00857979 0.0447249 -0.00769961" mass="0.866364" diaginertia="0.00145328 0.00141777 0.000545745" />
+                      <joint name="RightShoulderYaw" pos="0 0 0" axis="-0.0827222 0 0.996573" range="-1.56905 1.57254" actuatorfrcrange="-10 10" />
+                      <geom name="RightShoulderYaw__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderYaw" />
+                      <geom name="RightShoulderYaw__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="RightShoulderYaw" contype="0" conaffinity="0" group="3" />
+                      <body name="RightElbowPitch" pos="0.01 0 -0.125">
+                        <inertial pos="0.00100794 -0.00283196 -0.0151068" quat="0.999547 0.0263688 0.0145403 -5.74711e-05" mass="0.956015" diaginertia="0.00151665 0.00120307 0.000863633" />
+                        <joint name="RightElbowPitch" pos="0 0 0" axis="0 -1 0" range="0 2.44346" actuatorfrcrange="-10 10" />
+                        <geom name="RightElbowPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="RightElbowPitch" />
+                        <geom name="RightElbowPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="RightElbowPitch" contype="0" conaffinity="0" group="3" />
+                        <body name="RightWristRoll" pos="0 0 -0.075">
+                          <inertial pos="0.0101099 0.000778842 -0.0270905" quat="0.997523 0.0575326 -0.0354728 -0.0194768" mass="0.861193" diaginertia="0.00142306 0.00133602 0.00065518" />
+                          <joint name="RightWristRoll" pos="0 0 0" axis="0.0827222 0 -0.996573" range="-1.5708 1.5708" actuatorfrcrange="-10 10" />
+                          <geom name="RightWristRoll__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="RightWristRoll" />
+                          <geom name="RightWristRoll__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="RightWristRoll" contype="0" conaffinity="0" group="3" />
+                          <body name="RightWristPitch" pos="0 0 -0.065" quat="0.999143 0 -0.0413966 0">
+                            <inertial pos="0.0139754 -0.00373206 -0.114456" quat="0.999076 0.0407012 -0.00131135 -0.0137199" mass="2.34777" diaginertia="0.0070958 0.00696301 0.00231714" />
+                            <joint name="RightWristPitch" pos="0 0 0" axis="0 -1 0" range="-1.57429 1.56731" actuatorfrcrange="-10 10" />
+                            <geom name="RightWristPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightWristPitch_62010784d71e_150000" />
+                            <geom name="RightWristPitch__collision__0" type="mesh" rgba="1 1 1 1" mesh="RightWristPitch_62010784d71e_150000" contype="0" conaffinity="0" group="3" />
+                            <body name="RightPalm" pos="0.0157898 -0.00729275 -0.241774" quat="0.000298513 -3.34397e-05 0.996197 -0.0871234">
+                              <inertial pos="0.00193 -0.00052 -0.00664" mass="0.0257" diaginertia="1.612e-05 1.151e-05 6.72e-06" />
+                              <geom name="RightPalm__visual__0" pos="0.00155684 0.000323664 -0.0118964" quat="0.399642 0.599971 0.594295 0.356558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPalmVisual" />
+                              <geom name="RightPalm__collision__0" pos="0.0015796 0.000137625 -0.0119239" quat="0.394511 0.603167 0.596609 0.352999" type="mesh" rgba="1 1 1 1" mesh="RightPalmCollision" contype="0" conaffinity="0" group="3" />
+                              <geom name="RightPalm__visual__1" pos="0.00567331 -0.00127027 -0.00174443" quat="0.473534 0.486243 0.599718 0.423878" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPalmSkinVisual" />
+                              <geom name="RightPalm__collision__1" pos="0.00801383 -0.0012937 -0.00156967" quat="0.440886 0.499936 0.63402 0.392048" type="mesh" rgba="1 1 1 1" mesh="RightPalmSkinCollision" contype="0" conaffinity="0" group="3" />
+                              <body name="RightThumbMCP" pos="-0.02821 0.01777 -0.01321" quat="0.946057 0.103645 -0.24639 -0.183103">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="RightThumbMCP" pos="0 0 0" axis="0 0 -1" range="0 1.74533" actuatorfrcrange="-100 100" />
+                                <body name="RightThumbMP">
+                                  <inertial pos="0.00247 0 0.004" mass="0.00586" diaginertia="8.4e-07 6.6e-07 2.7e-07" />
+                                  <geom name="RightThumbMP__visual__0" pos="0.00266728 -3.6617e-06 0.00320215" quat="0.999996 -0.00225319 -0.00145209 -3.27185e-06" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightThumbMPVisual" />
+                                  <geom name="RightThumbMP__collision__0" pos="0.00251863 1.18171e-05 0.00333258" quat="0.999998 -0.00202571 0 0" type="mesh" rgba="1 1 1 1" mesh="RightThumbMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="RightThumbAbduction" pos="0 0 0" quat="0.764744 -0.53548 0.293558 0.205551">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="RightThumbAbduction" pos="0 0 0" axis="0 0.342021 0.939692" range="-1.0821 0" actuatorfrcrange="-100 100" />
+                                    <body name="RightThumbPP" pos="-0.03 0 0">
+                                      <inertial pos="0.01848 1e-05 2e-05" mass="0.00655" diaginertia="7.5e-07 7.1e-07 3e-07" />
+                                      <geom name="RightThumbPP__visual__0" pos="0.0177206 1.00709e-05 -0.000104936" quat="0.153775 -0.694438 0.156151 -0.685366" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightThumbPPVisual" />
+                                      <geom name="RightThumbPP__collision__0" pos="0.0172747 2.08125e-05 -0.00010892" quat="0.0793199 -0.704455 0.0755876 -0.70124" type="mesh" rgba="1 1 1 1" mesh="RightThumbPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="RightThumbPIP" quat="-9.38184e-07 -0.707105 -9.38187e-07 0.707108">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="RightThumbPIP" pos="0 0 0" axis="0 -1 0" range="-0.20944 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="RightThumbIP">
+                                          <inertial pos="0.00135 2e-05 0.01383" mass="0.01402" diaginertia="1.7e-06 1.64e-06 5.9e-07" />
+                                          <geom name="RightThumbIP__visual__0" pos="0.00129989 7.15977e-06 0.0136199" quat="0.999765 0 0.0216919 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightThumbIPVisual" />
+                                          <geom name="RightThumbIP__collision__0" pos="0.00135604 0.000127108 0.0134463" quat="0.99971 0.00354027 0.0238155 -8.43379e-05" type="mesh" rgba="1 1 1 1" mesh="RightThumbIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <geom name="RightThumbIP__visual__1" pos="0.00154244 1.65223e-07 0.0162596" quat="0 0.81152 0 0.584325" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightThumbIPSkinVisual" />
+                                          <geom name="RightThumbIP__collision__1" pos="0.00155282 6.48072e-06 0.0162467" quat="0 0.812781 0 0.582569" type="mesh" rgba="1 1 1 1" mesh="RightThumbIPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="RightThumbDIP" pos="0.0005 0 0.033">
+                                            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                            <joint name="RightThumbDIP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.95477" actuatorfrcrange="-100 100" />
+                                            <body name="RightThumbDP">
+                                              <inertial pos="-0.00327663 -0.000278943 0.0211035" quat="0.989246 0.00137529 -0.145688 0.0128946" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                              <geom name="RightThumbDP__visual__0" pos="0.00173769 -5.35292e-06 0.00512732" quat="0.992385 0 0.123178 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightThumbDPVisual" />
+                                              <geom name="RightThumbDP__collision__0" pos="0.00173769 -5.35292e-06 0.00512732" quat="0.992385 0 0.123178 0" type="mesh" rgba="1 1 1 1" mesh="RightThumbDPCollision" contype="0" conaffinity="0" group="3" />
+                                              <body name="RightThumbFingertip" pos="-0.003 0 0.025" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="RightIndexAbduction" pos="-0.0240888 0.00189996 0.0251649" quat="0.574831 0.616522 0.357027 -0.402494">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="RightIndexAbduction" pos="0 0 0" axis="0 0 -1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="RightIndexMP" pos="-0.02 0 0">
+                                  <inertial pos="0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="RightIndexMP__visual__0" pos="0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 -0.00404324 0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightIndexMPVisual" />
+                                  <geom name="RightIndexMP__collision__0" pos="0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 0.015587 0.718687" type="mesh" rgba="1 1 1 1" mesh="RightIndexMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="RightIndexMCP" quat="-0.707105 0 0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="RightIndexMCP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.65806" actuatorfrcrange="-100 100" />
+                                    <body name="RightIndexPP">
+                                      <inertial pos="0.00135 2e-05 0.01637" mass="0.0165" diaginertia="2.39e-06 2.31e-06 7.1e-07" />
+                                      <geom name="RightIndexPP__visual__0" pos="0.0012792 4.3222e-05 0.0160987" quat="0.999652 0.00241408 0.0176006 0.0195001" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightIndexPPVisual" />
+                                      <geom name="RightIndexPP__collision__0" pos="0.00135167 1.12474e-05 0.0156818" quat="0.99977 0 0.02144 0" type="mesh" rgba="1 1 1 1" mesh="RightIndexPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="RightIndexPP__visual__1" pos="0.0016617 7.13568e-08 0.0187639" quat="0 0.914199 0 0.405266" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightIndexPPSkinVisual" />
+                                      <geom name="RightIndexPP__collision__1" pos="0.00167739 -5.53101e-06 0.0187409" quat="0 0.915927 0 0.401344" type="mesh" rgba="1 1 1 1" mesh="RightIndexPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="RightIndexPIP" pos="0.0005 0 0.038">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="RightIndexPIP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="RightIndexIP">
+                                          <inertial pos="-0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 -0.148931 0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="RightIndexIP__visual__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightIndexIPVisual" />
+                                          <geom name="RightIndexIP__collision__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" rgba="1 1 1 1" mesh="RightIndexIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="RightIndexFingertip" pos="-0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="RightMiddleAbduction" pos="-7.34641e-08 0 0.03" quat="-0.499998 -0.5 -0.5 0.500002">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="RightMiddleAbduction" pos="0 0 0" axis="0 0 -1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="RightMiddleMP" pos="-0.02 0 0">
+                                  <inertial pos="0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="RightMiddleMP__visual__0" pos="0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 -0.00404324 0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightMiddleMPVisual" />
+                                  <geom name="RightMiddleMP__collision__0" pos="0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 0.015587 0.718687" type="mesh" rgba="1 1 1 1" mesh="RightMiddleMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="RightMiddleMCP" quat="-0.707105 0 0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="RightMiddleMCP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.58825" actuatorfrcrange="-100 100" />
+                                    <body name="RightMiddlePP">
+                                      <inertial pos="0.00144 2e-05 0.02021" mass="0.02006" diaginertia="3.78e-06 3.69e-06 8.9e-07" />
+                                      <geom name="RightMiddlePP__visual__0" pos="0.00128342 3.69633e-05 0.0202272" quat="0.999726 0.00202171 0.0138681 0.0187558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightMiddlePPVisual" />
+                                      <geom name="RightMiddlePP__collision__0" pos="0.00133938 -6.8451e-06 0.0201193" quat="0.999888 -0.000320497 0.0149394 4.78859e-06" type="mesh" rgba="1 1 1 1" mesh="RightMiddlePPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="RightMiddlePP__visual__1" pos="0.0017297 2.01445e-08 0.0229383" quat="0.993783 0 -0.111331 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightMiddlePPSkinVisual" />
+                                      <geom name="RightMiddlePP__collision__1" pos="0.00175258 2.72529e-06 0.0228851" quat="0.993953 0 -0.109808 0" type="mesh" rgba="1 1 1 1" mesh="RightMiddlePPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="RightMiddlePIP" pos="0.0005 0 0.046">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="RightMiddlePIP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.8675" actuatorfrcrange="-100 100" />
+                                        <body name="RightMiddleIP">
+                                          <inertial pos="-0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 -0.148931 0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="RightMiddleIP__visual__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightMiddleIPVisual" />
+                                          <geom name="RightMiddleIP__collision__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" rgba="1 1 1 1" mesh="RightMiddleIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="RightMiddleFingertip" pos="-0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="RightRingAbduction" pos="0.021521 0.00153821 0.0208248" quat="0.447196 0.413269 0.569818 -0.551844">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="RightRingAbduction" pos="0 0 0" axis="0 0 -1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="RightRingMP" pos="-0.02 0 0">
+                                  <inertial pos="0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="RightRingMP__visual__0" pos="0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 -0.00404324 0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightRingMPVisual" />
+                                  <geom name="RightRingMP__collision__0" pos="0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 0.015587 0.718687" type="mesh" rgba="1 1 1 1" mesh="RightRingMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="RightRingMCP" quat="-0.707105 0 0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="RightRingMCP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.58825" actuatorfrcrange="-100 100" />
+                                    <body name="RightRingPP">
+                                      <inertial pos="0.00144 2e-05 0.02021" mass="0.02006" diaginertia="3.78e-06 3.69e-06 8.9e-07" />
+                                      <geom name="RightRingPP__visual__0" pos="0.00128342 3.69633e-05 0.0202272" quat="0.999726 0.00202171 0.0138681 0.0187558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightRingPPVisual" />
+                                      <geom name="RightRingPP__collision__0" pos="0.00133938 -6.8451e-06 0.0201193" quat="0.999888 -0.000320497 0.0149394 4.78859e-06" type="mesh" rgba="1 1 1 1" mesh="RightRingPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="RightRingPP__visual__1" pos="0.0017297 2.01445e-08 0.0229383" quat="0.993783 0 -0.111331 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightRingPPSkinVisual" />
+                                      <geom name="RightRingPP__collision__1" pos="0.00175258 2.72529e-06 0.0228851" quat="0.993953 0 -0.109808 0" type="mesh" rgba="1 1 1 1" mesh="RightRingPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="RightRingPIP" pos="0.0005 0 0.046">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="RightRingPIP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.8675" actuatorfrcrange="-100 100" />
+                                        <body name="RightRingIP">
+                                          <inertial pos="-0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 -0.148931 0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="RightRingIP__visual__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightRingIPVisual" />
+                                          <geom name="RightRingIP__collision__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" rgba="1 1 1 1" mesh="RightRingIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="RightRingFingertip" pos="-0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="RightPinkyAbduction" pos="0.0425845 0.00498814 0.00724372" quat="0.367395 0.223906 0.652561 -0.623739">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="RightPinkyAbduction" pos="0 0 0" axis="0 0 -1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="RightPinkyMP" pos="-0.02 0 0">
+                                  <inertial pos="0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="RightPinkyMP__visual__0" pos="0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 -0.00404324 0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPinkyMPVisual" />
+                                  <geom name="RightPinkyMP__collision__0" pos="0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 0.015587 0.718687" type="mesh" rgba="1 1 1 1" mesh="RightPinkyMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="RightPinkyMCP" quat="-0.707105 0 0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="RightPinkyMCP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.71042" actuatorfrcrange="-100 100" />
+                                    <body name="RightPinkyPP">
+                                      <inertial pos="0.00135 2e-05 0.01383" mass="0.01402" diaginertia="1.7e-06 1.64e-06 5.9e-07" />
+                                      <geom name="RightPinkyPP__visual__0" pos="0.00129989 7.15977e-06 0.0136199" quat="0.999765 0 0.0216919 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPinkyPPVisual" />
+                                      <geom name="RightPinkyPP__collision__0" pos="0.00135604 0.000127108 0.0134463" quat="0.99971 0.00354027 0.0238155 -8.43379e-05" type="mesh" rgba="1 1 1 1" mesh="RightPinkyPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="RightPinkyPP__visual__1" pos="0.00154244 1.65223e-07 0.0162596" quat="0 0.81152 0 0.584325" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPinkyPPSkinVisual" />
+                                      <geom name="RightPinkyPP__collision__1" pos="0.00155282 6.48072e-06 0.0162467" quat="0 0.812781 0 0.582569" type="mesh" rgba="1 1 1 1" mesh="RightPinkyPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="RightPinkyPIP" pos="0.0005 0 0.033">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="RightPinkyPIP" pos="0 0 0" axis="0 -1 0" range="-0.349066 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="RightPinkyIP">
+                                          <inertial pos="-0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 -0.148931 0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="RightPinkyIP__visual__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="RightPinkyIPVisual" />
+                                          <geom name="RightPinkyIP__collision__0" pos="0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 -0.013409 0.707022" type="mesh" rgba="1 1 1 1" mesh="RightPinkyIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="RightPinkyFingertip" pos="-0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+                <body name="LeftShoulderPitch" pos="-0.04 0.07 0.17">
+                  <inertial pos="-0.00423299 0.00994039 -0.00532106" quat="0.676888 0.691548 -0.20646 -0.144769" mass="1.82637" diaginertia="0.00264672 0.002537 0.00194087" />
+                  <joint name="LeftShoulderPitch" pos="0 0 0" axis="0 -1 0" range="-1.39626 1.39626" actuatorfrcrange="-10 10" />
+                  <geom name="LeftShoulderPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderPitch" />
+                  <geom name="LeftShoulderPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderPitch" contype="0" conaffinity="0" group="3" />
+                  <body name="LeftShoulderRoll" pos="0 0.09 0">
+                    <inertial pos="-0.008793 0.00147815 -0.0113484" quat="0.99999 -0.000301554 0.00369503 -0.0026198" mass="1.85154" diaginertia="0.00236331 0.00205138 0.00160236" />
+                    <joint name="LeftShoulderRoll" pos="0 0 0" axis="0.996573 0 0.0827222" range="-0.179769 1.74009" actuatorfrcrange="-10 10" />
+                    <geom name="LeftShoulderRoll__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderRoll" />
+                    <geom name="LeftShoulderRoll__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderRoll" contype="0" conaffinity="0" group="3" />
+                    <body name="LeftShoulderYaw" pos="0 0 -0.1">
+                      <inertial pos="-0.00031396 0.00144325 -0.0157962" quat="0.998879 -0.00350189 0.046891 0.00552411" mass="0.862547" diaginertia="0.00139363 0.00135887 0.000537636" />
+                      <joint name="LeftShoulderYaw" pos="0 0 0" axis="-0.0827222 0 0.996573" range="-1.5708 1.5708" actuatorfrcrange="-10 10" />
+                      <geom name="LeftShoulderYaw__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderYaw" />
+                      <geom name="LeftShoulderYaw__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftShoulderYaw" contype="0" conaffinity="0" group="3" />
+                      <body name="LeftElbowPitch" pos="0.01 0 -0.125">
+                        <inertial pos="0.00101609 0.000126611 -0.0150011" quat="0.999559 0.0258633 0.0145999 -0.000131985" mass="0.962642" diaginertia="0.00152634 0.00120831 0.000871809" />
+                        <joint name="LeftElbowPitch" pos="0 0 0" axis="0 -1 0" range="0 2.44346" actuatorfrcrange="-10 10" />
+                        <geom name="LeftElbowPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftElbowPitch" />
+                        <geom name="LeftElbowPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftElbowPitch" contype="0" conaffinity="0" group="3" />
+                        <body name="LeftWristRoll" pos="0 0 -0.075">
+                          <inertial pos="0.010111 -0.000736899 -0.0270715" quat="0.99728 -0.0616638 -0.0354051 0.0194154" mass="0.863665" diaginertia="0.00142446 0.00133825 0.000655907" />
+                          <joint name="LeftWristRoll" pos="0 0 0" axis="0.0827222 0 -0.996573" range="-1.5708 1.5708" actuatorfrcrange="-10 10" />
+                          <geom name="LeftWristRoll__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftWristRoll" />
+                          <geom name="LeftWristRoll__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftWristRoll" contype="0" conaffinity="0" group="3" />
+                          <body name="LeftWristPitch" pos="0 0 -0.065">
+                            <inertial pos="0.0218477 0.00384544 -0.0942087" quat="0.998996 -0.0143787 -0.0415709 0.00849373" mass="2.82549" diaginertia="0.0124186 0.0122772 0.00253605" />
+                            <joint name="LeftWristPitch" pos="0 0 0" axis="0 1 0" range="-1.57429 1.56731" actuatorfrcrange="-10 10" />
+                            <geom name="LeftWristPitch__visual__0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="LeftWristPitch_3dc72d885655_150000" />
+                            <geom name="LeftWristPitch__collision__0" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="LeftWristPitch_3dc72d885655_150000" contype="0" conaffinity="0" group="3" />
+                            <body name="LeftPalm" pos="0.035749 0.00779837 -0.239665" quat="0.0869813 -0.995357 -0.00353878 -0.041068">
+                              <inertial pos="-0.00193 -0.00052 -0.00664" mass="0.0257" diaginertia="1.612e-05 1.151e-05 6.72e-06" />
+                              <geom name="LeftPalm__visual__0" pos="-0.00155684 0.000323664 -0.0118964" quat="0.399642 0.599971 -0.594295 -0.356558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPalmVisual" />
+                              <geom name="LeftPalm__collision__0" pos="-0.0015796 0.000137625 -0.0119239" quat="0.394511 0.603167 -0.596609 -0.352999" type="mesh" rgba="1 1 1 1" mesh="LeftPalmCollision" contype="0" conaffinity="0" group="3" />
+                              <geom name="LeftPalm__visual__1" pos="-0.00567331 -0.00127027 -0.00174443" quat="0.473534 0.486243 -0.599718 -0.423878" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPalmSkinVisual" />
+                              <geom name="LeftPalm__collision__1" pos="-0.00801383 -0.0012937 -0.00156967" quat="0.440886 0.499936 -0.63402 -0.392048" type="mesh" rgba="1 1 1 1" mesh="LeftPalmSkinCollision" contype="0" conaffinity="0" group="3" />
+                              <body name="LeftThumbMCP" pos="0.02821 0.01777 -0.01321" quat="0.946057 0.103645 0.24639 0.183103">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="LeftThumbMCP" pos="0 0 0" axis="0 0 1" range="0 1.74533" actuatorfrcrange="-100 100" />
+                                <body name="LeftThumbMP">
+                                  <inertial pos="-0.00247 0 0.004" mass="0.00586" diaginertia="8.4e-07 6.6e-07 2.7e-07" />
+                                  <geom name="LeftThumbMP__visual__0" pos="-0.00266728 -3.6617e-06 0.00320215" quat="0.999996 -0.00225319 0.00145209 3.27185e-06" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftThumbMPVisual" />
+                                  <geom name="LeftThumbMP__collision__0" pos="-0.00251863 1.18171e-05 0.00333258" quat="0.999998 -0.00202571 0 0" type="mesh" rgba="1 1 1 1" mesh="LeftThumbMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="LeftThumbAbduction" pos="0 0 0" quat="0.764744 -0.53548 -0.293558 -0.205551">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="LeftThumbAbduction" pos="0 0 0" axis="0 -0.342021 -0.939692" range="-1.0821 0" actuatorfrcrange="-100 100" />
+                                    <body name="LeftThumbPP" pos="0.03 0 0">
+                                      <inertial pos="-0.01848 1e-05 2e-05" mass="0.00655" diaginertia="7.5e-07 7.1e-07 3e-07" />
+                                      <geom name="LeftThumbPP__visual__0" pos="-0.0177206 1.00709e-05 -0.000104936" quat="0.153775 -0.694438 -0.156151 0.685366" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftThumbPPVisual" />
+                                      <geom name="LeftThumbPP__collision__0" pos="-0.0172747 2.08125e-05 -0.00010892" quat="0.0793199 -0.704455 -0.0755876 0.70124" type="mesh" rgba="1 1 1 1" mesh="LeftThumbPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="LeftThumbPIP" quat="-9.38184e-07 -0.707105 9.38187e-07 -0.707108">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="LeftThumbPIP" pos="0 0 0" axis="0 1 0" range="-0.20944 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="LeftThumbIP">
+                                          <inertial pos="-0.00135 2e-05 0.01383" mass="0.01402" diaginertia="1.7e-06 1.64e-06 5.9e-07" />
+                                          <geom name="LeftThumbIP__visual__0" pos="-0.00129989 7.15977e-06 0.0136199" quat="0.999765 0 -0.0216919 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftThumbIPVisual" />
+                                          <geom name="LeftThumbIP__collision__0" pos="-0.00135604 0.000127108 0.0134463" quat="0.99971 0.00354027 -0.0238155 8.43379e-05" type="mesh" rgba="1 1 1 1" mesh="LeftThumbIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <geom name="LeftThumbIP__visual__1" pos="-0.00154244 1.65223e-07 0.0162596" quat="0 0.81152 0 -0.584325" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftThumbIPSkinVisual" />
+                                          <geom name="LeftThumbIP__collision__1" pos="-0.00155282 6.48072e-06 0.0162467" quat="0 0.812781 0 -0.582569" type="mesh" rgba="1 1 1 1" mesh="LeftThumbIPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="LeftThumbDIP" pos="-0.0005 0 0.033">
+                                            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                            <joint name="LeftThumbDIP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.95477" actuatorfrcrange="-100 100" />
+                                            <body name="LeftThumbDP">
+                                              <inertial pos="0.00327663 -0.000278943 0.0211035" quat="0.989246 0.00137529 0.145688 -0.0128946" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                              <geom name="LeftThumbDP__visual__0" pos="-0.00173769 -5.35292e-06 0.00512732" quat="0.992385 0 -0.123178 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftThumbDPVisual" />
+                                              <geom name="LeftThumbDP__collision__0" pos="-0.00173769 -5.35292e-06 0.00512732" quat="0.992385 0 -0.123178 0" type="mesh" rgba="1 1 1 1" mesh="LeftThumbDPCollision" contype="0" conaffinity="0" group="3" />
+                                              <body name="LeftThumbFingertip" pos="0.003 0 0.025" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="LeftIndexAbduction" pos="0.0240888 0.00189996 0.0251649" quat="0.574831 0.616522 -0.357027 0.402494">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="LeftIndexAbduction" pos="0 0 0" axis="0 0 1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="LeftIndexMP" pos="0.02 0 0">
+                                  <inertial pos="-0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="LeftIndexMP__visual__0" pos="-0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 0.00404324 -0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftIndexMPVisual" />
+                                  <geom name="LeftIndexMP__collision__0" pos="-0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 -0.015587 -0.718687" type="mesh" rgba="1 1 1 1" mesh="LeftIndexMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="LeftIndexMCP" quat="-0.707105 0 -0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="LeftIndexMCP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.65806" actuatorfrcrange="-100 100" />
+                                    <body name="LeftIndexPP">
+                                      <inertial pos="-0.00135 2e-05 0.01637" mass="0.0165" diaginertia="2.39e-06 2.31e-06 7.1e-07" />
+                                      <geom name="LeftIndexPP__visual__0" pos="-0.0012792 4.3222e-05 0.0160987" quat="0.999652 0.00241408 -0.0176006 -0.0195001" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftIndexPPVisual" />
+                                      <geom name="LeftIndexPP__collision__0" pos="-0.00135167 1.12474e-05 0.0156818" quat="0.99977 0 -0.02144 0" type="mesh" rgba="1 1 1 1" mesh="LeftIndexPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="LeftIndexPP__visual__1" pos="-0.0016617 7.13568e-08 0.0187639" quat="0 0.914199 0 -0.405266" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftIndexPPSkinVisual" />
+                                      <geom name="LeftIndexPP__collision__1" pos="-0.00167739 -5.53101e-06 0.0187409" quat="0 0.915927 0 -0.401344" type="mesh" rgba="1 1 1 1" mesh="LeftIndexPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="LeftIndexPIP" pos="-0.0005 0 0.038">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="LeftIndexPIP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="LeftIndexIP">
+                                          <inertial pos="0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 0.148931 -0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="LeftIndexIP__visual__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftIndexIPVisual" />
+                                          <geom name="LeftIndexIP__collision__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" rgba="1 1 1 1" mesh="LeftIndexIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="LeftIndexFingertip" pos="0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="LeftMiddleAbduction" pos="7.34641e-08 0 0.03" quat="-0.499998 -0.5 0.5 -0.500002">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="LeftMiddleAbduction" pos="0 0 0" axis="0 0 1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="LeftMiddleMP" pos="0.02 0 0">
+                                  <inertial pos="-0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="LeftMiddleMP__visual__0" pos="-0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 0.00404324 -0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftMiddleMPVisual" />
+                                  <geom name="LeftMiddleMP__collision__0" pos="-0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 -0.015587 -0.718687" type="mesh" rgba="1 1 1 1" mesh="LeftMiddleMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="LeftMiddleMCP" quat="-0.707105 0 -0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="LeftMiddleMCP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.58825" actuatorfrcrange="-100 100" />
+                                    <body name="LeftMiddlePP">
+                                      <inertial pos="-0.00144 2e-05 0.02021" mass="0.02006" diaginertia="3.78e-06 3.69e-06 8.9e-07" />
+                                      <geom name="LeftMiddlePP__visual__0" pos="-0.00128342 3.69633e-05 0.0202272" quat="0.999726 0.00202171 -0.0138681 -0.0187558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftMiddlePPVisual" />
+                                      <geom name="LeftMiddlePP__collision__0" pos="-0.00133938 -6.8451e-06 0.0201193" quat="0.999888 -0.000320497 -0.0149394 -4.78859e-06" type="mesh" rgba="1 1 1 1" mesh="LeftMiddlePPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="LeftMiddlePP__visual__1" pos="-0.0017297 2.01445e-08 0.0229383" quat="0.993783 0 0.111331 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftMiddlePPSkinVisual" />
+                                      <geom name="LeftMiddlePP__collision__1" pos="-0.00175258 2.72529e-06 0.0228851" quat="0.993953 0 0.109808 0" type="mesh" rgba="1 1 1 1" mesh="LeftMiddlePPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="LeftMiddlePIP" pos="-0.0005 0 0.046">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="LeftMiddlePIP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.8675" actuatorfrcrange="-100 100" />
+                                        <body name="LeftMiddleIP">
+                                          <inertial pos="0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 0.148931 -0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="LeftMiddleIP__visual__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftMiddleIPVisual" />
+                                          <geom name="LeftMiddleIP__collision__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" rgba="1 1 1 1" mesh="LeftMiddleIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="LeftMiddleFingertip" pos="0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="LeftRingAbduction" pos="-0.021521 0.00153821 0.0208248" quat="0.447196 0.413269 -0.569818 0.551844">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="LeftRingAbduction" pos="0 0 0" axis="0 0 1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="LeftRingMP" pos="0.02 0 0">
+                                  <inertial pos="-0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="LeftRingMP__visual__0" pos="-0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 0.00404324 -0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftRingMPVisual" />
+                                  <geom name="LeftRingMP__collision__0" pos="-0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 -0.015587 -0.718687" type="mesh" rgba="1 1 1 1" mesh="LeftRingMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="LeftRingMCP" quat="-0.707105 0 -0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="LeftRingMCP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.58825" actuatorfrcrange="-100 100" />
+                                    <body name="LeftRingPP">
+                                      <inertial pos="-0.00144 2e-05 0.02021" mass="0.02006" diaginertia="3.78e-06 3.69e-06 8.9e-07" />
+                                      <geom name="LeftRingPP__visual__0" pos="-0.00128342 3.69633e-05 0.0202272" quat="0.999726 0.00202171 -0.0138681 -0.0187558" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftRingPPVisual" />
+                                      <geom name="LeftRingPP__collision__0" pos="-0.00133938 -6.8451e-06 0.0201193" quat="0.999888 -0.000320497 -0.0149394 -4.78859e-06" type="mesh" rgba="1 1 1 1" mesh="LeftRingPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="LeftRingPP__visual__1" pos="-0.0017297 2.01445e-08 0.0229383" quat="0.993783 0 0.111331 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftRingPPSkinVisual" />
+                                      <geom name="LeftRingPP__collision__1" pos="-0.00175258 2.72529e-06 0.0228851" quat="0.993953 0 0.109808 0" type="mesh" rgba="1 1 1 1" mesh="LeftRingPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="LeftRingPIP" pos="-0.0005 0 0.046">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="LeftRingPIP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.8675" actuatorfrcrange="-100 100" />
+                                        <body name="LeftRingIP">
+                                          <inertial pos="0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 0.148931 -0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="LeftRingIP__visual__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftRingIPVisual" />
+                                          <geom name="LeftRingIP__collision__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" rgba="1 1 1 1" mesh="LeftRingIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="LeftRingFingertip" pos="0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="LeftPinkyAbduction" pos="-0.0425845 0.00498814 0.00724372" quat="0.367395 0.223906 -0.652561 0.623739">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                <joint name="LeftPinkyAbduction" pos="0 0 0" axis="0 0 1" range="-0.645772 0.645772" actuatorfrcrange="-100 100" />
+                                <body name="LeftPinkyMP" pos="0.02 0 0">
+                                  <inertial pos="-0.01155 0 -4e-05" mass="0.00498" diaginertia="3.4e-07 3.1e-07 2e-07" />
+                                  <geom name="LeftPinkyMP__visual__0" pos="-0.0106985 -1.38907e-05 -0.000278788" quat="0.00431118 0.729397 0.00404324 -0.684065" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPinkyMPVisual" />
+                                  <geom name="LeftPinkyMP__collision__0" pos="-0.0104782 -4.45673e-05 -0.000164805" quat="0.0161189 0.694972 -0.015587 -0.718687" type="mesh" rgba="1 1 1 1" mesh="LeftPinkyMPCollision" contype="0" conaffinity="0" group="3" />
+                                  <body name="LeftPinkyMCP" quat="-0.707105 0 -0.707108 0">
+                                    <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                    <joint name="LeftPinkyMCP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.71042" actuatorfrcrange="-100 100" />
+                                    <body name="LeftPinkyPP">
+                                      <inertial pos="-0.00135 2e-05 0.01383" mass="0.01402" diaginertia="1.7e-06 1.64e-06 5.9e-07" />
+                                      <geom name="LeftPinkyPP__visual__0" pos="-0.00129989 7.15977e-06 0.0136199" quat="0.999765 0 -0.0216919 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPinkyPPVisual" />
+                                      <geom name="LeftPinkyPP__collision__0" pos="-0.00135604 0.000127108 0.0134463" quat="0.99971 0.00354027 -0.0238155 8.43379e-05" type="mesh" rgba="1 1 1 1" mesh="LeftPinkyPPCollision" contype="0" conaffinity="0" group="3" />
+                                      <geom name="LeftPinkyPP__visual__1" pos="-0.00154244 1.65223e-07 0.0162596" quat="0 0.81152 0 -0.584325" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPinkyPPSkinVisual" />
+                                      <geom name="LeftPinkyPP__collision__1" pos="-0.00155282 6.48072e-06 0.0162467" quat="0 0.812781 0 -0.582569" type="mesh" rgba="1 1 1 1" mesh="LeftPinkyPPSkinCollision" contype="0" conaffinity="0" group="3" />
+                                      <body name="LeftPinkyPIP" pos="-0.0005 0 0.033">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-09 1e-09 1e-09" />
+                                        <joint name="LeftPinkyPIP" pos="0 0 0" axis="0 1 0" range="-0.349066 1.88496" actuatorfrcrange="-100 100" />
+                                        <body name="LeftPinkyIP">
+                                          <inertial pos="0.00334379 -0.000327557 0.0210705" quat="0.988761 0.00304229 0.148931 -0.0127016" mass="0.012" diaginertia="3.56668e-06 3.54782e-06 6.34892e-07" />
+                                          <geom name="LeftPinkyIP__visual__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="1 1 1 1" mesh="LeftPinkyIPVisual" />
+                                          <geom name="LeftPinkyIP__collision__0" pos="-0.00104168 7.83653e-05 0.0117937" quat="0.70698 -0.0109762 0.013409 -0.707022" type="mesh" rgba="1 1 1 1" mesh="LeftPinkyIPCollision" contype="0" conaffinity="0" group="3" />
+                                          <body name="LeftPinkyFingertip" pos="0.009 0 0.035" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <geom name="display_floor" type="plane" size="2 2 0.05" pos="0 0 -0.0540002748014" rgba="0.28 0.31 0.34 1" contype="0" conaffinity="0" />
+    <light name="display_light" pos="0 -3 4" dir="0 1 -1" diffuse="0.7 0.7 0.7" />
+  </worldbody>
+  <option gravity="0 0 0" />
+</mujoco>

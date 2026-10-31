@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "input_sha256": {
+    "fullbody.hdf5": "9bbe88e94750e151abacc8d1a1616ce2894785c5d213486424a118fda409cebf",
+    "motion.json": "b04e05fe83f8996d691e2f7d67a4bf9a35729ff4d7920f1ee1c05669b54ff458",
+    "fullbody_meta.json": "9cab9b1dedb9882755fb61204fc93fd0f78f4803bd8cb4a341cd8a15ee8dd90a"
+  },
+  "frames": 601,
+  "duration_s": 6.0,
+  "peak_speed_deg_s": {
+    "hand_left": 0.4099368358222364,
+    "hand_right": 0.14998222317041154
+  },
+  "limits_endpoints_units_and_sync_checked": true,
+  "body_commands_empty": true,
+  "feedback_empty": true
+}

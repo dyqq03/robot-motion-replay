@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "reviewer": "assistant",
+  "method": "Explicit recorded visual review; this command does not inspect images automatically",
+  "notes": "查看六张正侧面及手部关键帧，颈部转动和右手小幅伴随克制，首尾恢复；手指变化较小，符合本例目的。审阅范围为关键帧。",
+  "input_sha256": {
+    "fullbody.hdf5": "7dc0d6b4ca6029d1bb8400574fcb2910dc03d821a0fd61eb896b3d5529684d43",
+    "motion.json": "faba85912a93e74e2a78ab0cae09d1a46eae23135238a4dd3076dc9e16529850",
+    "fullbody_meta.json": "0e1695b001baa7527239bf8def47b66d157e9dea2d3d9bee37d45fb0a92edd91",
+    "keyframes.jpg": "acafe1094d77f0809a7c6ba1f1e1aedbe42800aede81445933a10667f50696f3",
+    "preview.mp4": "a5029eb5820ad7c2dd41ea612a0264834556190bc79155293fb8101348c208cc"
+  }
+}

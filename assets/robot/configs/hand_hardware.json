@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "coordinate": "calibrated FT_core joint angle in degrees; motor encoder angle stored separately",
+  "hands": {
+    "left": {
+      "serial": "5B79076036",
+      "side_confirmed": true,
+      "model_path": "configs/hand_models/orcahand_v1_left",
+      "sdk_path": "unused-offline-sdk",
+      "poll_hz": 25
+    },
+    "right": {
+      "serial": "5B79030495",
+      "side_confirmed": true,
+      "model_path": "configs/hand_models/orcahand_v1_right",
+      "sdk_path": "unused-offline-sdk",
+      "poll_hz": 25
+    }
+  },
+  "side_confirmation": "User confirmed replacement boards on 2026-10-18; never infer side from ttyACM number",
+  "calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+}

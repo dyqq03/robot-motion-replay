@@ -1,0 +1,10 @@
+{
+  "host": "192.168.8.30",
+  "user": "root",
+  "port": 2222,
+  "bind_interface": "wlo1",
+  "replay_root": "/ros_ws/src/vla_collection/datasets/fullbody",
+  "labels_file": "/ros_ws/brain_actions.json",
+  "api": "http://127.0.0.1:8090",
+  "environment_script": "/ros_ws/scripts/b6_env.sh"
+}

@@ -1,0 +1,58 @@
+{
+  "source_bag": "fb_right_finger_greeting_20261022_v5",
+  "arm_mode": "ker",
+  "duration_sec": 5.425,
+  "synthetic": true,
+  "missing_joints": [],
+  "name_reorders": 0,
+  "dropped_jump_frames": 0,
+  "gaps": {},
+  "chains": {
+    "arms": {
+      "mode": "ker",
+      "frames_cmd_l": 1086,
+      "frames_cmd_r": 1086,
+      "frames_js": 0,
+      "units": "rad"
+    },
+    "neck": {
+      "frames": 0,
+      "units": "rad"
+    },
+    "eyou": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand_left": {
+      "frames": 0,
+      "units": "deg"
+    },
+    "hand_right": {
+      "frames": 1086,
+      "units": "deg",
+      "joint_names": [
+        "thumb_mcp",
+        "thumb_abd",
+        "thumb_pip",
+        "thumb_dip",
+        "index_abd",
+        "index_mcp",
+        "index_pip",
+        "middle_abd",
+        "middle_mcp",
+        "middle_pip",
+        "ring_abd",
+        "ring_mcp",
+        "ring_pip",
+        "pinky_abd",
+        "pinky_mcp",
+        "pinky_pip"
+      ]
+    }
+  },
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+}

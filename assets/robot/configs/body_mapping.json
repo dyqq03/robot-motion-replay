@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "position_equation": "q_model_rad = sign * q_real_rad + offset_rad",
+  "velocity_equation": "v_model_rad_s = sign * v_real_rad_s",
+  "limit_source": "Pre-calibration active URDF limits, adopted 2026-10-08",
+  "limit_basis": "real_limits_rad are fixed numeric bounds copied from the pre-calibration URDF; model_limits_rad = sorted(sign * real_limits_rad + offset_rad)",
+  "reference_urdf": "URDF_90kg_with_hands/urdf/humanoid_with_hands.before_base_5p3cm.urdf",
+  "reference_urdf_sha256": "158e8432379681121aa829bdf26fa5f4d95cdb0495434dc021fc38582260fcad",
+  "physical_zero_verified": false,
+  "group": "body",
+  "source_unit": "deg",
+  "sign_basis": "Existing handeye_calibration_ws joint_mapping_90kg_with_hands.yaml; hand zero convention requested by user",
+  "joints": [
+    {
+      "source_joint": "waistyaw",
+      "model_joint": "WaistYaw",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.15358897417550102,
+      "real_limits_rad": [
+        -3.6635987755983,
+        3.6635987755983
+      ],
+      "model_limits_rad": [
+        -3.8171877497738014,
+        3.510009801422799
+      ],
+      "reference_urdf_limits_rad": [
+        -3.6635987755983,
+        3.6635987755983
+      ],
+      "source_topic": "/Lower_limbs_Waist_motor_state",
+      "source_index": 0,
+      "zero_pose_real_rad": 0.15358897417550102,
+      "zero_reading_within_real_limits": true
+    },
+    {
+      "source_joint": "hippitch",
+      "model_joint": "HipPitch",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.005235987755982988,
+      "real_limits_rad": [
+        -2.0935987755983,
+        2.0935987755983
+      ],
+      "model_limits_rad": [
+        -2.098834763354283,
+        2.0883627878423168
+      ],
+      "reference_urdf_limits_rad": [
+        -2.0935987755983,
+        2.0935987755983
+      ],
+      "source_topic": "/Lower_limbs_Waist_motor_state",
+      "source_index": 1,
+      "zero_pose_real_rad": 0.005235987755982988,
+      "zero_reading_within_real_limits": true
+    },
+    {
+      "source_joint": "knee",
+      "model_joint": "Knee",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.005235987755982988,
+      "real_limits_rad": [
+        -2.0935987755983,
+        2.0935987755983
+      ],
+      "model_limits_rad": [
+        -2.098834763354283,
+        2.0883627878423168
+      ],
+      "reference_urdf_limits_rad": [
+        -2.0935987755983,
+        2.0935987755983
+      ],
+      "source_topic": "/Lower_limbs_Waist_motor_state",
+      "source_index": 2,
+      "zero_pose_real_rad": 0.005235987755982988,
+      "zero_reading_within_real_limits": true
+    },
+    {
+      "source_joint": "anklepitch",
+      "model_joint": "AnklePitch",
+      "source_unit": "deg",
+      "sign": 1,
+      "offset_rad": -0.005235987755982988,
+      "real_limits_rad": [
+        -1.7435987755983,
+        1.7435987755983
+      ],
+      "model_limits_rad": [
+        -1.748834763354283,
+        1.7383627878423171
+      ],
+      "reference_urdf_limits_rad": [
+        -1.7435987755983,
+        1.7435987755983
+      ],
+      "source_topic": "/Lower_limbs_Waist_motor_state",
+      "source_index": 3,
+      "zero_pose_real_rad": 0.005235987755982988,
+      "zero_reading_within_real_limits": true
+    }
+  ],
+  "offset_basis": "offset=-sign*recorded_hardware_position_at_URDF_zero",
+  "zero_readings_file": "configs/body_zero_readings.json",
+  "zero_readings_sha256": "36eaafae63842ebbcf94ac8a187e3bb34a4e0d27b86c74ab86ecac8aae79d65d",
+  "zero_source": "User-provided reference-pose readings, 2026-10-08"
+}

@@ -1,0 +1,14 @@
+{
+  "reference_examples": [
+    "fb_doc50_20261021_01_affirmative_nod_v6",
+    "fb_walk_arm_swing_5cycles_v5",
+    "fb_finger_test_01_20261024_v4",
+    "fb_conversation_20261022_01_right_lead_v4",
+    "fb_right_finger_greeting_20261022_v5",
+    "fb_right_hand_showcase_20261022_v6"
+  ],
+  "model": "assets/robot/generated/humanoid_shadow.xml",
+  "urdf": "assets/robot/URDF_90kg_with_hands/urdf/humanoid_with_hands.urdf",
+  "notes": "Copied numeric model/calibration snapshot; reference proof rebinding requires actual new full-path checks.",
+  "original_recording": "assets/reference_recordings/server_20261016/fb_right_wave"
+}

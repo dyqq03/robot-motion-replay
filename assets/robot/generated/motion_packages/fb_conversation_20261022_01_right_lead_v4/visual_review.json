@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "reviewer": "assistant",
+  "method": "Explicit recorded visual review; this command does not inspect images automatically",
+  "notes": "查看正面、侧面和手部关键帧拼图；首尾姿态一致，抬臂和弯指的示意可辨。仅记录抽样画面审阅，不声称逐帧看完视频；完整路径由数值报告单独验证。",
+  "input_sha256": {
+    "fullbody.hdf5": "318991ff8ef4aee782bfe5a13c9420c03d0ef7c9c27a0363943f6c4d7525d98d",
+    "motion.json": "835c58f2f58bc1bef0fd74f94a683c69b0372e922849bdb841e803f4680fa6eb",
+    "fullbody_meta.json": "a9db729edf9379b27846a8e42b953dc1b54a25c12de8ceff78ec566a866a71ad",
+    "keyframes.jpg": "1a0e3bd5ab56e4ac6f93d59cb7e356ebb0a8d78e0e6d6ed44805ded9da17eb14",
+    "preview.mp4": "152bee5dcc4515e434f2b004ffd57918c02725450295d2918e92480a3e52bfcc"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "index": 1,
+  "name": "轻微转头与右手自然伴随",
+  "slug": "fb_skill_small_conversation_v1",
+  "source_page": null,
+  "source_excerpt": "小幅讲话伴随动作；示范相对当前参考的连续样条，并非未经检查即可发布的模板",
+  "source": "user_requested_design",
+  "arms": [
+    "right"
+  ],
+  "neck": true,
+  "hands": [
+    "right"
+  ],
+  "near_head": false,
+  "speed_caps": {
+    "arms": 25.0,
+    "neck": 15.0,
+    "hand_left": 20.0,
+    "hand_right": 20.0
+  },
+  "preview_times_s": [
+    0.0,
+    1.2,
+    2.4,
+    3.5999999999999996,
+    4.8,
+    6.0
+  ],
+  "hand_retarget_modes": {
+    "right": "rest_relative"
+  },
+  "hand_endpoint_blend_fraction": 0.22,
+  "requested_duration_s": 6.0,
+  "automatic_duration_factor": 1.0,
+  "design_notes": [],
+  "schema_version": 1,
+  "duration_s": 6.0,
+  "sample_hz": 100.0,
+  "synthetic": true,
+  "joint_names": [
+    "openarm_left_joint1",
+    "openarm_left_joint2",
+    "openarm_left_joint3",
+    "openarm_left_joint4",
+    "openarm_left_joint5",
+    "openarm_left_joint7",
+    "openarm_right_joint1",
+    "openarm_right_joint2",
+    "openarm_right_joint3",
+    "openarm_right_joint4",
+    "openarm_right_joint5",
+    "openarm_right_joint7"
+  ],
+  "neck_joint_names": [
+    "neck_joint1",
+    "neck_joint2"
+  ],
+  "hand_joint_names": {
+    "right": [
+      "thumb_mcp",
+      "thumb_abd",
+      "thumb_pip",
+      "thumb_dip",
+      "index_abd",
+      "index_mcp",
+      "index_pip",
+      "middle_abd",
+      "middle_mcp",
+      "middle_pip",
+      "ring_abd",
+      "ring_mcp",
+      "ring_pip",
+      "pinky_abd",
+      "pinky_mcp",
+      "pinky_pip"
+    ]
+  },
+  "preview_arm_baseline_rad": {
+    "openarm_left_joint1": 0.13962634015954636,
+    "openarm_left_joint2": -0.24958208303518914,
+    "openarm_left_joint3": 0.019198621771937627,
+    "openarm_left_joint4": 0.8395033702092726,
+    "openarm_left_joint5": 0.026179938779914945,
+    "openarm_left_joint7": -0.20943951023931956,
+    "openarm_right_joint1": -0.13609784291737445,
+    "openarm_right_joint2": 0.2476792378182023,
+    "openarm_right_joint3": -0.015588512933942473,
+    "openarm_right_joint4": 0.8397223392172277,
+    "openarm_right_joint5": -0.026825396443887487,
+    "openarm_right_joint7": 0.21607647378587838
+  },
+  "preview_neck_baseline_rad": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "baseline_id": "user_confirmed_symmetric_arms_elbows_back_20261024",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "preview_cycles": 0,
+  "preview_label": "LOCAL 01 fb_skill_small_conversation_v1",
+  "loop_endpoints_match": true,
+  "units": {
+    "arms": "rad",
+    "neck": "rad",
+    "hand_left": "deg",
+    "hand_right": "deg",
+    "trajectory_csv": "deg"
+  },
+  "interpolation": "C2 quintic envelopes and head splines / bounded cubic arm B-splines; server and collision path: piecewise linear between dense commands",
+  "uncommanded_pose_assumptions": {
+    "arms": "current configured baseline snapshot in preview_arm_baseline_rad",
+    "neck": "J1 0 deg, J2 0 deg",
+    "hands": "measured hand reference snapshot in hand_baseline_pose_deg",
+    "waist_legs": "model qpos0"
+  },
+  "bilateral_arm_format_holds_inactive_side": true,
+  "hardware_execution_validated": false,
+  "generator": "portable robot-motion-replay",
+  "hand_baseline_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "hand_baseline_pose_deg": {
+    "left": {
+      "thumb_mcp": 17.83216783216782,
+      "thumb_abd": 0.0,
+      "thumb_pip": 30.707423580786,
+      "thumb_dip": 7.292246520874723,
+      "index_abd": 5.188191881918858,
+      "index_mcp": -6.710158434296364,
+      "index_pip": -8.343257443082319,
+      "middle_abd": -1.8134602936180118,
+      "middle_mcp": -0.9427710843373447,
+      "middle_pip": 2.6825817860300454,
+      "ring_abd": -11.757610630539638,
+      "ring_mcp": -5.661469933184883,
+      "ring_pip": 7.530631479736087,
+      "pinky_abd": -33.41239785222913,
+      "pinky_mcp": -4.75483214649034,
+      "pinky_pip": 2.954063604240279
+    },
+    "right": {
+      "thumb_mcp": 80.52631884240118,
+      "thumb_abd": -5.865871163711226,
+      "thumb_pip": 31.408695269633697,
+      "thumb_dip": 27.855671105715224,
+      "index_abd": 9.720111016212627,
+      "index_mcp": 4.100481759175036,
+      "index_pip": -4.0295713967388895,
+      "middle_abd": -0.5788199753980194,
+      "middle_mcp": 6.541248706171967,
+      "middle_pip": 3.9304106468760374,
+      "ring_abd": -2.775416114219226,
+      "ring_mcp": -1.236466940326011,
+      "ring_pip": 28.595853237296218,
+      "pinky_abd": -24.02913109033532,
+      "pinky_mcp": -11.919231678712407,
+      "pinky_pip": 1.2610232173543885
+    }
+  }
+}

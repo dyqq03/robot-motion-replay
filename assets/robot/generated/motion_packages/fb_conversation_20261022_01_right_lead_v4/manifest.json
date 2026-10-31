@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "draft": false,
+  "collision_check_required": true,
+  "collision_rules_file": "collision_rules.json",
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60",
+  "arm_mapping_sha256": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+  "neck_mapping_sha256": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+  "hand_mapping_sha256": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221",
+  "hand_hardware_sha256": "1ed4dc107abdad739e04a4feb47973f91acc65e87feff6bd63aa7afdb9531bbb",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "files": {
+    "README.md": "92170fa7c4c2cb06aefd36b27162b137bf40a1f068e556c5764d0dc6077a8836",
+    "arm_reference.json": "cf5f6e61679075188dce4fc4aadde8dc03139de58fd5e4a88e02ae5c2e5d3f97",
+    "backend_validation.json": "a5621f51f4f46b03d2c20cd19c2a0d7bf2474b76338c9287090957b42eabe422",
+    "candidate_review.json": "f5c3b82a722dc2055d978dd8f3c21c9a5f109dd8da6bb0f34d7c7ba5b93a9761",
+    "collision_rules.json": "b8e02f8bc06bb2cdd31fb57b51297cb458f6f29384f154c3d7780a5352f3a164",
+    "collision_validation.json": "140c914c71d8424dfc6472947cc810caca0825e2d27d18998dad2991df7e2578",
+    "fullbody.hdf5": "318991ff8ef4aee782bfe5a13c9420c03d0ef7c9c27a0363943f6c4d7525d98d",
+    "fullbody_meta.json": "a9db729edf9379b27846a8e42b953dc1b54a25c12de8ceff78ec566a866a71ad",
+    "hand_reference.json": "ea1b1ca31fc36d491dfe1312e0c511cd5f0fde681ee9e5b896b118a0a5ea76eb",
+    "keyframes.jpg": "1a0e3bd5ab56e4ac6f93d59cb7e356ebb0a8d78e0e6d6ed44805ded9da17eb14",
+    "kinematic_validation.json": "0d4efb1bfe41edaf90c45a6ab984caf9e22a1835777e05fc7915f13aafe7fa63",
+    "motion.json": "835c58f2f58bc1bef0fd74f94a683c69b0372e922849bdb841e803f4680fa6eb",
+    "preview.mp4": "152bee5dcc4515e434f2b004ffd57918c02725450295d2918e92480a3e52bfcc",
+    "render_validation.json": "38ee7d12d8a08cdeab0e9f152c31212e33921b9b8300e75090ddfa5c3c791257",
+    "source.json": "35f20ac76b2ced15a0d3cc1ef21ee51bd8bd49d13ba70ee3fbb857628ebc6ba0",
+    "trajectory.png": "d2ac703a6a78e51f2e423479c882fb12872976c54822c60a16c1f51d13be51fd",
+    "trajectory_deg.csv": "70d476bc272faf5c9a767e5f20a1a4292f7d3864809c5b0bc2d5b02dc8d9d75f",
+    "visual_review.json": "3d6ad774891f4d3d3b24ba5f275d19f151288906a87775fb13d9f9ac5bc10e85"
+  }
+}

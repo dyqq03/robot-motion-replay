@@ -1,0 +1,54 @@
+{
+  "generated_references": [
+    {
+      "name": "点头·连续平滑·两倍速",
+      "package": "fb_doc50_20261021_01_affirmative_nod_v6",
+      "duration_s": 1.725,
+      "path": "assets/robot/generated/motion_packages/fb_doc50_20261021_01_affirmative_nod_v6",
+      "video": "assets/robot/generated/motion_packages/fb_doc50_20261021_01_affirmative_nod_v6/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    },
+    {
+      "name": "走路轻摆臂五次",
+      "package": "fb_walk_arm_swing_5cycles_v5",
+      "duration_s": 9.0,
+      "path": "assets/robot/generated/motion_packages/fb_walk_arm_swing_5cycles_v5",
+      "video": "assets/robot/generated/motion_packages/fb_walk_arm_swing_5cycles_v5/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    },
+    {
+      "name": "手指测试动作1",
+      "package": "fb_finger_test_01_20261024_v4",
+      "duration_s": 6.0,
+      "path": "assets/robot/generated/motion_packages/fb_finger_test_01_20261024_v4",
+      "video": "assets/robot/generated/motion_packages/fb_finger_test_01_20261024_v4/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    },
+    {
+      "name": "右手轻带话，左手轻随",
+      "package": "fb_conversation_20261022_01_right_lead_v4",
+      "duration_s": 6.4,
+      "path": "assets/robot/generated/motion_packages/fb_conversation_20261022_01_right_lead_v4",
+      "video": "assets/robot/generated/motion_packages/fb_conversation_20261022_01_right_lead_v4/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    },
+    {
+      "name": "右手轻摆与四指轻弯招呼·两倍速",
+      "package": "fb_right_finger_greeting_20261022_v5",
+      "duration_s": 5.425,
+      "path": "assets/robot/generated/motion_packages/fb_right_finger_greeting_20261022_v5",
+      "video": "assets/robot/generated/motion_packages/fb_right_finger_greeting_20261022_v5/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    },
+    {
+      "name": "右手低位灵巧手展示·低头看手·1.5倍速",
+      "package": "fb_right_hand_showcase_20261022_v6",
+      "duration_s": 5.333333333333333,
+      "path": "assets/robot/generated/motion_packages/fb_right_hand_showcase_20261022_v6",
+      "video": "assets/robot/generated/motion_packages/fb_right_hand_showcase_20261022_v6/preview.mp4",
+      "status": "full_trajectory_and_backend_passed; sampled_keyframes_reviewed"
+    }
+  ],
+  "original_recording": "assets/reference_recordings/server_20261016/fb_right_wave",
+  "ready_demo": "work/packages/fb_skill_small_conversation_v1"
+}

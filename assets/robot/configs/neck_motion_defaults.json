@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "user_neck_zero_20261022",
+  "unit": "deg",
+  "coordinate_system": "hardware_source_joint_absolute_angles",
+  "neck": {"neck_joint1": 0.0, "neck_joint2": 0.0},
+  "source": "User instruction 2026-10-22: all future neck motions start and end at hardware zero",
+  "scope": "New motion generation only; historical package metadata and calibration stay unchanged",
+  "changes_calibration": false
+}

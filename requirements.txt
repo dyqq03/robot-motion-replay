@@ -1,0 +1,14 @@
+# Tested Python 3.11 snapshot. System OpenGL/EGL is required for rendering.
+mujoco==3.2.3
+numpy==1.26.0
+scipy==1.15.3
+h5py==3.16.0
+Pillow==11.3.0
+PyYAML==6.0.2
+matplotlib==3.10.3
+opencv-python==4.11.0.86
+imageio-ffmpeg==0.6.0
+pexpect==4.9.0
+# Optional: rebuilding/simplifying oversized source meshes
+fast-simplification==0.1.13
+trimesh==4.12.2

@@ -1,0 +1,44 @@
+{
+    "source_bag": "fb_right_wave",
+    "arm_mode": "mixed",
+    "duration_sec": 13.774,
+    "missing_joints": [],
+    "name_reorders": 0,
+    "dropped_jump_frames": 0,
+    "gaps": {},
+    "chains": {
+        "arms": {
+            "mode": "mixed",
+            "frames_cmd_l": 2761,
+            "frames_cmd_r": 2759,
+            "frames_js": 3380,
+            "units": "rad"
+        },
+        "neck": {
+            "frames": 0,
+            "units": "rad",
+            "interface": "/neck_controller/joint_trajectory"
+        },
+        "hand": {
+            "frames": 0,
+            "units": "rad",
+            "interface": "/hand/joint_targets"
+        },
+        "hand_left": {
+            "frames": 0,
+            "units": "rad",
+            "interface": "/left/hand/joint_targets"
+        },
+        "hand_right": {
+            "frames": 0,
+            "units": "rad",
+            "interface": "/right/hand/joint_targets"
+        },
+        "eyou": {
+            "frames": 0,
+            "units": "deg",
+            "interface": "/Lower_limbs_motor_cmd"
+        }
+    },
+    "arm_cmd_source": "executed_action"
+}

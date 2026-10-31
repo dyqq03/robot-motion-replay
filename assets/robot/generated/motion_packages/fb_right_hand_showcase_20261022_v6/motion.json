@@ -1,0 +1,484 @@
+{
+  "index": 1,
+  "name": "右手低位灵巧手展示·低头看手·1.5倍速",
+  "slug": "right_hand_showcase",
+  "source_page": null,
+  "source_excerpt": "用户确认v2后要求以当前速度整体提速1.5倍；幅度、手型、头手相对时序及首尾位置保持不变。",
+  "arms": [
+    "right"
+  ],
+  "hands": [
+    "right"
+  ],
+  "neck": true,
+  "near_head": false,
+  "speed_caps": {
+    "arms": 93.75,
+    "neck": 36.0,
+    "hand_right": 75.0
+  },
+  "preview_times_s": [
+    0.0,
+    0.9666666666666667,
+    1.9333333333333333,
+    2.9333333333333336,
+    4.266666666666667,
+    5.333333333333333
+  ],
+  "generation_batch": "hand_reference_refresh_20261026",
+  "supersedes": "fb_right_hand_showcase_20261022_v5",
+  "arm_target_deg": [
+    -2.9679789797308604,
+    15.000000000000002,
+    -1.262830937227365,
+    96.67365939804124,
+    71.99999999999999,
+    16.8
+  ],
+  "right_j7_fixed_deg": 16.8,
+  "hand_zero_pose_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "hand_bent_pose_deg": {
+    "thumb_mcp": 0.0,
+    "thumb_abd": 0.0,
+    "thumb_pip": 0.0,
+    "thumb_dip": 6.0,
+    "index_abd": 0.0,
+    "index_mcp": 34.2,
+    "index_pip": 41.4,
+    "middle_abd": 0.0,
+    "middle_mcp": 38.0,
+    "middle_pip": 46.0,
+    "ring_abd": 0.0,
+    "ring_mcp": 35.72,
+    "ring_pip": 43.239999999999995,
+    "pinky_abd": 0.0,
+    "pinky_mcp": 31.159999999999997,
+    "pinky_pip": 37.72
+  },
+  "neck_look_at_hand_target_deg": {
+    "neck_joint1": -25.0,
+    "neck_joint2": 26.0
+  },
+  "hand_phases_s": {
+    "initial_to_zero": [
+      0.39999999999999997,
+      1.9333333333333333
+    ],
+    "zero_display": [
+      1.9333333333333333,
+      2.013333333333333
+    ],
+    "deeper_curl": [
+      2.013333333333333,
+      3.1999999999999997
+    ],
+    "curl_display": [
+      3.1999999999999997,
+      3.3333333333333335
+    ],
+    "return_to_initial": [
+      3.3333333333333335,
+      4.8999999999999995
+    ]
+  },
+  "neck_phases_s": {
+    "look_toward_hand": [
+      0.43333333333333335,
+      2.033333333333333
+    ],
+    "watch_hand": [
+      2.033333333333333,
+      3.3333333333333335
+    ],
+    "return_to_zero": [
+      3.3333333333333335,
+      5.066666666666666
+    ]
+  },
+  "notes": [
+    "全轨迹以已确认v2为基准提速1.5倍，时长8→5.333333秒。",
+    "所有位置采样、手型及首尾参考保留；全部命令流统一缩放时间。",
+    "速度峰值变为原来的1.5倍，加速度峰值变为2.25倍。",
+    "右J7保持16.8°；左臂保持基准；左手及身体命令为空。"
+  ],
+  "schema_version": 1,
+  "duration_s": 5.333333333333333,
+  "sample_hz": 150.0,
+  "synthetic": true,
+  "joint_names": [
+    "openarm_left_joint1",
+    "openarm_left_joint2",
+    "openarm_left_joint3",
+    "openarm_left_joint4",
+    "openarm_left_joint5",
+    "openarm_left_joint7",
+    "openarm_right_joint1",
+    "openarm_right_joint2",
+    "openarm_right_joint3",
+    "openarm_right_joint4",
+    "openarm_right_joint5",
+    "openarm_right_joint7"
+  ],
+  "neck_joint_names": [
+    "neck_joint1",
+    "neck_joint2"
+  ],
+  "hand_joint_names": {
+    "right": [
+      "thumb_mcp",
+      "thumb_abd",
+      "thumb_pip",
+      "thumb_dip",
+      "index_abd",
+      "index_mcp",
+      "index_pip",
+      "middle_abd",
+      "middle_mcp",
+      "middle_pip",
+      "ring_abd",
+      "ring_mcp",
+      "ring_pip",
+      "pinky_abd",
+      "pinky_mcp",
+      "pinky_pip"
+    ]
+  },
+  "preview_arm_baseline_rad": {
+    "openarm_left_joint1": 0.13962634015954636,
+    "openarm_left_joint2": -0.24958208303518914,
+    "openarm_left_joint3": 0.019198621771937627,
+    "openarm_left_joint4": 0.8395033702092726,
+    "openarm_left_joint5": 0.026179938779914945,
+    "openarm_left_joint7": -0.20943951023931956,
+    "openarm_right_joint1": -0.13609784291737445,
+    "openarm_right_joint2": 0.2476792378182023,
+    "openarm_right_joint3": -0.015588512933942473,
+    "openarm_right_joint4": 0.8397223392172277,
+    "openarm_right_joint5": -0.026825396443887487,
+    "openarm_right_joint7": 0.21607647378587838
+  },
+  "preview_neck_baseline_rad": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "baseline_id": "user_confirmed_symmetric_arms_elbows_back_20261024",
+  "hand_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f",
+  "preview_cycles": 0,
+  "preview_label": "RIGHT HAND SHOWCASE V3 / 1.5X",
+  "loop_endpoints_match": true,
+  "units": {
+    "arms": "rad",
+    "neck": "rad",
+    "hand_left": "deg",
+    "hand_right": "deg",
+    "trajectory_csv": "deg"
+  },
+  "interpolation": "C2 quintic envelopes and head splines / bounded cubic arm B-splines; server and collision path: piecewise linear between dense commands",
+  "uncommanded_pose_assumptions": {
+    "arms": "confirmed elbows-back/hands-higher 20261024 arm reference",
+    "hands": "2026-10-26 measured reference with recorded minimum bounded ABD corrections; uncommanded hand stream remains empty",
+    "neck": "original package neck reference unchanged",
+    "waist_legs": "model qpos0"
+  },
+  "bilateral_arm_format_holds_inactive_side": true,
+  "hardware_execution_validated": false,
+  "generator": "scripts/refresh_hand_reference_20261026.py",
+  "hand_baseline_pose_deg": {
+    "left": {
+      "thumb_mcp": 17.83216783216782,
+      "thumb_abd": 0.0,
+      "thumb_pip": 30.707423580786,
+      "thumb_dip": 7.292246520874723,
+      "index_abd": 5.188191881918858,
+      "index_mcp": -6.710158434296364,
+      "index_pip": -8.343257443082319,
+      "middle_abd": -1.8134602936180118,
+      "middle_mcp": -0.9427710843373447,
+      "middle_pip": 2.6825817860300454,
+      "ring_abd": -11.757610630539638,
+      "ring_mcp": -5.661469933184883,
+      "ring_pip": 7.530631479736087,
+      "pinky_abd": -33.41239785222913,
+      "pinky_mcp": -4.75483214649034,
+      "pinky_pip": 2.954063604240279
+    },
+    "right": {
+      "thumb_mcp": 80.52631884240118,
+      "thumb_abd": -5.865871163711226,
+      "thumb_pip": 31.408695269633697,
+      "thumb_dip": 27.855671105715224,
+      "index_abd": 9.720111016212627,
+      "index_mcp": 4.100481759175036,
+      "index_pip": -4.0295713967388895,
+      "middle_abd": -0.5788199753980194,
+      "middle_mcp": 6.541248706171967,
+      "middle_pip": 3.9304106468760374,
+      "ring_abd": -2.775416114219226,
+      "ring_mcp": -1.236466940326011,
+      "ring_pip": 28.595853237296218,
+      "pinky_abd": -24.02913109033532,
+      "pinky_mcp": -11.919231678712407,
+      "pinky_pip": 1.2610232173543885
+    }
+  },
+  "hand_baseline_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "retiming": {
+    "source_package": "fb_right_hand_showcase_20261022_v2",
+    "speed_factor": 1.5,
+    "source_duration_s": 8.0,
+    "source_hdf5_sha256": "1db13a69f2a059947e979b61220cbcf4a9994d7da2c9db2928a202e4d0620645",
+    "source_motion_sha256": "9be43f6bc6dcd2b6362cbcb8b0b28130c0dcfed969d0817086b749a7862f60ad",
+    "position_samples_unchanged": true
+  },
+  "baseline_source": "configs/arm_motion_defaults.json",
+  "baseline_pose_deg": {
+    "openarm_left_joint1": 8.0,
+    "openarm_left_joint2": -14.3,
+    "openarm_left_joint3": 1.1,
+    "openarm_left_joint4": 48.1,
+    "openarm_left_joint5": 1.5,
+    "openarm_left_joint7": -12.0,
+    "openarm_right_joint1": -7.797832,
+    "openarm_right_joint2": 14.190975,
+    "openarm_right_joint3": -0.893156,
+    "openarm_right_joint4": 48.112546,
+    "openarm_right_joint5": -1.536982,
+    "openarm_right_joint7": 12.38027
+  },
+  "initial_pose_update": {
+    "method": "Action-aware arm retarget: rest-relative small motions; preserve original semantic display targets and continuously reshape departure/return for larger gestures; hands unchanged",
+    "source_package": "fb_right_hand_showcase_20261022_v4",
+    "source_hdf5_sha256": "664e144cb04e0357bf1ca1e316c4e2b85ccd2d4e386c6f7f2a2fe20ad5623fd9",
+    "modified_streams": [
+      {
+        "stream": "arms/cmd_left",
+        "original_start_deg": [
+          0.0,
+          -14.3,
+          1.1,
+          30.100000000000005,
+          1.5000000000000002,
+          -12.000000000000002
+        ],
+        "target_start_end_deg": [
+          8.0,
+          -14.3,
+          1.1,
+          48.1,
+          1.5,
+          -12.0
+        ],
+        "names": [
+          "openarm_left_joint1",
+          "openarm_left_joint2",
+          "openarm_left_joint3",
+          "openarm_left_joint4",
+          "openarm_left_joint5",
+          "openarm_left_joint7"
+        ],
+        "method": "Rest-relative: translate complete trajectory, including all interior rests, onto new baseline",
+        "progress_driver_joint": null,
+        "maximum_change_deg": [
+          8.0,
+          0.0,
+          0.0,
+          17.999999999999996,
+          2.220446049250313e-16,
+          1.7763568394002505e-15
+        ],
+        "unchanged_hand_samples": true
+      },
+      {
+        "stream": "arms/cmd_right",
+        "original_start_deg": [
+          0.201491,
+          14.191402,
+          -0.835797,
+          30.114478000000002,
+          -1.60657,
+          12.378242000000002
+        ],
+        "target_start_end_deg": [
+          -7.797832,
+          14.190975,
+          -0.893156,
+          48.112546,
+          -1.536982,
+          12.38027
+        ],
+        "names": [
+          "openarm_right_joint1",
+          "openarm_right_joint2",
+          "openarm_right_joint3",
+          "openarm_right_joint4",
+          "openarm_right_joint5",
+          "openarm_right_joint7"
+        ],
+        "method": "Semantic target preservation: continuous pose-dependent morph from new rest directly to original display target, with no extra frames or old-rest waypoint",
+        "progress_driver_joint": "openarm_right_joint5",
+        "maximum_change_deg": [
+          7.9993229999999995,
+          0.00042700000000017724,
+          0.05735899999999994,
+          17.998068,
+          0.06958799999999998,
+          0.0020279999999974763
+        ],
+        "unchanged_hand_samples": true
+      }
+    ],
+    "uncommanded_streams_preserved_empty": true
+  },
+  "hand_reference_update": {
+    "source_package": "fb_right_hand_showcase_20261022_v5",
+    "source_hdf5_sha256": "5ff2f05fc5b6f516f52ee72725af446b71afb763d4c6621c4d173a82734d65b3",
+    "changes": [
+      {
+        "side": "right",
+        "names": [
+          "thumb_mcp",
+          "thumb_abd",
+          "thumb_pip",
+          "thumb_dip",
+          "index_abd",
+          "index_mcp",
+          "index_pip",
+          "middle_abd",
+          "middle_mcp",
+          "middle_pip",
+          "ring_abd",
+          "ring_mcp",
+          "ring_pip",
+          "pinky_abd",
+          "pinky_mcp",
+          "pinky_pip"
+        ],
+        "previous_rest_deg": [
+          73.50877479122019,
+          -3.932063744452165,
+          34.121738754397406,
+          30.463918532678797,
+          13.929973248666396,
+          0.24880772898492864,
+          0.22920879832279084,
+          -1.95,
+          -1.1742289356591549,
+          0.7529279823270514,
+          -11.58,
+          -5.347577922516706,
+          1.5165146621265997,
+          -24.116067184838556,
+          -12.955228197739814,
+          2.4542436302638464
+        ],
+        "current_rest_deg": [
+          80.52631884240118,
+          -5.865871163711226,
+          31.408695269633697,
+          27.855671105715224,
+          9.720111016212627,
+          4.100481759175036,
+          -4.0295713967388895,
+          -0.5788199753980194,
+          6.541248706171967,
+          3.9304106468760374,
+          -2.775416114219226,
+          -1.236466940326011,
+          28.595853237296218,
+          -24.02913109033532,
+          -11.919231678712407,
+          1.2610232173543885
+        ],
+        "method": "quintic rest-offset morph preserving semantic extrema, bounded by original declared speed and joint limits",
+        "semantic_preservation_mix": [
+          0.16826460480968086,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.7584377891444724,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "relative_scales": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "arm_neck_commands_and_all_timestamps_unchanged": true,
+    "no_extra_old_reference_transition": true,
+    "source_snapshot": "reports/hand_angles_20261026/snapshot.json",
+    "reference_adjustments": [
+      {
+        "side": "left",
+        "joint": "thumb_abd",
+        "measured_deg": 2.8324873096446765,
+        "reference_deg": 0.0,
+        "delta_deg": -2.8324873096446765
+      },
+      {
+        "side": "left",
+        "joint": "middle_abd",
+        "measured_deg": 3.047058823529447,
+        "reference_deg": -1.8134602936180118,
+        "delta_deg": -4.860519117147459
+      },
+      {
+        "side": "left",
+        "joint": "ring_abd",
+        "measured_deg": -15.050847457627114,
+        "reference_deg": -11.757610630539638,
+        "delta_deg": 3.293236827087476
+      },
+      {
+        "side": "left",
+        "joint": "pinky_abd",
+        "measured_deg": -35.62731871838112,
+        "reference_deg": -33.41239785222913,
+        "delta_deg": 2.214920866151992
+      }
+    ],
+    "local_only": true
+  },
+  "bundle_reference_copy": true
+}

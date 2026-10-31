@@ -1,0 +1,23 @@
+[
+  {
+    "package": "fb_conversation_20261022_01_right_lead_v4",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 14.050690851989202,
+    "checked_poses": 283
+  },
+  {
+    "package": "fb_right_finger_greeting_20261022_v5",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 20.45571189399925,
+    "checked_poses": 774
+  },
+  {
+    "package": "fb_right_hand_showcase_20261022_v6",
+    "status": "passed",
+    "certified_fraction": 1.0,
+    "elapsed_s": 22.227542594016995,
+    "checked_poses": 517
+  }
+]

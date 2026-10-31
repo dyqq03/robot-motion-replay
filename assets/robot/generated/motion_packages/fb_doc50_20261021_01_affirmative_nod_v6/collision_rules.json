@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "description": "Local self-collision checks using existing convex collision meshes. Distances are meters; qpos is model radians. Defaults are provisional model margins, not hardware certification.",
+  "collision_geom_group": 3,
+  "ignore_same_welded_body": true,
+  "ignore_direct_joint_neighbors": true,
+  "clearance_m": {
+    "default": 0.015,
+    "same_hand": 0.002
+  },
+  "mesh_solver": {
+    "native_ccd": true,
+    "iterations": 200,
+    "tolerance": 1e-08,
+    "distance_padding_m": 0.005,
+    "numeric_guard_m": 0.0001,
+    "consistency_tolerance_m": 0.0005
+  },
+  "trajectory": {
+    "coarse_hz": 10.0,
+    "minimum_interval_s": 0.001,
+    "maximum_depth": 16,
+    "maximum_pose_checks": 10000,
+    "maximum_wall_time_s": 180.0
+  },
+  "excluded_pairs": [],
+  "pair_overrides": [
+    {
+      "geoms": [
+        "Knee__collision__0",
+        "WaistYaw__collision__0"
+      ],
+      "clearance_m": 0.001,
+      "reason": "HipPitch intermediate assembly between Knee and WaistYaw; unchanged waist/leg pose, source-hull gap 3.25 mm. Retain 1 mm positive clearance; no exclusion."
+    },
+    {
+      "geoms": [
+        "NeckYaw__collision__0",
+        "LeftShoulderPitch__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: NeckYaw/LeftShoulderPitch; audited positive source-hull separation at baseline about 11 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "LeftElbowPitch__collision__0",
+        "LeftWristPitch__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: LeftElbowPitch/LeftWristPitch; audited positive source-hull separation at baseline about 12 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "LeftWristPitch__collision__0",
+        "LeftThumbPP__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: LeftWristPitch/LeftThumbPP; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "LeftShoulderPitch__collision__0",
+        "LeftShoulderYaw__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: LeftShoulderPitch/LeftShoulderYaw; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "NeckYaw__collision__0",
+        "RightShoulderPitch__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: NeckYaw/RightShoulderPitch; audited positive source-hull separation at baseline about 11 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "RightElbowPitch__collision__0",
+        "RightWristPitch__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: RightElbowPitch/RightWristPitch; audited positive source-hull separation at baseline about 12 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "RightWristPitch__collision__0",
+        "RightThumbPP__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: RightWristPitch/RightThumbPP; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    },
+    {
+      "geoms": [
+        "RightShoulderPitch__collision__0",
+        "RightShoulderYaw__collision__0"
+      ],
+      "clearance_m": 0.005,
+      "reason": "Local mechanical assembly near shared mounting: RightShoulderPitch/RightShoulderYaw; audited positive source-hull separation at baseline about 13 mm, through one intermediate joint link. Preserve 5 mm clearance and test complete relative-motion path; no permitted penetration."
+    }
+  ],
+  "notes": [
+    "Mesh names and topology are discovered automatically; no hand-written exhaustive pair list.",
+    "Excluded pairs require two exact geom names and a reason. Never suppress a pair just because the baseline already overlaps.",
+    "Pair overrides may reduce clearance to zero for an intentional touch, but may not allow penetration; changes require a reason.",
+    "Quick checks are conservative bounding-box screening only. Candidate checks use mesh distances. Only a complete trajectory result with status passed is exportable.",
+    "The visible floor is not included in this self-collision group. Scene objects and real-world obstacles require separate collision geometry.",
+    "Model bounds, convex hulls, numerical tolerances and actual robot calibration limit the result. No physical collision response is enabled by this file."
+  ],
+  "proxy_manifest": "generated/collision_proxy_doc50_20261021/manifest.json",
+  "compound_mounts": [
+    {
+      "geoms": [
+        "LeftPalm__collision__0",
+        "LeftThumbPP__collision__0"
+      ],
+      "joint": "LeftThumbMCP",
+      "radius_m": 0.03,
+      "reason": "Audited two-axis thumb-root assembly: MCP/ABD axes share the same anchor; seven source-surface edge intersections lie 22.73–24.20 mm from this anchor. Only convex fragments wholly inside its 30 mm mounting sphere are excepted against each other. Remaining palm/thumb surfaces retain 2 mm clearance. Evidence: evidence/actual_surface_intersections.json."
+    },
+    {
+      "geoms": [
+        "RightPalm__collision__0",
+        "RightThumbPP__collision__0"
+      ],
+      "joint": "RightThumbMCP",
+      "radius_m": 0.03,
+      "reason": "Audited two-axis thumb-root assembly: MCP/ABD axes share the same anchor; seven source-surface edge intersections lie 22.73–24.20 mm from this anchor. Only convex fragments wholly inside its 30 mm mounting sphere are excepted against each other. Remaining palm/thumb surfaces retain 2 mm clearance. Evidence: evidence/actual_surface_intersections.json."
+    }
+  ]
+}
