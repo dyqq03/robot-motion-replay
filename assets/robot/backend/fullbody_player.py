@@ -938,7 +938,7 @@ class FullbodyPlayer:
             cur = self._fb.neck_pos(self._neck_names)
             if cur is None or len(cur) != 2 or not all(math.isfinite(v) for v in cur):
                 raise ValueError("回放归位缺少完整脖子反馈")
-            target = [math.radians(4.5), math.radians(-8.3)]
+            target = [0.0, 0.0]
             duration = max(duration, self._chain_approach_need(cur, target, self.APPROACH_VMAX))
             neck_msg = JointTrajectory()
             neck_msg.joint_names = list(self._neck_names)
@@ -960,7 +960,7 @@ class FullbodyPlayer:
             self._pub_arm_traj[side].publish(msg)
         if neck_msg is not None:
             self._pub_neck_traj.publish(neck_msg)
-        neck_note = "脖子目标 +4.5°, -8.3°" if neck_msg is not None else "本动作未发送脖子归位轨迹"
+        neck_note = "脖子目标 0°, 0°" if neck_msg is not None else "本动作未发送脖子归位轨迹"
         self._log.info(f"[全身回放] 正常结束归位 ({neck_note}): {duration:.1f}s")
 
     def tick(self):

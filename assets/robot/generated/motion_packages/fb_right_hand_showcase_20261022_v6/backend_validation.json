@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "backend_source": "backend/fullbody_player.py",
-  "backend_sha256": "53d9f996a87a8360c8d8a61f8d0ac33059c79cb103ad7e8fd25b3bfff7b4d8a4",
+  "backend_sha256": "5af4ccf5253a7faa4b301595b03f44148e83154cb1d5c9adabc5213de7949be1",
   "helper_sha256": "65a06f8a0b412e681143787f7e747a523ea2a17298caa33f94d2700c3cefce63",
   "input_sha256": {
     "fullbody.hdf5": "5c4f409969666ea394a4b71b49eb600e808fa58850ae7b24177bd91c997ff6cb",

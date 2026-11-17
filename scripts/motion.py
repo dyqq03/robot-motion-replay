@@ -25,9 +25,9 @@ def create(spec_path,out=None):
  spec=read(spec_path);name=identifier(spec['package']);duration=float(spec['duration_s']);hz=float(spec.get('sample_hz',100))
  if not math.isfinite(duration) or not .2<=duration<=300 or not 20<=hz<=250:raise ValueError('Invalid duration/sample rate')
  d=designer();t=np.linspace(0,duration,int(math.ceil(duration*hz))+1);q=np.tile(d.rest,(len(t),1));arms=[];hands=[]
- if not spec.get('tracks'):raise ValueError('At least one command chain is required')
+ if not spec.get('tracks') and not spec.get('hand_phrases'):raise ValueError('At least one command chain is required')
  modes={}
- for key,track in spec['tracks'].items():
+ for key,track in spec.get('tracks',{}).items():
   off,names=track_spec(d,key);mode=track['mode']
   if mode not in ['rest_relative','absolute']:raise ValueError('Declare track mode: rest_relative or absolute')
   frames=track['keyframes'];kt=np.array([f['t'] for f in frames],float)
@@ -47,6 +47,14 @@ def create(spec_path,out=None):
   q[:,off:off+len(names)]=result
   if key.startswith('arm_'):arms.append(key[4:])
   if key.startswith('hand_'):hands.append(key[5:]);modes[key[5:]]=mode
+ if spec.get('hand_phrases'):
+  from conversational_hands import apply_phrases,parse_phrases
+  episodes=parse_phrases(spec['hand_phrases'],duration)
+  participating={e[0] for e in episodes}
+  if participating & set(hands):raise ValueError('Declare each hand using either keyframe track or hand_phrases')
+  q,hand_timeline=apply_phrases(d,t,q,episodes)
+  for side in sorted(participating):hands.append(side);modes[side]='rest_relative'
+ else:hand_timeline=[]
  caps={'arms':15. if spec.get('near_head') else 25.,'neck':15.,'hand_left':20.,'hand_right':20.}
  if set(spec.get('speed_caps_deg_s',{}))-set(caps):raise ValueError('Unknown speed cap group')
  caps.update(spec.get('speed_caps_deg_s',{}))
@@ -57,7 +65,12 @@ def create(spec_path,out=None):
  if factor>1:
   if spec.get('extend_for_speed_limits',True):t*=factor*1.00001
   else:raise ValueError(f'Speed cap exceeded: extend duration by {factor:g}')
- meta=dict(index=spec.get('index',1),name=spec['name'],slug=name,source_page=None,source_excerpt=spec.get('description',spec['name']),source=spec.get('source','user_requested_design'),arms=arms,neck='neck' in spec['tracks'],hands=hands,near_head=bool(spec.get('near_head')),speed_caps=caps,preview_times_s=np.linspace(0,float(t[-1]),6).tolist(),hand_retarget_modes=modes,hand_endpoint_blend_fraction=.22,requested_duration_s=duration,automatic_duration_factor=float(t[-1]/duration),design_notes=spec.get('notes',[]))
+ # Semantic timestamps describe the exported clock, including speed extensions.
+ scale=float(t[-1]/duration)
+ for episode in hand_timeline:
+  for keyframe in episode['keyframes']:keyframe['t_s']*=scale
+  episode['flexion_stagger_s']={finger:delay*scale for finger,delay in episode['flexion_stagger_s'].items()}
+ meta=dict(index=spec.get('index',1),name=spec['name'],slug=name,source_page=None,source_excerpt=spec.get('description',spec['name']),source=spec.get('source','user_requested_design'),arms=arms,neck='neck' in spec.get('tracks',{}),hands=hands,near_head=bool(spec.get('near_head')),speed_caps=caps,preview_times_s=np.linspace(0,float(t[-1]),6).tolist(),hand_retarget_modes=modes,hand_endpoint_blend_fraction=.22,requested_duration_s=duration,automatic_duration_factor=float(t[-1]/duration),design_notes=spec.get('notes',[]),semantic_hand_timeline=hand_timeline)
  dest=Path(out) if out else WORK/'drafts'/name
  if dest.name!=name:raise ValueError('Output directory basename must equal package name')
  dest.parent.mkdir(parents=True,exist_ok=True)
@@ -71,6 +84,9 @@ def kinematics(directory):
  from motion_collision import model_trajectory
  directory=Path(directory);m,d,base,t,poses,meta=load_package(directory,check_collision_provenance=False)
  specs={s['source_joint']:s for f in ['arm_mapping.json','neck_mapping.json','hand_mapping.json'] for s in read(ROBOT/'configs'/f)['joints']}
+ from calibrated_hand_pose import CalibratedHandPose
+ from hand_limits import validate_joint_degrees
+ calibration=CalibratedHandPose();hand_checks={}
  speeds={};cols=[];arrays=[]
  with h5py.File(directory/'fullbody.hdf5') as f:
   paths=[('arms/cmd_left','arms/t_arm_cmd_l',ARM_NAMES[:6],'arms',True),('arms/cmd_right','arms/t_arm_cmd_r',ARM_NAMES[6:],'arms',True),('neck/q','neck/t',NECK_NAMES,'neck',True)]
@@ -88,6 +104,10 @@ def kinematics(directory):
    for j,n in enumerate(names):
     lo,hi=np.rad2deg(specs[n]['real_limits_rad'])
     if values[:,j].min()<lo-1e-5 or values[:,j].max()>hi+1e-5:raise ValueError('Hardware limit: '+n)
+   if g.startswith('hand_'):
+    side=g[5:];expected=calibration.models[side+'_hand'].names
+    ordered=values[:,[names.index(side+'/'+n) for n in expected]]
+    hand_checks[side]=validate_joint_degrees(calibration,side,ordered)
    peak=float(abs(np.gradient(values,ts,axis=0,edge_order=2)).max());speeds[g]=max(speeds.get(g,0),peak)
    if g in meta.get('speed_caps',{}) and peak>meta['speed_caps'][g]+1e-5:raise ValueError('Speed cap: '+g)
    cols+=names;arrays.append(np.column_stack([np.interp(t,ts,values[:,j]) for j in range(len(names))]))
@@ -99,7 +119,7 @@ def kinematics(directory):
    low,high=m.jnt_range[j];v=path[:,m.jnt_qposadr[j]]
    if v.min()<low-1e-5 or v.max()>high+1e-5:raise ValueError('Model limit: '+m.joint(j).name)
  np.savetxt(directory/'trajectory_deg.csv',np.column_stack([t,*arrays]),delimiter=',',header='t_s,'+','.join(cols),comments='',fmt='%.10f')
- report=dict(status='passed',input_sha256=inputs(directory),frames=len(t),duration_s=float(t[-1]),peak_speed_deg_s=speeds,limits_endpoints_units_and_sync_checked=True,body_commands_empty=True,feedback_empty=True)
+ report=dict(status='passed',hardware_hand_checks=hand_checks,input_sha256=inputs(directory),frames=len(t),duration_s=float(t[-1]),peak_speed_deg_s=speeds,limits_endpoints_units_and_sync_checked=True,body_commands_empty=True,feedback_empty=True)
  write(directory/'kinematic_validation.json',report);return report
 
 def check(directory,stage='trajectory',seconds=0):
@@ -125,7 +145,7 @@ def render(directory,fps=24,video=True):
  values=model_trajectory(m,base,poses);opt=mujoco.MjvOption();opt.geomgroup[3]=0
  cams=[]
  for az in [165.,75.]:
-  c=mujoco.MjvCamera();c.azimuth=az;c.elevation=-8.;c.distance=1.55;c.lookat[:]=[.08,0,1.13];cams.append(c)
+  c=mujoco.MjvCamera();c.azimuth=az;c.elevation=-8.;c.distance=float(meta.get('preview_camera_distance_m',1.85));c.lookat[:]=meta.get('preview_camera_lookat_m',[.08,0,1.14]);cams.append(c)
  hc=[]
  for side,az in [('left',130.),('right',200.)]:
   c=mujoco.MjvCamera();c.azimuth=az;c.elevation=-10.;c.distance=.45;hc.append((side,c))
@@ -216,7 +236,7 @@ def doctor():
     asset=(path.parent/node.attrib['file']).resolve()
     if not asset.is_relative_to(SKILL) or not asset.is_file():raise ValueError('Missing/external model asset: '+str(asset))
  model=mujoco.MjModel.from_xml_path(str(ROBOT/'generated/humanoid_shadow.xml'));CalibratedHandPose();hand_baseline_deg();geometry_hashes(read(ROBOT/'configs/design_collision_rules.json'));verify_snapshot()
- return dict(status='passed',skill_root=str(SKILL),model_joints=model.njnt,dependencies=versions,external_project_dependencies=False,hardware_access=False)
+ return dict(status='passed',active_robot=read(SKILL/'assets/active_robot.json'),skill_root=str(SKILL),model_joints=model.njnt,dependencies=versions,external_project_dependencies=False,hardware_access=False)
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='cmd',required=True)

@@ -1,0 +1,1543 @@
+{
+  "status": "numerical_checks_passed",
+  "default_server": {
+    "host": "192.168.8.30",
+    "user": "root",
+    "port": 2222,
+    "bind_interface": "wlo1",
+    "replay_root": "/ros_ws/src/vla_collection/datasets/fullbody",
+    "labels_file": "/ros_ws/brain_actions.json",
+    "api": "http://127.0.0.1:8090",
+    "environment_script": "/ros_ws/scripts/b6_env.sh"
+  },
+  "active_robot": {
+    "id": "original_robot_192_168_8_30",
+    "host": "192.168.8.30",
+    "server_profile": "assets/server_profile.json",
+    "hand_reference_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+    "snapshot_reference_date": "2026-10-26",
+    "fresh_hardware_measurement": false,
+    "physical_geometry_zero_measured": false,
+    "optional_profiles": [
+      "assets/profiles/new_robot_192_168_2_27/profile.json"
+    ]
+  },
+  "model_snapshot": {
+    "status": "passed",
+    "mapped_joints": 50,
+    "geometry_unchanged": true,
+    "active_calibration_revision": "7fcf062c6eef94b551ec0785488f35f2d41d80b341cc66f863ee054d8cfa2f0f"
+  },
+  "mapping_sha256": {
+    "arm": "8b830b644f4feae0b84475590554026d0dcf0d014df76a70d29495b88253e35e",
+    "neck": "ab4bbf69d951d20ad932836f7095c57bcdf01092c287913b084e2a2113af7438",
+    "body": "596f5b2dc0a9631abfadea7077dece92a51fcf18efee6151084a3b2bb4188c2d",
+    "hand": "4970bb95712ef138e34d0baf179c0e3c8b4647c2da5a3dfd2e4d756628f23221"
+  },
+  "calibration_files_sha256": {
+    "left": {
+      "config.yaml": "78dd3cd0fb5f06edc2e360bccc550d278c492517df4a0a83ac2c2d6e888c3542",
+      "calibration.yaml": "8de5723145e0fb0072ccd5a2351977aee7fd883632041077d161dae67ab783e7"
+    },
+    "right": {
+      "config.yaml": "803e8662ac889786eb4899048a445fb85e429897ddbb46d3d3ce27c2594e03ca",
+      "calibration.yaml": "7f67c0ffe9a6180d803d5c69eab9dbcb7bfa7ad287f862f5fce29a794697992d"
+    }
+  },
+  "joints": [
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint1",
+      "model_joint": "RightShoulderPitch",
+      "logical_limits_deg": [
+        -74.48451336700703,
+        114.59155902616465
+      ],
+      "model_limits_deg": [
+        -114.39155902616464,
+        74.68451336700703
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.003490658503988659,
+      "model_zero_logical_deg": 0.2,
+      "logical_zero_model_rad": 0.003490658503988659,
+      "motion_reference_deg": -7.797832,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint2",
+      "model_joint": "RightShoulderRoll",
+      "logical_limits_deg": [
+        -10.000004285756797,
+        99.99998556178845
+      ],
+      "model_limits_deg": [
+        -99.79998556178845,
+        10.200004285756798
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.003490658503988659,
+      "model_zero_logical_deg": 0.2,
+      "logical_zero_model_rad": 0.003490658503988659,
+      "motion_reference_deg": 14.190975,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint3",
+      "model_joint": "RightShoulderYaw",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -89.89998127603167,
+        90.09998127603166
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.0017453292519943296,
+      "model_zero_logical_deg": 0.1,
+      "logical_zero_model_rad": 0.0017453292519943296,
+      "motion_reference_deg": -0.893156,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint4",
+      "model_joint": "RightElbowPitch",
+      "logical_limits_deg": [
+        0.0,
+        140.00000270481564
+      ],
+      "model_limits_deg": [
+        0.0,
+        140.00000270481564
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 48.112546,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint5",
+      "model_joint": "RightWristRoll",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -1.536982,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_right_joint7",
+      "model_joint": "RightWristPitch",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -90.19998127603166,
+        89.79998127603166
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.003490658503988659,
+      "model_zero_logical_deg": 0.2,
+      "logical_zero_model_rad": -0.003490658503988659,
+      "motion_reference_deg": 12.38027,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint1",
+      "model_joint": "LeftShoulderPitch",
+      "logical_limits_deg": [
+        -79.99997699027486,
+        79.99997699027486
+      ],
+      "model_limits_deg": [
+        -79.99997699027486,
+        79.99997699027486
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": 0.0,
+      "motion_reference_deg": 8.0,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint2",
+      "model_joint": "LeftShoulderRoll",
+      "logical_limits_deg": [
+        -99.99998556178845,
+        10.000004285756797
+      ],
+      "model_limits_deg": [
+        -10.300004285756797,
+        99.69998556178845
+      ],
+      "model_sign": -1,
+      "model_offset_rad": -0.005235987755982988,
+      "model_zero_logical_deg": -0.3,
+      "logical_zero_model_rad": -0.005235987755982988,
+      "motion_reference_deg": -14.3,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint3",
+      "model_joint": "LeftShoulderYaw",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": 0.0,
+      "motion_reference_deg": 1.1,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint4",
+      "model_joint": "LeftElbowPitch",
+      "logical_limits_deg": [
+        0.0,
+        140.00000270481564
+      ],
+      "model_limits_deg": [
+        0.0,
+        140.00000270481564
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 48.1,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint5",
+      "model_joint": "LeftWristRoll",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 1.5,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "arm",
+      "logical_joint": "openarm_left_joint7",
+      "model_joint": "LeftWristPitch",
+      "logical_limits_deg": [
+        -89.99998127603166,
+        89.99998127603166
+      ],
+      "model_limits_deg": [
+        -90.19998127603166,
+        89.79998127603166
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.003490658503988659,
+      "model_zero_logical_deg": 0.2,
+      "logical_zero_model_rad": -0.003490658503988659,
+      "motion_reference_deg": -12.0,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "neck",
+      "logical_joint": "neck_joint1",
+      "model_joint": "NeckYaw",
+      "logical_limits_deg": [
+        -87.2957795130824,
+        87.2957795130824
+      ],
+      "model_limits_deg": [
+        -86.43634282038616,
+        88.15521620577861
+      ],
+      "model_sign": -1,
+      "model_offset_rad": 0.015,
+      "model_zero_logical_deg": 0.8594366926962348,
+      "logical_zero_model_rad": 0.015,
+      "motion_reference_deg": 0.0,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "neck",
+      "logical_joint": "neck_joint2",
+      "model_joint": "NeckPitch",
+      "logical_limits_deg": [
+        -50.053522829578824,
+        50.053522829578824
+      ],
+      "model_limits_deg": [
+        -45.412564689019156,
+        54.694480970138486
+      ],
+      "model_sign": 1,
+      "model_offset_rad": 0.081,
+      "model_zero_logical_deg": -4.640958140559668,
+      "logical_zero_model_rad": 0.081,
+      "motion_reference_deg": 0.0,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "body",
+      "logical_joint": "waistyaw",
+      "model_joint": "WaistYaw",
+      "logical_limits_deg": [
+        -209.90874767107857,
+        209.90874767107857
+      ],
+      "model_limits_deg": [
+        -218.70874767107858,
+        201.10874767107856
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.15358897417550102,
+      "model_zero_logical_deg": 8.8,
+      "logical_zero_model_rad": -0.15358897417550102,
+      "motion_reference_deg": null,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "body",
+      "logical_joint": "hippitch",
+      "model_joint": "HipPitch",
+      "logical_limits_deg": [
+        -119.9543738355393,
+        119.9543738355393
+      ],
+      "model_limits_deg": [
+        -120.25437383553931,
+        119.6543738355393
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.005235987755982988,
+      "model_zero_logical_deg": 0.3,
+      "logical_zero_model_rad": -0.005235987755982988,
+      "motion_reference_deg": null,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "body",
+      "logical_joint": "knee",
+      "model_joint": "Knee",
+      "logical_limits_deg": [
+        -119.9543738355393,
+        119.9543738355393
+      ],
+      "model_limits_deg": [
+        -120.25437383553931,
+        119.6543738355393
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.005235987755982988,
+      "model_zero_logical_deg": 0.3,
+      "logical_zero_model_rad": -0.005235987755982988,
+      "motion_reference_deg": null,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "body",
+      "logical_joint": "anklepitch",
+      "model_joint": "AnklePitch",
+      "logical_limits_deg": [
+        -99.9008510059605,
+        99.9008510059605
+      ],
+      "model_limits_deg": [
+        -100.20085100596049,
+        99.60085100596051
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.005235987755982988,
+      "model_zero_logical_deg": 0.3,
+      "logical_zero_model_rad": -0.005235987755982988,
+      "motion_reference_deg": null,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/thumb_mcp",
+      "model_joint": "LeftThumbMCP",
+      "logical_limits_deg": [
+        0.0,
+        99.99999988573333
+      ],
+      "model_limits_deg": [
+        0.0,
+        99.99999988573333
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 17.83216783216782,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/thumb_abd",
+      "model_joint": "LeftThumbAbduction",
+      "logical_limits_deg": [
+        -62.00000021563356,
+        0.0
+      ],
+      "model_limits_deg": [
+        -62.00000021563356,
+        0.0
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 0.0,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/thumb_pip",
+      "model_joint": "LeftThumbPIP",
+      "logical_limits_deg": [
+        -11.999999986288,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -11.999999986288,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 30.707423580786,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/thumb_dip",
+      "model_joint": "LeftThumbDIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        111.99999987202135
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        111.99999987202135
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 7.292246520874723,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/index_abd",
+      "model_joint": "LeftIndexAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 5.188191881918858,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/index_mcp",
+      "model_joint": "LeftIndexMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        95.00000003468612
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        95.00000003468612
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -6.710158434296364,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/index_pip",
+      "model_joint": "LeftIndexPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -8.343257443082319,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/middle_abd",
+      "model_joint": "LeftMiddleAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -1.8134602936180118,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/middle_mcp",
+      "model_joint": "LeftMiddleMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -0.9427710843373447,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/middle_pip",
+      "model_joint": "LeftMiddlePIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 2.6825817860300454,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/ring_abd",
+      "model_joint": "LeftRingAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -11.757610630539638,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/ring_mcp",
+      "model_joint": "LeftRingMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -5.661469933184883,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/ring_pip",
+      "model_joint": "LeftRingPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 7.530631479736087,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/pinky_abd",
+      "model_joint": "LeftPinkyAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -33.41239785222913,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/pinky_mcp",
+      "model_joint": "LeftPinkyMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        98.00000017449757
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        98.00000017449757
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -4.75483214649034,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "left/pinky_pip",
+      "model_joint": "LeftPinkyPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 2.954063604240279,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/thumb_mcp",
+      "model_joint": "RightThumbMCP",
+      "logical_limits_deg": [
+        0.0,
+        99.99999988573333
+      ],
+      "model_limits_deg": [
+        0.0,
+        99.99999988573333
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 80.52631884240118,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/thumb_abd",
+      "model_joint": "RightThumbAbduction",
+      "logical_limits_deg": [
+        -62.00000021563356,
+        0.0
+      ],
+      "model_limits_deg": [
+        -62.00000021563356,
+        0.0
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -5.865871163711226,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/thumb_pip",
+      "model_joint": "RightThumbPIP",
+      "logical_limits_deg": [
+        -11.999999986288,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -11.999999986288,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 31.408695269633697,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/thumb_dip",
+      "model_joint": "RightThumbDIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        111.99999987202135
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        111.99999987202135
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 27.855671105715224,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/index_abd",
+      "model_joint": "RightIndexAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 9.720111016212627,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/index_mcp",
+      "model_joint": "RightIndexMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        95.00000003468612
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        95.00000003468612
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 4.100481759175036,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/index_pip",
+      "model_joint": "RightIndexPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -4.0295713967388895,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/middle_abd",
+      "model_joint": "RightMiddleAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -0.5788199753980194,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/middle_mcp",
+      "model_joint": "RightMiddleMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 6.541248706171967,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/middle_pip",
+      "model_joint": "RightMiddlePIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 3.9304106468760374,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/ring_abd",
+      "model_joint": "RightRingAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -2.775416114219226,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/ring_mcp",
+      "model_joint": "RightRingMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        91.00000003925679
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -1.236466940326011,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/ring_pip",
+      "model_joint": "RightRingPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.00000002097411
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 28.595853237296218,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/pinky_abd",
+      "model_joint": "RightPinkyAbduction",
+      "logical_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_limits_deg": [
+        -36.99999981448188,
+        36.99999981448188
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -24.02913109033532,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/pinky_mcp",
+      "model_joint": "RightPinkyMCP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        98.00000017449757
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        98.00000017449757
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": -11.919231678712407,
+      "physical_zero_verified": false
+    },
+    {
+      "group": "hand",
+      "logical_joint": "right/pinky_pip",
+      "model_joint": "RightPinkyPIP",
+      "logical_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_limits_deg": [
+        -19.99999997714667,
+        107.999999876592
+      ],
+      "model_sign": 1,
+      "model_offset_rad": -0.0,
+      "model_zero_logical_deg": 0.0,
+      "logical_zero_model_rad": -0.0,
+      "motion_reference_deg": 1.2610232173543885,
+      "physical_zero_verified": false
+    }
+  ],
+  "hands": {
+    "left": {
+      "serial": "5B79076036",
+      "checks": {
+        "joint_rom": true,
+        "motor_limits": true,
+        "encoder_roundtrip_error_deg": 3.552713678800501e-14
+      },
+      "joints": [
+        {
+          "name": "thumb_mcp",
+          "motor_id": 4,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            0,
+            100
+          ],
+          "encoder_limits_rad": [
+            1.77021382922003,
+            3.08636934522591
+          ],
+          "motor_rad_per_joint_deg": 0.0131615551600588,
+          "logical_zero_encoder_rad": 1.77021382922003,
+          "reference_deg": 17.83216783216782
+        },
+        {
+          "name": "thumb_abd",
+          "motor_id": 3,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -62,
+            0
+          ],
+          "encoder_limits_rad": [
+            -0.2868544073346149,
+            0.3175340230923277
+          ],
+          "motor_rad_per_joint_deg": 0.00974820049075714,
+          "logical_zero_encoder_rad": 0.31753402309232776,
+          "reference_deg": 0.0
+        },
+        {
+          "name": "thumb_pip",
+          "motor_id": 1,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -12,
+            108
+          ],
+          "encoder_limits_rad": [
+            2.1874566035249243,
+            3.5925830052281715
+          ],
+          "motor_rad_per_joint_deg": 0.011709386680860393,
+          "logical_zero_encoder_rad": 3.452070365057847,
+          "reference_deg": 30.707423580786
+        },
+        {
+          "name": "thumb_dip",
+          "motor_id": 2,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            112
+          ],
+          "encoder_limits_rad": [
+            5.554544432933906,
+            7.097729105546862
+          ],
+          "motor_rad_per_joint_deg": 0.011690792974340574,
+          "logical_zero_encoder_rad": 5.788360292420718,
+          "reference_deg": 7.292246520874723
+        },
+        {
+          "name": "index_abd",
+          "motor_id": 14,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            4.663301595172349,
+            5.494719182206366
+          ],
+          "motor_rad_per_joint_deg": 0.011235372797756988,
+          "logical_zero_encoder_rad": 5.079010388689358,
+          "reference_deg": 5.188191881918858
+        },
+        {
+          "name": "index_mcp",
+          "motor_id": 15,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            95
+          ],
+          "encoder_limits_rad": [
+            3.730641276137879,
+            5.376602661539172
+          ],
+          "motor_rad_per_joint_deg": 0.014312707699141678,
+          "logical_zero_encoder_rad": 4.016895430120712,
+          "reference_deg": -6.710158434296364
+        },
+        {
+          "name": "index_pip",
+          "motor_id": 16,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            108
+          ],
+          "encoder_limits_rad": [
+            2.9007576698917474,
+            4.65256372965715
+          ],
+          "motor_rad_per_joint_deg": 0.013685984841917204,
+          "logical_zero_encoder_rad": 3.1744773667300916,
+          "reference_deg": -8.343257443082319
+        },
+        {
+          "name": "middle_abd",
+          "motor_id": 13,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            -0.380427235395639,
+            0.5322913333963175
+          ],
+          "motor_rad_per_joint_deg": 0.012334034713404819,
+          "logical_zero_encoder_rad": 0.07593204900033929,
+          "reference_deg": -1.8134602936180118
+        },
+        {
+          "name": "middle_mcp",
+          "motor_id": 8,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            91
+          ],
+          "encoder_limits_rad": [
+            2.5770877236478773,
+            4.104932588381976
+          ],
+          "motor_rad_per_joint_deg": 0.013764368150757645,
+          "logical_zero_encoder_rad": 2.85237508666303,
+          "reference_deg": -0.9427710843373447
+        },
+        {
+          "name": "middle_pip",
+          "motor_id": 9,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            107
+          ],
+          "encoder_limits_rad": [
+            2.2641556429192065,
+            3.9990879140178666
+          ],
+          "motor_rad_per_joint_deg": 0.013660884024398898,
+          "logical_zero_encoder_rad": 2.5373733234071842,
+          "reference_deg": 2.6825817860300454
+        },
+        {
+          "name": "ring_abd",
+          "motor_id": 5,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            -0.19481556006147643,
+            0.7102331047910518
+          ],
+          "motor_rad_per_joint_deg": 0.012230387362872002,
+          "logical_zero_encoder_rad": 0.2577087723647876,
+          "reference_deg": -11.757610630539638
+        },
+        {
+          "name": "ring_mcp",
+          "motor_id": 7,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            91
+          ],
+          "encoder_limits_rad": [
+            2.750427552678955,
+            4.12794230020026
+          ],
+          "motor_rad_per_joint_deg": 0.012410042770462211,
+          "logical_zero_encoder_rad": 2.998628408088199,
+          "reference_deg": -5.661469933184883
+        },
+        {
+          "name": "ring_pip",
+          "motor_id": 6,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            107
+          ],
+          "encoder_limits_rad": [
+            5.37046673838763,
+            6.998020354334295
+          ],
+          "motor_rad_per_joint_deg": 0.012815382802729645,
+          "logical_zero_encoder_rad": 5.626774394442222,
+          "reference_deg": 7.530631479736087
+        },
+        {
+          "name": "pinky_abd",
+          "motor_id": 12,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            1.418932228794218,
+            2.3285828360104035
+          ],
+          "motor_rad_per_joint_deg": 0.012292575773191695,
+          "logical_zero_encoder_rad": 1.8737575324023108,
+          "reference_deg": -33.41239785222913
+        },
+        {
+          "name": "pinky_mcp",
+          "motor_id": 10,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            98
+          ],
+          "encoder_limits_rad": [
+            0.9219224535192704,
+            2.429825568010856
+          ],
+          "motor_rad_per_joint_deg": 0.01277883995331852,
+          "logical_zero_encoder_rad": 1.1774992525856407,
+          "reference_deg": -4.75483214649034
+        },
+        {
+          "name": "pinky_pip",
+          "motor_id": 11,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            108
+          ],
+          "encoder_limits_rad": [
+            5.491651220630596,
+            7.228117472517141
+          ],
+          "motor_rad_per_joint_deg": 0.013566142592863636,
+          "logical_zero_encoder_rad": 5.762974072487868,
+          "reference_deg": 2.954063604240279
+        }
+      ]
+    },
+    "right": {
+      "serial": "5B79030495",
+      "checks": {
+        "joint_rom": true,
+        "motor_limits": true,
+        "encoder_roundtrip_error_deg": 1.4210854715202004e-14
+      },
+      "joints": [
+        {
+          "name": "thumb_mcp",
+          "motor_id": 13,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            0,
+            100
+          ],
+          "encoder_limits_rad": [
+            1.2164467573165894,
+            2.090815782546997
+          ],
+          "motor_rad_per_joint_deg": 0.008743690252304077,
+          "logical_zero_encoder_rad": 1.2164467573165894,
+          "reference_deg": 80.52631884240118
+        },
+        {
+          "name": "thumb_abd",
+          "motor_id": 14,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -62,
+            0
+          ],
+          "encoder_limits_rad": [
+            2.2020294666290283,
+            3.087289571762085
+          ],
+          "motor_rad_per_joint_deg": 0.014278388792468656,
+          "logical_zero_encoder_rad": 3.087289571762085,
+          "reference_deg": -5.865871163711226
+        },
+        {
+          "name": "thumb_pip",
+          "motor_id": 16,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -12,
+            108
+          ],
+          "encoder_limits_rad": [
+            1.5999419689178467,
+            3.3640198707580566
+          ],
+          "motor_rad_per_joint_deg": 0.01470064918200175,
+          "logical_zero_encoder_rad": 1.7763497591018678,
+          "reference_deg": 31.408695269633697
+        },
+        {
+          "name": "thumb_dip",
+          "motor_id": 15,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            112
+          ],
+          "encoder_limits_rad": [
+            -0.27765053510665894,
+            1.5079030990600586
+          ],
+          "motor_rad_per_joint_deg": 0.013526921470959982,
+          "logical_zero_encoder_rad": -0.007112105687459291,
+          "reference_deg": 27.855671105715224
+        },
+        {
+          "name": "index_abd",
+          "motor_id": 3,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            4.275818347930908,
+            5.48919677734375
+          ],
+          "motor_rad_per_joint_deg": 0.01639700580287624,
+          "logical_zero_encoder_rad": 4.882507562637329,
+          "reference_deg": 9.720111016212627
+        },
+        {
+          "name": "index_mcp",
+          "motor_id": 2,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            95
+          ],
+          "encoder_limits_rad": [
+            4.000621795654297,
+            5.603631973266602
+          ],
+          "motor_rad_per_joint_deg": 0.013939218935759171,
+          "logical_zero_encoder_rad": 4.2794061743694805,
+          "reference_deg": 4.100481759175036
+        },
+        {
+          "name": "index_pip",
+          "motor_id": 1,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            108
+          ],
+          "encoder_limits_rad": [
+            3.6861557960510254,
+            5.345922946929932
+          ],
+          "motor_rad_per_joint_deg": 0.012966930866241455,
+          "logical_zero_encoder_rad": 3.9454944133758545,
+          "reference_deg": -4.0295713967388895
+        },
+        {
+          "name": "middle_abd",
+          "motor_id": 4,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            -0.054916512221097946,
+            1.0923477411270142
+          ],
+          "motor_rad_per_joint_deg": 0.015503570991190704,
+          "logical_zero_encoder_rad": 0.5187156144529581,
+          "reference_deg": -0.5788199753980194
+        },
+        {
+          "name": "middle_mcp",
+          "motor_id": 9,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            91
+          ],
+          "encoder_limits_rad": [
+            4.678641319274902,
+            6.33380651473999
+          ],
+          "motor_rad_per_joint_deg": 0.014911398157343134,
+          "logical_zero_encoder_rad": 4.976869282421765,
+          "reference_deg": 6.541248706171967
+        },
+        {
+          "name": "middle_pip",
+          "motor_id": 8,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            107
+          ],
+          "encoder_limits_rad": [
+            2.7212820053100586,
+            4.683243274688721
+          ],
+          "motor_rad_per_joint_deg": 0.01544851393211545,
+          "logical_zero_encoder_rad": 3.0302522839523673,
+          "reference_deg": 3.9304106468760374
+        },
+        {
+          "name": "ring_abd",
+          "motor_id": 12,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            3.758406162261963,
+            4.782952308654785
+          ],
+          "motor_rad_per_joint_deg": 0.013845218194497598,
+          "logical_zero_encoder_rad": 4.270679235458374,
+          "reference_deg": -2.775416114219226
+        },
+        {
+          "name": "ring_mcp",
+          "motor_id": 7,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -20,
+            91
+          ],
+          "encoder_limits_rad": [
+            -1.1903691291809082,
+            0.424912691116333
+          ],
+          "motor_rad_per_joint_deg": 0.014552088471146318,
+          "logical_zero_encoder_rad": 0.13387092169340664,
+          "reference_deg": -1.236466940326011
+        },
+        {
+          "name": "ring_pip",
+          "motor_id": 11,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            107
+          ],
+          "encoder_limits_rad": [
+            4.108000755310059,
+            5.964117527008057
+          ],
+          "motor_rad_per_joint_deg": 0.014615092690535418,
+          "logical_zero_encoder_rad": 4.400302609120767,
+          "reference_deg": 28.595853237296218
+        },
+        {
+          "name": "pinky_abd",
+          "motor_id": 5,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -37,
+            37
+          ],
+          "encoder_limits_rad": [
+            1.9788353443145752,
+            3.284559726715088
+          ],
+          "motor_rad_per_joint_deg": 0.017644924086493416,
+          "logical_zero_encoder_rad": 2.6316975355148315,
+          "reference_deg": -24.02913109033532
+        },
+        {
+          "name": "pinky_mcp",
+          "motor_id": 10,
+          "motor_direction": -1,
+          "logical_rom_deg": [
+            -20,
+            98
+          ],
+          "encoder_limits_rad": [
+            2.4328935146331787,
+            4.180097579956055
+          ],
+          "motor_rad_per_joint_deg": 0.014806814112905728,
+          "logical_zero_encoder_rad": 3.8839612976979403,
+          "reference_deg": -11.919231678712407
+        },
+        {
+          "name": "pinky_pip",
+          "motor_id": 6,
+          "motor_direction": 1,
+          "logical_rom_deg": [
+            -20,
+            108
+          ],
+          "encoder_limits_rad": [
+            3.002000331878662,
+            4.812097549438477
+          ],
+          "motor_rad_per_joint_deg": 0.01414138451218605,
+          "logical_zero_encoder_rad": 3.284828022122383,
+          "reference_deg": 1.2610232173543885
+        }
+      ]
+    }
+  },
+  "neck_motion_reference_deg": {
+    "neck_joint1": 0.0,
+    "neck_joint2": 0.0
+  },
+  "physical_alignment_status": "requires_robot_specific_direction_and_zero_evidence",
+  "live_driver_directions_verified": false,
+  "live_startup_targets_verified": false,
+  "network_access": false,
+  "serial_access": false,
+  "robot_commands_sent": false
+}

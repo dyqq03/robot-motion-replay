@@ -1,0 +1,204 @@
+{
+  "index": 4,
+  "name": "平视左右讲解，手势由左向右接续",
+  "slug": "horizontal_dialogue",
+  "semantic_timeline": [
+    {
+      "part": "left_arm",
+      "pose": "low_explain",
+      "times_s": [
+        0.4,
+        2.7457446808510633,
+        5.7,
+        9.4
+      ],
+      "morph_to": "mid_screen",
+      "morph_times_s": [
+        3.0,
+        5.4
+      ],
+      "amount": 0.8
+    },
+    {
+      "part": "right_arm",
+      "pose": "low_conversational",
+      "times_s": [
+        6.1,
+        8.0,
+        13.2,
+        16.5
+      ],
+      "amount": 1.25,
+      "morph_times_s": [
+        9.0,
+        11.6
+      ]
+    },
+    {
+      "part": "left_arm",
+      "pose": "low_conversational",
+      "times_s": [
+        15.0,
+        16.4,
+        18.0,
+        20.1
+      ],
+      "amount": 0.65,
+      "morph_times_s": null
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        0.1,
+        1.9,
+        4.0,
+        6.8
+      ],
+      "design_yaw_right_positive_deg": -22,
+      "pitch_deg": 0
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        8.3,
+        10.3,
+        12.4,
+        15.4
+      ],
+      "design_yaw_right_positive_deg": 20,
+      "pitch_deg": 0
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        17.0,
+        17.7,
+        17.8,
+        18.7
+      ],
+      "design_yaw_right_positive_deg": 0,
+      "pitch_deg": 2.5
+    },
+    {
+      "part": "left_fingers",
+      "keyframes": [
+        {
+          "t_s": 1.0,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 2.5,
+          "shape": "curl",
+          "amount": 0.85
+        },
+        {
+          "t_s": 4.45,
+          "shape": "open",
+          "amount": 0.75
+        },
+        {
+          "t_s": 6.9,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    },
+    {
+      "part": "right_fingers",
+      "keyframes": [
+        {
+          "t_s": 6.7,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 8.1,
+          "shape": "open",
+          "amount": 0.9
+        },
+        {
+          "t_s": 9.95,
+          "shape": "curl",
+          "amount": 0.85
+        },
+        {
+          "t_s": 11.95,
+          "shape": "soft",
+          "amount": 0.8
+        },
+        {
+          "t_s": 14.600000000000001,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    },
+    {
+      "part": "left_fingers",
+      "keyframes": [
+        {
+          "t_s": 15.35,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 16.6,
+          "shape": "broad",
+          "amount": 0.8
+        },
+        {
+          "t_s": 18.0,
+          "shape": "relaxed",
+          "amount": 1.2
+        },
+        {
+          "t_s": 19.75,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    }
+  ],
+  "preview_times_s": [
+    0.0,
+    2.25,
+    4.2,
+    11.0,
+    15.8,
+    20.6
+  ],
+  "world_space_gaze_checks": [
+    {
+      "t_s": 2.95,
+      "side": "left"
+    },
+    {
+      "t_s": 11.350000000000001,
+      "side": "right"
+    }
+  ],
+  "hand_shape_design": "Small calibrated ABD spread plus slight MCP/PIP extension; open-to-curl and curl-to-open morphs; independent flexion delays 0–120ms, unequal finger amplitudes, thumb participation; C2 transitions.",
+  "design_notes": "Preserve original arms, neck and clocks exactly; replace repetitive hand curl pulses with irregular open, curl, soft and relaxed phrases."
+}

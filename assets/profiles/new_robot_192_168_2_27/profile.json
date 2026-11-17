@@ -1,0 +1,25 @@
+{
+  "id": "new_robot_192_168_2_27",
+  "host": "192.168.2.27",
+  "snapshot_date": "2026-11-17",
+  "neck_driver_directions": [
+    1,
+    -1
+  ],
+  "neck_startup_deg": [
+    0,
+    0
+  ],
+  "neck_replay_end_return_deg": [
+    0,
+    0
+  ],
+  "reference": "hand_startup_pose.json",
+  "reference_source": "saved robot startup target, not a new measurement",
+  "calibration": "hand_models",
+  "physical_geometry_zero_measured": false,
+  "enabled_by_default": false,
+  "activation": "manual_selection_alignment_calibration_import_and_full_validation_required",
+  "measurement_status": "historical_saved_startup_target_not_fresh_feedback",
+  "neck_driver_directions_scope": "saved on-disk configuration; historical readback includes an older process that was not restarted; verify live parameters before use"
+}

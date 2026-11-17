@@ -1,0 +1,201 @@
+{
+  "index": 2,
+  "name": "左手铺垫，右手补充再提示屏幕",
+  "slug": "left_explanation",
+  "semantic_timeline": [
+    {
+      "part": "left_arm",
+      "pose": "low_conversational",
+      "times_s": [
+        0.4,
+        2.4,
+        5.6,
+        8.1
+      ],
+      "amount": 1.25,
+      "morph_times_s": [
+        3.2,
+        5.5
+      ]
+    },
+    {
+      "part": "right_arm",
+      "pose": "low_conversational",
+      "times_s": [
+        5.8,
+        7.4,
+        10.2,
+        12.1
+      ],
+      "amount": 1.0,
+      "morph_times_s": null
+    },
+    {
+      "part": "left_arm",
+      "pose": "upper_side",
+      "times_s": [
+        12.3,
+        14.8,
+        16.0,
+        19.8
+      ],
+      "morph_to": "mid_screen",
+      "morph_times_s": [
+        15.1,
+        17.7
+      ],
+      "amount": 0.85
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        1.4,
+        2.7,
+        3.4,
+        5.3
+      ],
+      "design_yaw_right_positive_deg": -6,
+      "pitch_deg": 0
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        6.3,
+        7.5,
+        8.0,
+        9.6
+      ],
+      "design_yaw_right_positive_deg": 8,
+      "pitch_deg": 0
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        11.9,
+        13.7,
+        15.2,
+        18.1
+      ],
+      "design_yaw_right_positive_deg": -19,
+      "pitch_deg": -2
+    },
+    {
+      "part": "neck",
+      "times_s": [
+        9.5,
+        10.15,
+        10.2,
+        11.0
+      ],
+      "design_yaw_right_positive_deg": 0,
+      "pitch_deg": 3.0
+    },
+    {
+      "part": "left_fingers",
+      "keyframes": [
+        {
+          "t_s": 0.75,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 2.05,
+          "shape": "open",
+          "amount": 0.9
+        },
+        {
+          "t_s": 3.85,
+          "shape": "curl",
+          "amount": 0.9
+        },
+        {
+          "t_s": 6.4,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    },
+    {
+      "part": "right_fingers",
+      "keyframes": [
+        {
+          "t_s": 6.1,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 7.6499999999999995,
+          "shape": "soft",
+          "amount": 1
+        },
+        {
+          "t_s": 10.0,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    },
+    {
+      "part": "left_fingers",
+      "keyframes": [
+        {
+          "t_s": 12.25,
+          "shape": "rest",
+          "amount": 1
+        },
+        {
+          "t_s": 13.75,
+          "shape": "soft",
+          "amount": 0.9
+        },
+        {
+          "t_s": 15.6,
+          "shape": "open",
+          "amount": 0.8
+        },
+        {
+          "t_s": 18.35,
+          "shape": "rest",
+          "amount": 1
+        }
+      ],
+      "flexion_stagger_s": {
+        "index": 0.0,
+        "middle": 0.04,
+        "ring": 0.08,
+        "pinky": 0.12,
+        "thumb": 0.1
+      }
+    }
+  ],
+  "preview_times_s": [
+    0.0,
+    2.25,
+    4.2,
+    11.0,
+    15.8,
+    20.4
+  ],
+  "world_space_gaze_checks": [
+    {
+      "t_s": 14.45,
+      "side": "left"
+    }
+  ],
+  "hand_shape_design": "Small calibrated ABD spread plus slight MCP/PIP extension; open-to-curl and curl-to-open morphs; independent flexion delays 0–120ms, unequal finger amplitudes, thumb participation; C2 transitions.",
+  "design_notes": "Preserve original arms, neck and clocks exactly; replace repetitive hand curl pulses with irregular open, curl, soft and relaxed phrases."
+}

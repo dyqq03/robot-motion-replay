@@ -2,6 +2,7 @@
 from pathlib import Path
 import json,shutil
 import numpy as np,h5py,mujoco
+from hand_limits import validate_joint_degrees
 from doc50_kinematics import Designer,ARM_NAMES,NECK_NAMES,SIDES,ROOT
 from motion_baseline import require_endpoints,require_hand_endpoints,read_baseline
 from collision_checker import digest
@@ -35,12 +36,13 @@ def validate(designer,t,q,meta):
   if side not in meta['hands']:
    np.testing.assert_allclose(q[:,off:off+16],np.tile(designer.rest[off:off+16],(len(t),1)),atol=1e-10)
   elif designer.hand_reference is not None:require_hand_endpoints(q[:,off:off+16],designer.hand_names[side],side=side)
+ hand_checks={s:validate_joint_degrees(designer.cal,s,q[:,14+(0 if s=='left' else 16):30+(0 if s=='left' else 16)]) for s in SIDES}
  modelq=designer.model_path(q)
  for j in range(designer.model.njnt):
   if designer.model.jnt_limited[j]:
    low,high=designer.model.jnt_range[j];col=designer.model.jnt_qposadr[j]
    if modelq[:,col].min()<low-1e-5 or modelq[:,col].max()>high+1e-5:raise ValueError('Model limits: '+designer.model.joint(j).name)
- return dict(status='passed',frames=len(t),duration_s=float(t[-1]),units_valid=True,names_valid=True,synchronized=True,start_end_baselines_valid=True,hardware_and_model_limits_valid=True,minimum_hardware_limit_margin_deg=min(margins),peak_speed_deg_s={g:float(abs(velocity[:,v]).max()) for g,v in groups.items()},peak_acceleration_deg_s2={g:float(abs(acceleration[:,v]).max()) for g,v in groups.items()},speed_caps_deg_s=meta['speed_caps'],body_commands_empty=True,no_measured_feedback_fabricated=True,hardware_execution_validated=False)
+ return dict(status='passed',hardware_hand_checks=hand_checks,frames=len(t),duration_s=float(t[-1]),units_valid=True,names_valid=True,synchronized=True,start_end_baselines_valid=True,hardware_and_model_limits_valid=True,minimum_hardware_limit_margin_deg=min(margins),peak_speed_deg_s={g:float(abs(velocity[:,v]).max()) for g,v in groups.items()},peak_acceleration_deg_s2={g:float(abs(acceleration[:,v]).max()) for g,v in groups.items()},speed_caps_deg_s=meta['speed_caps'],body_commands_empty=True,no_measured_feedback_fabricated=True,hardware_execution_validated=False)
 
 def write_draft(directory,designer,t,q,meta):
  require_new_package(directory);directory.mkdir(parents=True)
@@ -74,7 +76,10 @@ def write_draft(directory,designer,t,q,meta):
  if designer.hand_reference is not None:
   motion['hand_baseline_id']=json.loads((ROOT/'configs/hand_motion_defaults.json').read_text())['id']
   motion['hand_baseline_pose_deg']={s:dict(zip(designer.hand_names[s],designer.hand_rest[s].tolist())) for s in SIDES}
-  motion['uncommanded_pose_assumptions']['hands']='measured hand reference snapshot in hand_baseline_pose_deg'
+  motion['uncommanded_pose_assumptions']['hands']='named hand reference in hand_baseline_pose_deg; reference kind recorded separately'
+ reference=json.loads((ROOT/'configs/hand_motion_defaults.json').read_text())
+ active_robot=json.loads((ROOT.parents[1]/'assets/active_robot.json').read_text())
+ motion.update(robot_id=active_robot['id'],hand_reference_kind=reference.get('reference_kind','measured_reference'),neck_coordinate_system='logical joint radians; hardware driver signs must be verified per robot and applied once',physical_geometry_zero_measured=False)
  write_json(directory/'motion.json',motion);write_json(directory/'kinematic_validation.json',checks)
  shutil.copyfile(RULES,directory/'collision_rules.json')
  columns=[];values=[t]

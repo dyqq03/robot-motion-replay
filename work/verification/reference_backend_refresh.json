@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "packages": [
+    "fb_doc50_20261021_01_affirmative_nod_v6",
+    "fb_walk_arm_swing_5cycles_v5",
+    "fb_finger_test_01_20261024_v4",
+    "fb_conversation_20261022_01_right_lead_v4",
+    "fb_right_finger_greeting_20261022_v5",
+    "fb_right_hand_showcase_20261022_v6",
+    "fb_skill_small_conversation_v1"
+  ],
+  "change": "local neck end-return target only: [4.5,-8.3]deg -> [0,0]deg",
+  "motion_streams_unchanged": true,
+  "existing_visual_and_collision_inputs_unchanged": true,
+  "server_access": false
+}

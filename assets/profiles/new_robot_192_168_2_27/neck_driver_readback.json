@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "all_remote_file_sha256_match": true,
+  "offline_tests_run": 6,
+  "offline_test_output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.007s\n\nOK\n",
+  "motor_directions": [
+    1,
+    -1
+  ],
+  "startup_neck_degrees": [
+    0,
+    0
+  ],
+  "node_restarted": false,
+  "hardware_commands_sent": false,
+  "running_neck_processes": [
+    {
+      "pid": "37504",
+      "args": [
+        "/usr/bin/python3",
+        "/ros_ws/install/neck_controll/lib/neck_controll/neck_node",
+        "--ros-args",
+        "-p",
+        "zero_pos:=[0.0, 0.0]",
+        "-p",
+        "motor_directions:=[-1.0, -1.0]",
+        "-p",
+        "motor_zero_offsets:=[0.0, 0.0]",
+        ""
+      ]
+    }
+  ]
+}

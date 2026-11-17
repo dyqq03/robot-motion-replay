@@ -47,9 +47,9 @@ angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
 Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
 'QbB' (scale to unit box) may remove this warning.
 See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
-{"draft": "/tmp/robot_motion_portability_oxsl2sg1/robot-motion-replay/work/self_test_9aidw2jm/drafts/fb_self_test_neck_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
-{"draft": "/tmp/robot_motion_portability_oxsl2sg1/robot-motion-replay/work/self_test_9aidw2jm/drafts/fb_self_test_hands_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
-{"draft": "/tmp/robot_motion_portability_oxsl2sg1/robot-motion-replay/work/self_test_9aidw2jm/drafts/fb_self_test_combined_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_neck_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_hands_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_combined_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
 {
   "status": "passed",
   "full": true,
@@ -70,6 +70,48 @@ See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
   "synthetic_samples_used_only_inside_isolated_tests": true
 }
 
+alignment_and_hands
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999993.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/alignment_hands_hgmlj248/fb_test_hand_phrase_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/alignment_hands_hgmlj248/fb_test_hand_phrase_slow_v1", "duration_s": 215.58441162379495, "automatic_duration_factor": 35.93073527063249}
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "numerical_alignment_is_distinct_from_physical_verification",
+    "calibrated_rom_encoder_roundtrip_and_out_of_range_rejection",
+    "actual_player_neck_returns_smoothly_to_zero_and_rejects_stale_feedback",
+    "open_then_curl_single_hand_stream_and_invalid_timing_rejection",
+    "speed_extension_scales_semantic_timeline_and_finger_delays",
+    "new_hand_phrase_complete_collision_path_and_full_video"
+  ],
+  "network_access": false,
+  "robot_commands_sent": false
+}
+
 deployment
 {
   "status": "passed",
@@ -84,4 +126,4 @@ deployment
 }
 
 manifest
-Portable bundle verified: 318 files
+Portable bundle verified: 369 files

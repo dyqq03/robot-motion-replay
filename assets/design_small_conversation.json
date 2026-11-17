@@ -1,5 +1,5 @@
 {
-  "package": "fb_skill_small_conversation_v1",
+  "package": "fb_skill_small_conversation_v2",
   "name": "轻微转头与右手自然伴随",
   "description": "小幅讲话伴随动作；示范相对当前参考的连续样条，并非未经检查即可发布的模板",
   "duration_s": 6.0,

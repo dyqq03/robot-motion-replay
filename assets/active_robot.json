@@ -1,0 +1,12 @@
+{
+  "id": "original_robot_192_168_8_30",
+  "host": "192.168.8.30",
+  "server_profile": "assets/server_profile.json",
+  "hand_reference_id": "user_measured_hands_20261026_175142_collision_adjusted_v1",
+  "snapshot_reference_date": "2026-10-26",
+  "fresh_hardware_measurement": false,
+  "physical_geometry_zero_measured": false,
+  "optional_profiles": [
+    "assets/profiles/new_robot_192_168_2_27/profile.json"
+  ]
+}

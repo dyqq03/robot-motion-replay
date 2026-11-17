@@ -12,6 +12,8 @@ description: 为内置双臂、颈部和灵巧手机器人设计动作，在 MuJ
 - 新建或修改动作：读 [设计与迭代](references/design.md) 和 [回放格式](references/package-format.md)。
 - 校准变化、实时角度、起止手型或批量更新：读 [手部参考生命周期](references/hand-reference.md)。
 - 环境、模型重建或迁移：读 [独立运行与资源](references/environment.md)。
+- 换机、校准或方向/零位/限位疑问：先读 [方向、零位与限位对齐](references/alignment-and-limits.md)。区分电机驱动sign和模型sign，不能在多个层重复反向。
+- 讲话/PPT伴随手势：另读 [自然讲话手势](references/conversational-gestures.md)，含先张后弯、双手错峰与近期五组轨迹模板。
 - 用户明确要求上传/替换服务器文件：读 [上传替换](references/deployment.md)。本地生成不隐含上传、执行真机动作或修改起栈配置的授权。
 
 先运行 `python scripts/motion.py doctor`。依赖缺失时按环境文档准备；手型/标定版本不一致时走手型更新流程，不能改哈希字段来伪装兼容。
@@ -26,6 +28,8 @@ description: 为内置双臂、颈部和灵巧手机器人设计动作，在 MuJ
 
 内置默认采用与2026-10-26参考手型一致的标定快照。另附 `assets/calibration_candidates/20261030/`：右手标定已变化，未静默设为当前默认。使用时先导入、重新采集和验证参考手型。本资源快照不代表当前真机状态。
 
+默认连接目标为 **192.168.8.30:2222，绑定wlo1**（`assets/server_profile.json`）。`192.168.2.27` 只作为 `assets/profiles/new_robot_192_168_2_27/` 的可选历史资料，不能把该机的颈部驱动 `[+1,-1]`、双手标定或起栈目标套给默认机器人。换机后逐项核对实体方向、逻辑零、模型偏置、限位和参考姿态；本地数值核对用 `python scripts/alignment_audit.py --out work/verification/alignment.json`，通过不代表实体已对齐。
+
 ## 设计循环
 
 1. 明确语义、参与部位、节奏、时长和幅度。信息足够就推进，只询问影响动作含义的缺失信息。
@@ -38,23 +42,24 @@ description: 为内置双臂、颈部和灵巧手机器人设计动作，在 MuJ
 
 ```bash
 python scripts/motion.py create assets/design_small_conversation.json
-python scripts/motion.py check work/drafts/fb_skill_small_conversation_v1
-python scripts/motion.py render work/drafts/fb_skill_small_conversation_v1
+python scripts/motion.py check work/drafts/fb_skill_small_conversation_v2
+python scripts/motion.py render work/drafts/fb_skill_small_conversation_v2
 # 实际查看 keyframes.jpg 和 preview.mp4 后记录观察：
-python scripts/motion.py review work/drafts/fb_skill_small_conversation_v1 --reviewer assistant --notes '描述实际看到的节奏、首尾、掌心与手指姿态'
-python scripts/motion.py publish work/drafts/fb_skill_small_conversation_v1
-python scripts/motion.py preview work/packages/fb_skill_small_conversation_v1
+python scripts/motion.py review work/drafts/fb_skill_small_conversation_v2 --reviewer assistant --notes '描述实际看到的节奏、首尾、掌心与手指姿态'
+python scripts/motion.py publish work/drafts/fb_skill_small_conversation_v2
+python scripts/motion.py preview work/packages/fb_skill_small_conversation_v2
 ```
 
 JSON示例是设计起点，不保证所有修改都通过。正式输出默认在 `work/packages/`，失败试验在 `work/drafts/`。批量交付同时提供Markdown/JSON目录，含名称、时长、控制链、包/视频路径和检查状态。
 
-内置同名示例已在 `work/packages/` 发布。直接预览即可；练习重新发布时先把设计JSON的 `package` 改为新的版本名，避免覆盖示例。
+旧版示例 `fb_skill_small_conversation_v1` 已在 `work/packages/` 发布。设计JSON采用新名字v2；再次练习时使用尚未存在的名字，避免覆盖示例。
 
 ## 不可遗漏的约定
 
 - 身体/腰腿流为空，不伪造实测反馈，不制造 `.db3`。只指挥本任务参与的链。
 - 新手型来自用户认可姿态的稳定实测，不能用连接时任意当前姿态。保留原始值、修正值、标定版本和理由。修正范围以当前任务授权为准。
 - 参考姿态通过不代表弯指/组合全路径通过。每个动作检查完整最终轨迹。
+- 起栈目标、界面归零/回初始、包内首尾、起播接近和结束恢复是独立层。颈部新包首尾为逻辑0°；本地播放器快照结束归位也已改为0°，服务器实际行为需另行核对。
 - 报告绑定模型、实际网格、映射、标定、规则和实现。装配规则必须有内置几何证据，不因初始重叠就排除。
 - 直接设置qpos是运动学预览，不能提供物理碰撞阻挡。外部障碍、真实动力学、实际位置到第一帧和结束控制交接不在包内证明范围内。
 - 参考包用于格式、节奏、姿态比较；旧默认、旧J7注释和某次倍速要求不是新动作的隐式要求。

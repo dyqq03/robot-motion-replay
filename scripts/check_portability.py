@@ -23,7 +23,7 @@ def audit(event,args):
 sys.addaudithook(audit)
 target=sys.argv[1];sys.argv=sys.argv[1:];sys.path.insert(0,str(Path(target).parent));runpy.run_path(target,run_name='__main__')
 '''
-  commands=[('self_test',[sys.executable,str(copied/'scripts/self_test.py'),*(['--full'] if full else []),'--report',str(copied/'work/verification/relocated_self_test.json')]),('deployment',[sys.executable,str(copied/'scripts/test_deployment.py')]),('manifest',[sys.executable,str(copied/'scripts/bundle_manifest.py')])]
+  commands=[('self_test',[sys.executable,str(copied/'scripts/self_test.py'),*(['--full'] if full else []),'--report',str(copied/'work/verification/relocated_self_test.json')]),('alignment_and_hands',[sys.executable,str(copied/'scripts/test_alignment_and_hands.py'),*(['--full'] if full else [])]),('deployment',[sys.executable,str(copied/'scripts/test_deployment.py')]),('manifest',[sys.executable,str(copied/'scripts/bundle_manifest.py')])]
   for label,cmd in commands:
    result=subprocess.run([cmd[0],'-c',bootstrap,*cmd[1:]],cwd=parent,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=600)
    output.append(label+'\n'+result.stdout)

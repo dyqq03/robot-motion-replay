@@ -9,6 +9,8 @@
   ],
   "model": "assets/robot/generated/humanoid_shadow.xml",
   "urdf": "assets/robot/URDF_90kg_with_hands/urdf/humanoid_with_hands.urdf",
-  "notes": "Copied numeric model/calibration snapshot; reference proof rebinding requires actual new full-path checks.",
-  "original_recording": "assets/reference_recordings/server_20261016/fb_right_wave"
+  "notes": "Default 192.168.8.30 model/calibration snapshot preserved; optional new-robot templates require explicit alignment and complete revalidation.",
+  "original_recording": "assets/reference_recordings/server_20261016/fb_right_wave",
+  "active_robot": "assets/active_robot.json",
+  "optional_design_templates": "assets/designs/ppt_natural20/catalog.json"
 }

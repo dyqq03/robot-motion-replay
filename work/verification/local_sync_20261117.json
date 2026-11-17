@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "default_server": "192.168.8.30:2222",
+  "bind_interface": "wlo1",
+  "optional_robot": "192.168.2.27 is historical only; no automatic activation",
+  "skill_validation": "passed",
+  "alignment_report": "work/verification/alignment.json",
+  "portability": "work/verification/relocation.json",
+  "original_resources": "work/verification/preserved_snapshot_20261117.json",
+  "backend_refresh": "work/verification/reference_backend_refresh.json",
+  "network_access": false,
+  "robot_commands_sent": false,
+  "github_push": false
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "numerical_alignment_is_distinct_from_physical_verification",
+    "calibrated_rom_encoder_roundtrip_and_out_of_range_rejection",
+    "actual_player_neck_returns_smoothly_to_zero_and_rejects_stale_feedback",
+    "open_then_curl_single_hand_stream_and_invalid_timing_rejection",
+    "speed_extension_scales_semantic_timeline_and_finger_delays",
+    "new_hand_phrase_complete_collision_path_and_full_video"
+  ],
+  "network_access": false,
+  "robot_commands_sent": false
+}

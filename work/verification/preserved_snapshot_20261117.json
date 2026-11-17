@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "protected_file_count": 148,
+  "changed_files": [],
+  "scope": "Original default configuration, model, mesh, collision proxies and reference HDF5 streams; backend reports/ZIPs refreshed separately",
+  "default_server": "192.168.8.30"
+}

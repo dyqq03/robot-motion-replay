@@ -87,6 +87,10 @@ def reference_evidence(profile):
 def validate_reference(profile):
  profile=Path(profile);p=read(profile)
  if p['calibration_files_sha256']!=reference_fingerprint():raise ValueError('Reference calibration no longer matches')
+ from hand_limits import validate_joint_degrees
+ cal=CalibratedHandPose()
+ for side in SIDES:
+  validate_joint_degrees(cal,side,np.array([[p['hands'][side][n] for n in cal.models[side+'_hand'].names]]))
  d=Designer(hand_reference=flat(p['hands']));path=d.model_path(np.tile(d.rest,(2,1)))
  report=CollisionChecker(d.model,RULES).check_trajectory(np.array([0.,1.]),path)
  report.update(evidence=reference_evidence(profile),scope='Rest pose only; every retargeted complete trajectory still requires a new check')

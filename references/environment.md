@@ -29,12 +29,18 @@ Python环境、系统OpenGL/EGL驱动不随技能打包。交互窗口需要桌�
 |`assets/robot/generated/motion_packages`|六个重新核验的参考副本|
 |`assets/reference_recordings`|一个完整原始真机招手录制，含HDF5、rosbag及下载校验清单；仅作历史参照|
 |`assets/calibration_candidates/20261030`|待导入新标定，不是活动配置|
+|`assets/profiles/new_robot_192_168_2_27`|另一机器的可选历史YAML、启动/驱动/播放器快照和轨迹输入，不是默认配置|
+|`assets/designs/ppt_natural20`|近期五组自然PPT动作的自包含轨迹/语义模板，使用前适配和重查|
 
 默认手臂角度（J1/J2/J3/J4/J5/J7，度）：左 `[8,-14.3,1.1,48.1,1.5,-12]`；右 `[-7.797832,14.190975,-0.893156,48.112546,-1.536982,12.380270]`。此表供理解，生成读取JSON完整精度。
+
+默认连接和活动标定继续保留原机器人 `192.168.8.30` 的快照。本次本地同步没有连接服务器，没有重新测量或修改任何真机。默认播放器保留原快照，仅把颈部正常结束恢复目标由4.5°/-8.3°改为0°/0°；以离线实际播放器消息桩验证。可选新机器人播放器单独保存，不代表两台服务器都已部署此本地修改，也不宣称加入了所有服务器的抓取事件功能。
 
 普通设计不重建模型。URDF/网格/映射变化时，在新资源版本内运行内置 `build_mujoco_model.py --help` 和 `build_collision_proxy.py --help`，并读 `assets/robot/evidence/doc50_collision_geometry.md`。视觉模型变化会使旧侧车来源哈希失效，必须相应重建/复核，不只更新哈希。关节零点、baselink/视觉偏移和安装几何不是一回事。
 
 `python scripts/self_test.py` 在临时目录检查生成、后端消息桩、手型采样和适配；`--full` 另做实际小动作全路径、视频和导出保护。交付验证证据在 `work/verification/`。`scripts/bundle_manifest.py` 维护固定资源哈希，不将运行日志和新动作纳入固定清单。
+
+`python scripts/alignment_audit.py --out work/verification/alignment.json` 生成50关节的本地坐标/限位清单，并单列实体方向/零位证据状态。`python scripts/test_alignment_and_hands.py --full` 另验证真实播放器颈部归零、过期反馈拒绝、手部编码器范围与新手型短语的完整路径/视频。
 
 `python scripts/check_portability.py --full` 实际复制整个技能到临时位置，从不同工作目录运行，并用Python审计阻止读取原技能。`scripts/model_snapshot.py` 数值核对50个关节的映射、URDF和MJCF限位及当前标定；`--refresh-report` 仅在来源已核实后刷新描述性报告，改变报告会使旧动作证明失效，随后必须完整重检。
 

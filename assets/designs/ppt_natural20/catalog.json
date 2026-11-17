@@ -1,0 +1,52 @@
+[
+  {
+    "index": 1,
+    "name": "右手带话，适度示屏后回到观众",
+    "package": "fb_ppt_natural20_20261116_01_right_conversational_v2",
+    "duration_s": 20.0,
+    "template": "assets/designs/ppt_natural20/01.npz",
+    "source_hdf5_sha256": "b15e807c8b2a4ac3eeafdb1eb08559de322b322b178baea8a8365f05aa38265e",
+    "source_robot": "new_robot_192_168_2_27",
+    "status": "design_template_requires_active_profile_retarget_and_complete_validation"
+  },
+  {
+    "index": 2,
+    "name": "左手铺垫，右手补充再提示屏幕",
+    "package": "fb_ppt_natural20_20261116_02_left_explanation_v2",
+    "duration_s": 20.4,
+    "template": "assets/designs/ppt_natural20/02.npz",
+    "source_hdf5_sha256": "5b6882329c2cd4a8b4fbb0047a3b434f195af79a438488605bf843e9ab66001c",
+    "source_robot": "new_robot_192_168_2_27",
+    "status": "design_template_requires_active_profile_retarget_and_complete_validation"
+  },
+  {
+    "index": 3,
+    "name": "双手解释，短暂高位示屏后回落",
+    "package": "fb_ppt_natural20_20261116_03_audience_to_screen_v2",
+    "duration_s": 19.8,
+    "template": "assets/designs/ppt_natural20/03.npz",
+    "source_hdf5_sha256": "9e8cd92b11d700fe1784c768a6fe6585d3c42a887c8864b0e085de655fdd3f9d",
+    "source_robot": "new_robot_192_168_2_27",
+    "status": "design_template_requires_active_profile_retarget_and_complete_validation"
+  },
+  {
+    "index": 4,
+    "name": "平视左右讲解，手势由左向右接续",
+    "package": "fb_ppt_natural20_20261116_04_horizontal_dialogue_v2",
+    "duration_s": 20.6,
+    "template": "assets/designs/ppt_natural20/04.npz",
+    "source_hdf5_sha256": "bdc2e86ecf39c3deb679ed466c906db58ba3f5d61264e41420cf1d13c96e081f",
+    "source_robot": "new_robot_192_168_2_27",
+    "status": "design_template_requires_active_profile_retarget_and_complete_validation"
+  },
+  {
+    "index": 5,
+    "name": "轻展主题，停顿强调再自然收尾",
+    "package": "fb_ppt_natural20_20261116_05_relaxed_summary_v2",
+    "duration_s": 20.2,
+    "template": "assets/designs/ppt_natural20/05.npz",
+    "source_hdf5_sha256": "a76dd11c4fdecd9308ef22e4425933d9f7095b00523a35c1cca2e6960b22dda9",
+    "source_robot": "new_robot_192_168_2_27",
+    "status": "design_template_requires_active_profile_retarget_and_complete_validation"
+  }
+]
