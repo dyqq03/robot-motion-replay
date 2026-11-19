@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "palm_normal_local_axis": [0, 1, 0],
+  "body_names": {"palm": "{Side}Palm", "elbow": "{Side}ElbowPitch", "wrist": "{Side}WristPitch", "middle_base": "{Side}MiddleMP"},
+  "interpretation": "Model body origins and a declared local palm axis, not measured anatomical centerlines. Verify against rendered geometry when importing a different hand assembly."
+}

@@ -1,5 +1,6 @@
 """Exercise disk-only deployment using real certified ZIPs and temporary fake server paths."""
 import copy,io,json,tarfile,tempfile,zipfile
+from unittest.mock import patch
 from pathlib import Path
 from common import SKILL,ROBOT,WORK,read,write,digest
 import deploy,deploy_remote as remote
@@ -15,9 +16,9 @@ def run():
   original_guard=remote.guard
   remote.guard=lambda profile:dict(mode='offline_test_fixture',loaded=None)
   try:
-   def fixture(case):
+   def fixture(case,same_name=False):
     path=base/case;root=path/'replays';root.mkdir(parents=True)
-    old='fb_legacy_reference_v1';(root/old).mkdir();(root/old/'original.bin').write_bytes(b'actual-old-recording')
+    old=name if same_name else 'fb_legacy_reference_v1';(root/old).mkdir();(root/old/'original.bin').write_bytes(b'actual-old-recording')
     (root/'fb_unrelated').mkdir();(root/'fb_unrelated'/'keep').write_bytes(b'untouched')
     labels=path/'brain_actions.json';write(labels,{'_metadata':{'keep':True},'old_label':{'rk_action':old,'duration':9.0,'title':'保留标签'},'other':{'rk_action':'fb_unrelated','duration':3}})
     profile=dict(replay_root=str(root),labels_file=str(labels))
@@ -52,6 +53,32 @@ def run():
    table=read(labels);assert table['old_label']['rk_action']==name and table['old_label']['title']=='保留标签' and table['_metadata']=={'keep':True} and table['other']['rk_action']=='fb_unrelated'
    assert backup.exists() and not list(path.glob('.robot_skill_stage_*'))
    checks.append('real_archive_install_label_migration_exact_replacement_and_backup_preservation')
+   path,root,old,labels,profile,spec,transfer=fixture('same_name',True)
+   result=remote.install(transfer(),profile)
+   assert result['replaced_same_name']==[name] and result['removed']==[]
+   assert remote.hashes(root/name)==remote.hashes(package)
+   assert read(labels)['old_label']['rk_action']==name
+   assert read(labels)['old_label']['duration']==read(package/'motion.json')['duration_s']
+   checks.append('same_name_replace_updates_bytes_and_duration_preserving_label_identity')
+   path,root,old,labels,profile,spec,transfer=fixture('cached_same_name',True)
+   before=remote.hashes(root/old);raw=labels.read_bytes()
+   remote.guard=lambda profile:dict(mode='offline_test_fixture',loaded=name)
+   try:remote.install(transfer(),profile)
+   except AssertionError:pass
+   else:raise AssertionError('Cached same-name package was replaced')
+   assert remote.hashes(root/old)==before and labels.read_bytes()==raw
+   remote.guard=lambda profile:dict(mode='offline_test_fixture',loaded=None)
+   path,root,old,labels,profile,spec,transfer=fixture('rollback_same_name',True)
+   before=remote.hashes(root/old);raw=labels.read_bytes();replace=remote.os.replace
+   def fail_labels(src,dst):
+    if str(dst)==str(labels):raise OSError('Injected label commit failure')
+    return replace(src,dst)
+   with patch('deploy_remote.os.replace',side_effect=fail_labels):
+    try:remote.install(transfer(),profile)
+    except OSError:pass
+    else:raise AssertionError('Injected failure was not exercised')
+   assert remote.hashes(root/old)==before and labels.read_bytes()==raw
+   checks.append('cached_package_blocks_replace_and_commit_failure_restores_old_package_and_labels')
   finally:remote.guard=original_guard
  return dict(status='passed',checks=checks,network_access=False,robot_commands_sent=False,real_server_tested=False)
 

@@ -47,9 +47,9 @@ angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
 Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
 'QbB' (scale to unit box) may remove this warning.
 See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
-{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_neck_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
-{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_hands_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
-{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/self_test_8dbnel70/drafts/fb_self_test_combined_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/self_test_edy2ws8v/drafts/fb_self_test_neck_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/self_test_edy2ws8v/drafts/fb_self_test_hands_v1", "duration_s": 2.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/self_test_edy2ws8v/drafts/fb_self_test_combined_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
 {
   "status": "passed",
   "full": true,
@@ -95,8 +95,8 @@ angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
 Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
 'QbB' (scale to unit box) may remove this warning.
 See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
-{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/alignment_hands_hgmlj248/fb_test_hand_phrase_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
-{"draft": "/tmp/robot_motion_portability_6nwtgkk9/robot-motion-replay/work/alignment_hands_hgmlj248/fb_test_hand_phrase_slow_v1", "duration_s": 215.58441162379495, "automatic_duration_factor": 35.93073527063249}
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/alignment_hands_4jcd3n50/fb_test_hand_phrase_v1", "duration_s": 6.0, "automatic_duration_factor": 1.0}
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/alignment_hands_4jcd3n50/fb_test_hand_phrase_slow_v1", "duration_s": 215.58441162379492, "automatic_duration_factor": 35.93073527063249}
 {
   "status": "passed",
   "full": true,
@@ -118,12 +118,83 @@ deployment
   "checks": [
     "local_dry_run_checks_current_proofs_and_zip_without_network",
     "changed_labels_old_recordings_and_corrupt_zip_rejected_before_commit",
-    "real_archive_install_label_migration_exact_replacement_and_backup_preservation"
+    "real_archive_install_label_migration_exact_replacement_and_backup_preservation",
+    "same_name_replace_updates_bytes_and_duration_preserving_label_identity",
+    "cached_package_blocks_replace_and_commit_failure_restores_old_package_and_labels"
   ],
   "network_access": false,
   "robot_commands_sent": false,
   "real_server_tested": false
 }
 
+workflow
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999993.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 1.0000000000000000.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999993.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+QH7089 qhull precision warning: The initial hull is narrow.  Is the input lower
+dimensional (e.g., a square in 3-d instead of a cube)?  Cosine of the minimum
+angle is 0.9999999999999997.  If so, Qhull may produce a wide facet.
+Options 'Qs' (search all points), 'Qbb' (scale last coordinate), or
+'QbB' (scale to unit box) may remove this warning.
+See 'Limitations' in qh-impre.htm.  Use 'Pp' to skip this warning.
+{"draft": "/tmp/robot_motion_portability_swlf4tmw/robot-motion-replay/work/workflow_test_h89t5d75/fb_workflow_test_v1", "duration_s": 8.0, "automatic_duration_factor": 1.0}
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "pass_points_C2_nonzero_velocity_and_explicit_static_stops",
+    "speed_changes_keep_protected_hold_and_reject_moving_hold_ranges",
+    "overlapping_arm_hand_head_phrases_backend_units_and_fixed_duration_failure",
+    "actual_model_landmarks_and_wrist_bounded_candidate_search_never_certifies_a_path",
+    "offline_dependency_differences_and_wrong_robot_runtime_evidence_rejection",
+    "same_name_local_revision_archives_original_and_rolls_back_injected_failure",
+    "pending_and_negative_reviews_block_pass_stale_media_and_changed_content_invalidate_attestations",
+    "real_model_complete_collision_and_video_with_pending_review_export_rejected",
+    "new_workflow_publish_archive_consistency_and_design_change_invalidation"
+  ],
+  "network_access": false,
+  "robot_commands_sent": false,
+  "synthetic_visual_assessment_only_inside_deleted_test_fixture": true
+}
+
 manifest
-Portable bundle verified: 369 files
+Portable bundle verified: 383 files

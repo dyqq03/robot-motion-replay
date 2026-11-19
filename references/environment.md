@@ -51,3 +51,7 @@ python assets/robot/scripts/preview_motion_package.py assets/reference_recording
 ```
 
 原始录制不是新生成并通过当前检查的正式包，不应直接作为新动作的安全证明。六个生成参考和可运行示例的目录见 `assets/reference_catalog.md`。维护者使用 `scripts/prepare_examples.py` 会重建内置参考证明及画面，并清除旧视觉审阅；普通动作设计不运行它。
+
+`python scripts/test_workflow.py --full` 验证经过点/停留的C2连续性、倍速保留静止段、组合链、实际几何测量和受限IK、依赖差异、同名归档/故障恢复、视觉负面结果与过期证据拒绝，并运行真实模型完整轨迹/视频。合成审阅记录只存在于临时测试夹具，不表示用户认可任何动作。迁移测试也包含此脚本。
+
+常用新工具：`design_tools.py` 组合设计种子；`pose_tools.py` 测量/搜索；`visual_review.py` 准备审阅和对照；`catalog.py` 维护目录与独立认可记录；`state_audit.py` 比较本地依赖。都从技能根定位资源，生成物保存在 `work/`。测试会临时导入标定/参考并在finally恢复；涉及这些默认文件的测试不要并行执行。

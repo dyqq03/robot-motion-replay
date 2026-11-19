@@ -41,7 +41,7 @@ python scripts/hand_reference.py adopt work/hand_references/hands_new_reference_
 
 ## 批量适配动作
 
-从当前动作目录选择每种动作的最新版，不选全部历史。选择JSON为列表，每项 `source` 指本技能内源包路径，`package` 指全新版本名。模式JSON按旧包名映射左右手，例如：
+从当前动作目录选择每种动作的最新版，不选全部历史。选择JSON为列表，每项 `source` 指本技能内源包路径，`package` 通常指全新版本名；明确要求同名更新时可用原名，草稿仍与正式源目录分开，发布按 [修订流程](catalog-and-revisions.md)。模式JSON按旧包名映射左右手，例如：
 
 ```json
 {"fb_right_finger_greeting_20261022_v5":{"right":"rest_relative"}}

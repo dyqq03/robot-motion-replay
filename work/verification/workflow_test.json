@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "full": true,
+  "checks": [
+    "pass_points_C2_nonzero_velocity_and_explicit_static_stops",
+    "speed_changes_keep_protected_hold_and_reject_moving_hold_ranges",
+    "overlapping_arm_hand_head_phrases_backend_units_and_fixed_duration_failure",
+    "actual_model_landmarks_and_wrist_bounded_candidate_search_never_certifies_a_path",
+    "offline_dependency_differences_and_wrong_robot_runtime_evidence_rejection",
+    "same_name_local_revision_archives_original_and_rolls_back_injected_failure",
+    "pending_and_negative_reviews_block_pass_stale_media_and_changed_content_invalidate_attestations",
+    "real_model_complete_collision_and_video_with_pending_review_export_rejected"
+  ],
+  "network_access": false,
+  "robot_commands_sent": false,
+  "synthetic_visual_assessment_only_inside_deleted_test_fixture": true
+}

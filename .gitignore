@@ -15,7 +15,9 @@ work/measurements/
 work/hand_references/
 work/self_test_*/
 work/offline_deployment_*/
+work/workflow_test_*/
+work/revisions/
+work/catalog/
 work/upload_selection.json
 work/selection.json
 work/retarget_modes.json
-

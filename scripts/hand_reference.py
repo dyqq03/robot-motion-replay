@@ -191,7 +191,8 @@ def rebase(selection,modes,reviewed_calibration_targets=False):
     def verify(key,obj):
      if isinstance(obj,h5py.Dataset) and key not in ['hand_'+s+'/q' for s in sides]:np.testing.assert_array_equal(f[key][:],obj[:])
     orig.visititems(verify)
-   meta.update(supersedes=source.name,hand_baseline_id=ref['id'],hand_baseline_pose_deg=ref['hands'],hand_calibration_revision=CalibratedHandPose().revision,hand_retarget_modes=modes_by_side,hand_reference_update=changes,hardware_execution_validated=False)
+   meta.update(slug=name,supersedes=source.name,hand_baseline_id=ref['id'],hand_baseline_pose_deg=ref['hands'],hand_calibration_revision=CalibratedHandPose().revision,hand_retarget_modes=modes_by_side,hand_reference_update=changes,hardware_execution_validated=False,authoring_workflow_version=2)
+   write(dest/'design.json',dict(operation='hand_reference_rebase',source_package=source.name,source_inputs_sha256=inputs(source),target_reference_id=ref['id'],modes=modes_by_side,changes=changes))
    write(dest/'motion.json',meta);fm=read(dest/'fullbody_meta.json');fm['hand_calibration_revision']=CalibratedHandPose().revision;write(dest/'fullbody_meta.json',fm)
    manifest=read(source/'manifest.json');manifest.update(draft=True,collision_check_required=False,model_sha256=digest(ROBOT/'generated/humanoid_shadow.xml'),hand_mapping_sha256=digest(ROBOT/'configs/hand_mapping.json'),hand_hardware_sha256=digest(ROBOT/'configs/hand_hardware.json'),hand_calibration_revision=CalibratedHandPose().revision,files={});write(dest/'manifest.json',manifest);refresh_manifest(dest)
    report=kinematics(dest);refresh_manifest(dest)

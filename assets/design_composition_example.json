@@ -1,0 +1,17 @@
+{
+  "package": "fb_skill_coordinated_phrase_v1",
+  "name": "轻抬右臂并展示手型",
+  "duration_s": 8,
+  "intent": {
+    "meaning": "单侧讲话伴随，抬臂和手型变化重叠，头部平视轻转",
+    "key_poses": ["右臂轻抬", "手指先张再弯", "收回后保持"],
+    "inactive_side": "左臂保持参考，左手为空流",
+    "review_focus": ["腕部关系", "抬臂与手型同步", "结束3秒保持"]
+  },
+  "components": [
+    {"component": "small_right_arm_phrase", "start_s": 0, "end_s": 5},
+    {"component": "right_open_then_soft", "start_s": 0.2, "end_s": 4.9},
+    {"component": "small_level_head_turn", "start_s": 0.4, "end_s": 4.6}
+  ],
+  "timing": {"speed_factor": 1, "protected_holds_s": [[5, 8]]}
+}

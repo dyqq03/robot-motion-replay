@@ -3,7 +3,9 @@
   "checks": [
     "local_dry_run_checks_current_proofs_and_zip_without_network",
     "changed_labels_old_recordings_and_corrupt_zip_rejected_before_commit",
-    "real_archive_install_label_migration_exact_replacement_and_backup_preservation"
+    "real_archive_install_label_migration_exact_replacement_and_backup_preservation",
+    "same_name_replace_updates_bytes_and_duration_preserving_label_identity",
+    "cached_package_blocks_replace_and_commit_failure_restores_old_package_and_labels"
   ],
   "network_access": false,
   "robot_commands_sent": false,

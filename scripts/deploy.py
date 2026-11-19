@@ -48,7 +48,10 @@ def upload(profile,selection,apply=False):
   if old is not None and (Path(old).name!=old or not old.startswith('fb_')):raise ValueError('Invalid exact old package name')
   rows.append(dict(package=directory.name,name=read(directory/'motion.json')['name'],duration_s=read(directory/'motion.json')['duration_s'],replaces=old,zip_sha256=digest(archive),archive=str(archive)))
  assert rows and len({r['package'] for r in rows})==len(rows)
- olds=[r['replaces'] for r in rows if r['replaces']];assert len(set(olds))==len(olds) and not set(olds)&{r['package'] for r in rows}
+ olds=[r['replaces'] for r in rows if r['replaces']]
+ assert len(set(olds))==len(olds)
+ names={r['package'] for r in rows}
+ assert all(not r.get('replaces') or r['replaces']==r['package'] or r['replaces'] not in names for r in rows),'Cross-package replacement cycles are not supported'
  if not apply:return dict(status='dry_run_local_only',actions=rows,network_access=False)
  token=uuid.uuid4().hex;out=WORK/'deployments'/token;out.mkdir(parents=True)
  snapshot=remote_call(profile,'snapshot('+repr(profile)+','+repr(olds)+')');write(out/'server_before.json',snapshot)

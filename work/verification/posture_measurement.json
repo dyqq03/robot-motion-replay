@@ -1,0 +1,49 @@
+{
+  "time_s": 2.0,
+  "measurements": {
+    "side": "right",
+    "positions_m": {
+      "palm": [
+        0.2525085367750739,
+        -0.2606242572897121,
+        0.837412411300859
+      ],
+      "elbow": [
+        -0.061023802566394114,
+        -0.21441789225973304,
+        1.040869504513047
+      ],
+      "wrist": [
+        0.03479378476319503,
+        -0.23620810804424602,
+        0.9411491332224222
+      ],
+      "middle_base": [
+        0.29571921458154726,
+        -0.2732777862282111,
+        0.8156715755511066
+      ]
+    },
+    "palm_normal_world": [
+      0.10219640673839488,
+      0.9345607283692514,
+      -0.3408110025214795
+    ],
+    "palm_normal_down_deg": 19.926292420253013,
+    "forearm_direction_world": [
+      0.6844117571671293,
+      -0.15564449376950718,
+      -0.7122888025307125
+    ],
+    "palm_to_middle_base_direction_world": [
+      0.8642242016759105,
+      -0.25307369614135206,
+      -0.43482207114978627
+    ],
+    "forearm_to_middle_base_deg": 19.848512029635042,
+    "elbow_height_m": 1.040869504513047,
+    "landmark_sha256": "68fd6d0be5a0aa669621290c0c10b7e69c9c7f9c55e8605be00adb1ef1f9ed3a",
+    "interpretation": "Model body origins and a declared local palm axis, not measured anatomical centerlines. Verify against rendered geometry when importing a different hand assembly."
+  },
+  "model_sha256": "d16190eb7be931ebba46315e4f58fbd8c9681eb145eb7a394048d57a7d2e7d60"
+}

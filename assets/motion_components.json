@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "Editable design seeds, not accepted or certified motion packages",
+  "components": {
+    "small_right_arm_phrase": {
+      "meaning": "右臂单独轻抬后收回；由使用者按语义调整肩肘空间目标",
+      "tracks": {"arm_right": {"mode": "rest_relative", "keyframes": [
+        {"phase": 0, "kind": "stop", "q": {}},
+        {"phase": 0.35, "kind": "pass", "q": {"openarm_right_joint4": 3}},
+        {"phase": 0.65, "kind": "pass", "q": {"openarm_right_joint4": 1}},
+        {"phase": 1, "kind": "stop", "q": {}}
+      ]}}
+    },
+    "small_level_head_turn": {
+      "meaning": "平视小幅转头后回正，不附加仰头",
+      "tracks": {"neck": {"mode": "rest_relative", "keyframes": [
+        {"phase": 0, "kind": "stop", "q": {}},
+        {"phase": 0.4, "kind": "pass", "q": {"neck_joint1": -3}},
+        {"phase": 0.7, "kind": "pass", "q": {"neck_joint1": -1}},
+        {"phase": 1, "kind": "stop", "q": {}}
+      ]}}
+    },
+    "right_open_then_soft": {
+      "meaning": "右手先轻张再柔和弯曲并恢复；幅度是待检查的参考相对量",
+      "hand_phrases": [{"side": "right", "keys": [
+        {"phase": 0, "shape": "rest", "amount": 1},
+        {"phase": 0.3, "shape": "open", "amount": 0.08},
+        {"phase": 0.6, "shape": "soft", "amount": 0.08},
+        {"phase": 0.9, "shape": "rest", "amount": 1}
+      ]}]
+    }
+  }
+}

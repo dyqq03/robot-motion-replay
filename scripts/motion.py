@@ -3,7 +3,7 @@ import argparse,json,math,re,shutil,sys,zipfile,os
 from pathlib import Path
 if len(sys.argv)>1 and sys.argv[1] in ['doctor','create','check','render']:os.environ.setdefault('MUJOCO_GL','egl')
 import numpy as np,h5py
-from scipy.interpolate import make_interp_spline
+from trajectory import interpolate, retime_clock, map_timeline
 from common import SKILL,ROBOT,WORK,read,write,digest,inputs,refresh_manifest
 from doc50_kinematics import Designer,ARM_NAMES,NECK_NAMES
 from motion_baseline import hand_baseline_deg
@@ -40,9 +40,7 @@ def create(spec_path,out=None):
     if isinstance(v,bool) or not isinstance(v,(float,int)) or not math.isfinite(v):raise ValueError('Finite joint degrees required')
     row[names.index(n)]=v
    values.append(row)
-  # One global spline: intermediate keyframes do not implicitly stop.
-  z=np.zeros(len(names));spline=make_interp_spline(kt,np.array(values),k=5,bc_type=([(1,z),(2,z)],[(1,z),(2,z)]))
-  result=spline(t)
+  result=interpolate(frames,np.array(values),t)
   if mode=='rest_relative':result+=d.rest[off:off+len(names)]
   q[:,off:off+len(names)]=result
   if key.startswith('arm_'):arms.append(key[4:])
@@ -55,6 +53,10 @@ def create(spec_path,out=None):
   q,hand_timeline=apply_phrases(d,t,q,episodes)
   for side in sorted(participating):hands.append(side);modes[side]='rest_relative'
  else:hand_timeline=[]
+ timing=spec.get('timing',{});holds=timing.get('protected_holds_s',[])
+ t,q,clock=retime_clock(t,q,timing.get('speed_factor',1.),holds)
+ hand_timeline=map_timeline(hand_timeline,clock)
+ exported_holds=[[float(clock(a)),float(clock(b))] for a,b in holds]
  caps={'arms':15. if spec.get('near_head') else 25.,'neck':15.,'hand_left':20.,'hand_right':20.}
  if set(spec.get('speed_caps_deg_s',{}))-set(caps):raise ValueError('Unknown speed cap group')
  caps.update(spec.get('speed_caps_deg_s',{}))
@@ -63,14 +65,14 @@ def create(spec_path,out=None):
  velocity=np.gradient(q,t,axis=0,edge_order=2)
  factor=max([1.]+[float(abs(velocity[:,sl]).max())/caps[g] for g,sl in groupcols.items()])
  if factor>1:
-  if spec.get('extend_for_speed_limits',True):t*=factor*1.00001
+  if spec.get('extend_for_speed_limits',True):
+   t,q,extension=retime_clock(t,q,1/(factor*1.00001),exported_holds)
+   hand_timeline=map_timeline(hand_timeline,extension)
+   exported_holds=[[float(extension(a)),float(extension(b))] for a,b in exported_holds]
   else:raise ValueError(f'Speed cap exceeded: extend duration by {factor:g}')
- # Semantic timestamps describe the exported clock, including speed extensions.
- scale=float(t[-1]/duration)
- for episode in hand_timeline:
-  for keyframe in episode['keyframes']:keyframe['t_s']*=scale
-  episode['flexion_stagger_s']={finger:delay*scale for finger,delay in episode['flexion_stagger_s'].items()}
- meta=dict(index=spec.get('index',1),name=spec['name'],slug=name,source_page=None,source_excerpt=spec.get('description',spec['name']),source=spec.get('source','user_requested_design'),arms=arms,neck='neck' in spec.get('tracks',{}),hands=hands,near_head=bool(spec.get('near_head')),speed_caps=caps,preview_times_s=np.linspace(0,float(t[-1]),6).tolist(),hand_retarget_modes=modes,hand_endpoint_blend_fraction=.22,requested_duration_s=duration,automatic_duration_factor=float(t[-1]/duration),design_notes=spec.get('notes',[]),semantic_hand_timeline=hand_timeline)
+ if timing.get('fixed_duration',False) and abs(t[-1]-duration)>1e-8:
+  raise ValueError('Fixed duration cannot be met with requested timing and speed caps; redesign the movement')
+ meta=dict(index=spec.get('index',1),name=spec['name'],slug=name,source_page=None,source_excerpt=spec.get('description',spec['name']),source=spec.get('source','user_requested_design'),arms=arms,neck='neck' in spec.get('tracks',{}),hands=hands,near_head=bool(spec.get('near_head')),speed_caps=caps,preview_times_s=np.linspace(0,float(t[-1]),6).tolist(),hand_retarget_modes=modes,hand_endpoint_blend_fraction=.22,requested_duration_s=duration,automatic_duration_factor=float(t[-1]/duration),design_notes=spec.get('notes',[]),semantic_hand_timeline=hand_timeline,authoring_workflow_version=2,intent=spec.get('intent',{}),timing=dict(requested=timing,exported_protected_holds_s=exported_holds,exported_clock_may_be_nonuniform=True))
  dest=Path(out) if out else WORK/'drafts'/name
  if dest.name!=name:raise ValueError('Output directory basename must equal package name')
  dest.parent.mkdir(parents=True,exist_ok=True)
@@ -180,11 +182,9 @@ def render(directory,fps=24,video=True):
  write(directory/'render_validation.json',dict(full_duration_video=video,fps=fps,frames=framecount,duration_s=float(t[-1]),input_sha256=inputs(directory),views=['front','side','left_hand','right_hand']))
  refresh_manifest(directory)
 
-def review(directory,notes,reviewer):
- directory=Path(directory)
- for name in ['keyframes.jpg','preview.mp4']:
-  if not (directory/name).is_file():raise ValueError('Render before reviewing')
- write(directory/'visual_review.json',dict(status='passed',reviewer=reviewer,method='Explicit recorded visual review; this command does not inspect images automatically',notes=notes,input_sha256=inputs(directory)|{n:digest(directory/n) for n in ['keyframes.jpg','preview.mp4']}));refresh_manifest(directory)
+def review(directory,notes,reviewer,status='pending',assessment=None):
+ from visual_review import record
+ return record(directory,notes,reviewer,status,assessment)
 
 def verify_export(directory):
  import cv2
@@ -200,6 +200,14 @@ def verify_export(directory):
   if report.get('status')!='passed' or not set(inputs(directory))<=set(report.get('input_sha256',{})):raise ValueError('Missing current evidence: '+file)
   for n,h in report['input_sha256'].items():
    if digest(directory/n)!=h:raise ValueError('Stale evidence: '+file+' '+n)
+ if read(directory/'motion.json').get('authoring_workflow_version',1)>=2:
+  visual=read(directory/'visual_review.json')
+  if visual.get('schema_version',1)<2 or not visual.get('observations') or not visual.get('viewed_files'):
+   raise ValueError('New authoring workflow requires an explicit timed visual assessment')
+  if not visual.get('method') or any(r.get('verdict')!='acceptable' for r in visual['observations']):
+   raise ValueError('Unresolved visual critique cannot be exported')
+  for required in ['review_evidence.json','design.json']:
+   if required not in visual.get('input_sha256',{}):raise ValueError('Unbound visual design evidence: '+required)
  backend=read(directory/'backend_validation.json')
  if backend['backend_sha256']!=digest(SOURCE) or backend['helper_sha256']!=digest(HELPER):raise ValueError('Backend validation stale')
  rv=read(directory/'render_validation.json')
@@ -208,10 +216,13 @@ def verify_export(directory):
  if not ok or fps<=0 or abs((count-1)/fps-read(directory/'motion.json')['duration_s'])>1/fps+.01:raise ValueError('Incomplete video')
  return True
 
-def publish(directory,out=None):
+def publish(directory,out=None,replace_local=False):
  directory=Path(directory);verify_export(directory)
  out=Path(out) if out else WORK/'packages'/directory.name
  if out.name!=directory.name:raise ValueError('Published package basename must stay unchanged')
+ if replace_local:
+  from revisions import replace_local as replace
+  return replace(directory,out)
  if out!=directory:
   if out.exists() or out.with_suffix('.zip').exists():raise FileExistsError(out)
   out.parent.mkdir(parents=True,exist_ok=True);shutil.copytree(directory,out)
@@ -244,8 +255,8 @@ def main():
  x=sub.add_parser('create');x.add_argument('design',type=Path);x.add_argument('--out',type=Path)
  x=sub.add_parser('check');x.add_argument('package',type=Path);x.add_argument('--stage',choices=['quick','candidate','trajectory'],default='trajectory');x.add_argument('--time',type=float,default=0)
  x=sub.add_parser('render');x.add_argument('package',type=Path);x.add_argument('--fps',type=int,default=24);x.add_argument('--keyframes-only',action='store_true')
- x=sub.add_parser('review');x.add_argument('package',type=Path);x.add_argument('--notes',required=True);x.add_argument('--reviewer',required=True)
- x=sub.add_parser('publish');x.add_argument('package',type=Path);x.add_argument('--out',type=Path)
+ x=sub.add_parser('review');x.add_argument('package',type=Path);x.add_argument('--notes',default='');x.add_argument('--reviewer',required=True);x.add_argument('--status',choices=['pending','needs_changes','passed'],default='pending');x.add_argument('--assessment',type=Path)
+ x=sub.add_parser('publish');x.add_argument('package',type=Path);x.add_argument('--out',type=Path);x.add_argument('--replace-local',action='store_true')
  x=sub.add_parser('preview');x.add_argument('package',type=Path);x.add_argument('--then',type=Path,nargs='*',default=[])
  a=p.parse_args();result=None
  if a.cmd=='doctor':result=doctor()
@@ -254,8 +265,8 @@ def main():
  elif a.cmd=='render':
   if not 1<=a.fps<=60:raise ValueError('fps must be 1..60')
   render(a.package,a.fps,not a.keyframes_only)
- elif a.cmd=='review':review(a.package,a.notes,a.reviewer)
- elif a.cmd=='publish':result=publish(a.package,a.out)
+ elif a.cmd=='review':result=review(a.package,a.notes,a.reviewer,a.status,a.assessment)
+ elif a.cmd=='publish':result=publish(a.package,a.out,a.replace_local)
  elif a.cmd=='preview':
   import subprocess
   raise SystemExit(subprocess.call([sys.executable,str(ROBOT/'scripts/preview_motion_package.py'),str(a.package),'--then',*map(str,a.then)]))

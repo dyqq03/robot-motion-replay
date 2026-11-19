@@ -53,6 +53,12 @@ def install(transfer,profile):
  with tarfile.open(transfer) as tar:
   spec=json.load(tar.extractfile('selection.json'));rows=spec['actions'];expected={'selection.json'}|{r['package']+'.zip' for r in rows}
   assert set(tar.getnames())==expected and len(tar.getmembers())==len(expected)
+  assert rows and len({r['package'] for r in rows})==len(rows)
+  replacements=[r['replaces'] for r in rows if r.get('replaces')]
+  assert all(Path(n).name==n and n.startswith('fb_') for n in replacements)
+  assert len(set(replacements))==len(replacements)
+  package_names={r['package'] for r in rows}
+  assert all(not r.get('replaces') or r['replaces']==r['package'] or r['replaces'] not in package_names for r in rows)
   raw=labels.read_bytes();assert sha(labels)==spec['label_sha256'],'Labels changed since local backup'
   for r in rows:
    if r.get('replaces'):assert hashes(root/r['replaces'])==spec['old_hashes'][r['replaces']]
@@ -71,7 +77,7 @@ def install(transfer,profile):
      if filename!='manifest.json':assert hashlib.sha256(data).hexdigest()==manifest['files'][filename]
      (dest/filename).write_bytes(data)
    assert json.loads((dest/'collision_validation.json').read_text())['status']=='passed'
-   if (root/name).exists():assert hashes(root/name)==hashes(dest),'Different existing version'
+   if (root/name).exists() and row.get('replaces')!=name:assert hashes(root/name)==hashes(dest),'Different existing version; explicit same-name replaces required'
    ready.append((row,dest,hashes(dest)))
   commit_guard=guard(profile);assert labels.read_bytes()==raw
   mapping={r['replaces']:r for r in rows if r.get('replaces')};table=json.loads(raw);migrated=[]
@@ -79,17 +85,33 @@ def install(transfer,profile):
    if not k.startswith('_') and isinstance(v,dict) and v.get('rk_action') in mapping:
     row=mapping[v['rk_action']];v['rk_action']=row['package'];v['duration']=row['duration_s'];migrated.append(k)
   loaded=commit_guard.get('loaded');assert loaded not in mapping,'Old package cached: load an unaffected package first, then retry; do not play'
-  for row,dest,hh in ready:
-   final=root/row['package']
-   if final.exists():shutil.rmtree(dest)
-   else:os.rename(dest,final)
-   assert hashes(final)==hh
-  if migrated:
-   tmp=labels.with_name('.'+labels.name+'.skill_upload.tmp');assert not tmp.exists();attr=labels.stat()
-   with tmp.open('x') as f:json.dump(table,f,ensure_ascii=False,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
-   os.chmod(tmp,stat.S_IMODE(attr.st_mode));os.chown(tmp,attr.st_uid,attr.st_gid);assert labels.read_bytes()==raw;os.replace(tmp,labels)
-  removed=[]
-  for old in mapping:
-   assert hashes(root/old)==spec['old_hashes'][old];shutil.rmtree(root/old);removed.append(old)
+  # Recheck actual bytes immediately before the idle-only commit. Rollback
+  # directories stay beside root on the same filesystem until labels commit.
+  for old in mapping:assert hashes(root/old)==spec['old_hashes'][old]
+  moved=[];installed=[];labels_written=False;new_labels=None
+  tmp=labels.with_name('.'+labels.name+'.skill_upload.tmp')
+  try:
+   for old in mapping:
+    saved=stage/('.old_'+old);os.rename(root/old,saved);moved.append((old,saved))
+   for row,dest,hh in ready:
+    final=root/row['package']
+    if final.exists():
+     assert hashes(final)==hh;shutil.rmtree(dest)
+    else:os.rename(dest,final);installed.append(final)
+    assert hashes(final)==hh
+   if migrated:
+    assert not tmp.exists();attr=labels.stat()
+    with tmp.open('x') as f:json.dump(table,f,ensure_ascii=False,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+    os.chmod(tmp,stat.S_IMODE(attr.st_mode));os.chown(tmp,attr.st_uid,attr.st_gid);assert labels.read_bytes()==raw
+    new_labels=tmp.read_bytes();os.replace(tmp,labels);labels_written=True
+  except BaseException:
+   if labels_written and labels.read_bytes()==new_labels:
+    tmp.write_bytes(raw);os.replace(tmp,labels)
+   for final in reversed(installed):
+    if final.exists():shutil.rmtree(final)
+   for old,saved in reversed(moved):os.rename(saved,root/old)
+   raise
+  removed=[old for old in mapping if old not in package_names]
+  for old,saved in moved:shutil.rmtree(saved)
   stage.rmdir();Path(transfer).unlink()
-  return dict(status='complete',uploaded=[r['package'] for r in rows],removed=removed,migrated_labels=migrated,guards=[before_guard,commit_guard],hardware_commands_sent=False,startup_changed=False,label_sha256=sha(labels))
+  return dict(status='complete',uploaded=[r['package'] for r in rows],removed=removed,replaced_same_name=[r['package'] for r in rows if r.get('replaces')==r['package']],installed=[dict(package=r['package'],zip_sha256=r['zip_sha256'],files_sha256=hh) for r,dest,hh in ready],migrated_labels=migrated,guards=[before_guard,commit_guard],hardware_commands_sent=False,startup_changed=False,label_sha256=sha(labels),target=dict(host=profile.get('host'),port=profile.get('port'),replay_root=str(root)))

@@ -27,8 +27,12 @@ python scripts/motion.py doctor
 
 ```bash
 python scripts/self_test.py --full
+python scripts/test_workflow.py --full
+python scripts/test_deployment.py
 python scripts/check_portability.py --full
 python scripts/bundle_manifest.py
 ```
 
 这些命令在本地测试生成、仿真、消息桩回放、导出与迁移，不发送真实关节指令。原始录制仅作历史参考；正式新包需有当前完整轨迹与视觉检查。上传及真机操作按当次用户要求执行。
+
+姿态测量、经过/停留时序和组件组合见 [设计](references/design.md)；带时间点的实际画面审阅见 [视觉审阅](references/visual-review.md)；保留包名的更新和独立认可/部署记录见 [目录与修订](references/catalog-and-revisions.md)。

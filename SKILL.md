@@ -10,13 +10,17 @@ description: 为内置双臂、颈部和灵巧手机器人设计动作，在 MuJ
 ## 按任务读取
 
 - 新建或修改动作：读 [设计与迭代](references/design.md) 和 [回放格式](references/package-format.md)。
+- 观察仿真、修正“不自然”：读 [视觉审阅与迭代](references/visual-review.md)。
 - 校准变化、实时角度、起止手型或批量更新：读 [手部参考生命周期](references/hand-reference.md)。
 - 环境、模型重建或迁移：读 [独立运行与资源](references/environment.md)。
 - 换机、校准或方向/零位/限位疑问：先读 [方向、零位与限位对齐](references/alignment-and-limits.md)。区分电机驱动sign和模型sign，不能在多个层重复反向。
 - 讲话/PPT伴随手势：另读 [自然讲话手势](references/conversational-gestures.md)，含先张后弯、双手错峰与近期五组轨迹模板。
 - 用户明确要求上传/替换服务器文件：读 [上传替换](references/deployment.md)。本地生成不隐含上传、执行真机动作或修改起栈配置的授权。
+- 动作目录、同名更新、上传状态：读 [目录与修订](references/catalog-and-revisions.md)。起栈/回放异常和事件兼容另读 [运行时边界](references/runtime-compatibility.md)。
 
 先运行 `python scripts/motion.py doctor`。依赖缺失时按环境文档准备；手型/标定版本不一致时走手型更新流程，不能改哈希字段来伪装兼容。
+
+模型、标定、参考或目标机器变化时，用 `scripts/state_audit.py` 保存和比较本地依赖。快照差异和实体核验分开记录，不能把磁盘文件一致当成运行进程已加载。
 
 ## 当前快照与坐标
 
@@ -32,20 +36,21 @@ description: 为内置双臂、颈部和灵巧手机器人设计动作，在 MuJ
 
 ## 设计循环
 
-1. 明确语义、参与部位、节奏、时长和幅度。信息足够就推进，只询问影响动作含义的缺失信息。
-2. 从当前参考设计连续轨迹。基准附近的小动作围绕新基准；明确手势保留语义目标并调整起落，不绕回历史初始姿态。J7优先保持参考，有实际姿态需要再改变。
-3. 用统一入口或内置Python工具生成全新名字的草稿。支持纯颈部、纯手部、单/双臂和组合。未参与链为空；历史双臂格式中另一臂的保持指令必须声明。
+1. 明确语义、关键姿态、掌面方向、参与部位、节奏与时长，记入设计 `intent`。有歧义时做针对性澄清，信息足够直接推进。新手势先看关键姿态，再完善全段。
+2. 从当前参考设计连续轨迹。基准附近的小动作围绕新基准；明确手势保留语义目标并调整起落，不绕回历史初始姿态。J7优先保持参考；零度或其他腕角是具体动作的约束，不推广为全局规则。
+3. 用统一入口或内置Python工具生成独立草稿。`design_tools.py` 组合可重叠的控制链短语；`pose_tools.py` 测量掌面、肘高和腕部几何关系或搜索受限IK候选。支持纯颈部、纯手部、单/双臂和组合。未参与链为空；历史双臂格式中另一臂的保持指令必须声明。
 4. 粗调复用模型和 `CollisionChecker.quick()`；成形候选用 `candidate()`，查看正侧面和手部细节继续修改。数值通过不等于自然，不在每个GUI帧做完整扫描。
 5. 全部流形成后执行完整 `check`：实际时间轴、首尾、限位、速度、整段插值碰撞和消息桩正反回放。不确定也是未通过，继续调整或换候选；不得改例外/间隙凑通过。
-6. `render` 生成全长视频、关键帧和轨迹。实际查看后用 `review` 记录具体观察。没看画面不能写已审阅，渲染成功不等于视觉评价通过。
-7. `publish` 只接受当前有效的完整证明，创建新包和ZIP。相关数据/模型/标定/实现变化后重新检查，历史包不覆盖。
+6. `render` 全长视频后，用 `visual_review.py prepare` 准备关键/衔接时间采样。实际查看后记录带时间点的具体观察；未解决缺陷保持 `needs_changes`。说清看了哪些画面，不将“视频可解码”写成“完整观看”，不把助手判断等同用户认可。
+7. `publish` 只接受当前有效的完整证明和显式视觉通过，创建包和ZIP。依赖或轨迹变化后重新检查。明确要求同名更新时用修订工具保留旧内容；用户认可、真机测试和上传回执分别记录。
 
 ```bash
 python scripts/motion.py create assets/design_small_conversation.json
 python scripts/motion.py check work/drafts/fb_skill_small_conversation_v2
 python scripts/motion.py render work/drafts/fb_skill_small_conversation_v2
-# 实际查看 keyframes.jpg 和 preview.mp4 后记录观察：
-python scripts/motion.py review work/drafts/fb_skill_small_conversation_v2 --reviewer assistant --notes '描述实际看到的节奏、首尾、掌心与手指姿态'
+python scripts/visual_review.py prepare work/drafts/fb_skill_small_conversation_v2
+# 实际查看后，按视觉审阅文档编写 assessment.json；有缺陷用 needs_changes：
+python scripts/motion.py review work/drafts/fb_skill_small_conversation_v2 --status passed --reviewer assistant --assessment work/assessment.json --notes '本次实际观察与修改结论'
 python scripts/motion.py publish work/drafts/fb_skill_small_conversation_v2
 python scripts/motion.py preview work/packages/fb_skill_small_conversation_v2
 ```
